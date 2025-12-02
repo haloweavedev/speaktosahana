@@ -1,4 +1,6 @@
+import React from "react";
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,9 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script defer src="https://cloud.umami.is/script.js" data-website-id="1f516028-f9aa-44a0-baec-95f00bc07366"></script>
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body>
         {children}
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="1f516028-f9aa-44a0-baec-95f00bc07366"
+        />
       </body>
     </html>
   );
