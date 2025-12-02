@@ -1,11 +1,56 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "ui": "tui",
+  "globalEnv": [
+    "NODE_ENV",
+    "NEXT_PUBLIC_APP_URL",
+    "NEXHEALTH_API_BASE_URL",
+    "NEXT_PUBLIC_SUPABASE_URL",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+    "DATABASE_URL",
+    "DIRECT_URL",
+    "RESEND_API_KEY",
+    "VAPI_API_KEY",
+    "SUPABASE_SERVICE_ROLE",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "INTERNAL_API_SECRET",
+    "VAPI_WEBHOOK_CREDENTIAL_ID",
+    "OPENAI_API_KEY",
+    "AUTUMN_SECRET_KEY",
+    "VAPI_GLOBAL_TOOL_IDS",
+    "SUPABASE_JWT_SECRET",
+    "NEXHEALTH_API_KEY",
+    "UMAMI_API_KEY",
+    "VAPI_UNINTEGRATED_ASSISTANT_ID",
+    "VAPI_MARKETING_ASSISTANT_ID",
+    "VAPI_EMAIL_EXPERIMENT_ASSISTANT_ID"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "env": [
+        "NEXT_PUBLIC_SUPABASE_URL",
+        "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+        "DATABASE_URL",
+        "DIRECT_URL",
+        "RESEND_API_KEY",
+        "VAPI_API_KEY",
+        "SUPABASE_SERVICE_ROLE",
+        "SUPABASE_SERVICE_ROLE_KEY",
+        "INTERNAL_API_SECRET",
+        "VAPI_WEBHOOK_CREDENTIAL_ID",
+        "OPENAI_API_KEY",
+        "AUTUMN_SECRET_KEY",
+        "VAPI_GLOBAL_TOOL_IDS",
+        "SUPABASE_JWT_SECRET",
+        "NEXHEALTH_API_KEY",
+        "UMAMI_API_KEY",
+        "VAPI_UNINTEGRATED_ASSISTANT_ID",
+        "VAPI_MARKETING_ASSISTANT_ID",
+        "VAPI_EMAIL_EXPERIMENT_ASSISTANT_ID"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
