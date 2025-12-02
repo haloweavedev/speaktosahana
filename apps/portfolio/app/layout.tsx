@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
+import SmoothScrolling from "./components/SmoothScrolling";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <SmoothScrolling>
+          {children}
+        </SmoothScrolling>
         <Script
           defer
           src="https://cloud.umami.is/script.js"

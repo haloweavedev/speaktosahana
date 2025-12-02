@@ -52,7 +52,7 @@ const App = () => {
   );
 
   const LensCard = ({ title, role, desc, icon: Icon }: { title: string; role: string; desc: string; icon: React.ElementType }) => (
-    <div className="bg-stone-50 p-8 border-l-2 border-emerald-800 hover:bg-white hover:shadow-xl transition-all duration-500 group">
+    <div className="bg-stone-50 p-6 md:p-8 border-l-2 border-emerald-800 hover:bg-white hover:shadow-xl transition-all duration-500 group">
       <div className="mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
         <Icon className="w-8 h-8 text-emerald-900" strokeWidth={1.5} />
       </div>
@@ -144,7 +144,7 @@ const App = () => {
 
       {/* Content Card */}
       <div className="w-full md:w-1/2 pl-20 md:px-12">
-        <div className="relative bg-white p-8 border-l-4 border-stone-200 hover:border-emerald-700 shadow-sm hover:shadow-xl transition-all duration-500 rounded-sm group-hover:-translate-y-1">
+        <div className="relative bg-white p-6 md:p-8 border-l-4 border-stone-200 hover:border-emerald-700 shadow-sm hover:shadow-xl transition-all duration-500 rounded-sm group-hover:-translate-y-1">
           {/* Mobile Date */}
           <span className="md:hidden font-serif font-bold text-4xl text-stone-200 absolute -top-10 left-0">{date}</span>
           
@@ -207,7 +207,7 @@ const App = () => {
             <p className="text-emerald-800 font-bold tracking-widest uppercase text-xs mb-6 animate-fade-in-up">
               Strategic Initiatives Lead • APD
             </p>
-            <h1 className="text-6xl md:text-8xl font-serif font-medium leading-[1.1] text-stone-900 mb-8">
+            <h1 className="text-5xl md:text-8xl font-serif font-medium leading-[1.1] text-stone-900 mb-8">
               Inclusion isn't charity. <br/>
               <span className="italic text-stone-400">It is strategy.</span>
             </h1>
