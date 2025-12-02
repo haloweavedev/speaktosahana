@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "speaktosahana",
   "private": true,
   "scripts": {
     "build": "turbo run build",
