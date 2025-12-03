@@ -9,7 +9,15 @@ const prismaClientSingleton = () => {
     throw new Error("DATABASE_URL (or DIRECT_URL/DIRECT_DATABASE_URL) must be set for Prisma.");
   }
 
-  const adapter = new PrismaPg({ connectionString });
+  const allowSelfSigned =
+    process.env.PRISMA_ALLOW_SELF_SIGNED === "true" ||
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED === "0";
+
+  const adapter = new PrismaPg({
+    connectionString,
+    ...(allowSelfSigned ? { ssl: { rejectUnauthorized: false } } : {}),
+  });
+
   return new PrismaClient({
     adapter,
     log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
