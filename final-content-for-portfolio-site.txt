@@ -1,17 +1,20 @@
-"use client";
-
 import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
+  Linkedin, 
   Mail, 
   ArrowUpRight,
   Quote,
+  ChevronDown,
   Layout,
   Briefcase,
   Award,
-  MapPin,
+  Anchor,
+  Compass,
+  BookOpen,
   Plus,
   Minus,
+  MapPin,
   Camera
 } from 'lucide-react';
 
@@ -26,14 +29,14 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const NavLink = ({ to, label }: { to: string; label: string }) => (
+  const NavLink = ({ to, label }) => (
     <button 
       onClick={() => scrollToSection(to)}
       className="text-sm font-medium text-stone-500 hover:text-emerald-900 transition-colors uppercase tracking-widest relative group py-2 font-sans"
@@ -42,7 +45,8 @@ const App = () => {
     </button>
   );
 
-  const PhotoPlaceholder = ({ label, className = '' }: { label: string; className?: string }) => (
+  // Photo Placeholder Component
+  const PhotoPlaceholder = ({ label, className }) => (
     <div className={`bg-stone-200 border border-stone-300 flex flex-col items-center justify-center text-stone-400 p-8 ${className}`}>
       <Camera className="w-8 h-8 mb-2 opacity-50" />
       <span className="text-xs font-bold uppercase tracking-widest text-center">{label}</span>
@@ -50,14 +54,11 @@ const App = () => {
   );
 
   // Elegant Lens Card for About Section
-  const LensCard = ({ title, role, desc, icon: Icon }: { title: string; role?: string; desc: string; icon: React.ElementType }) => (
+  const LensCard = ({ title, role, desc, icon: Icon }) => (
     <div className="bg-stone-50 p-8 border-l-2 border-emerald-800/30 hover:border-emerald-800 transition-colors duration-500 group">
-      <div className="flex items-center gap-3 mb-3">
+      <div className="flex items-center gap-3 mb-4">
         <Icon className="w-5 h-5 text-emerald-800 opacity-60 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
-        <div>
-          <h3 className="text-lg font-serif font-bold text-stone-900">{title}</h3>
-          {role && <p className="text-[11px] font-bold uppercase tracking-widest text-stone-400">{role}</p>}
-        </div>
+        <h3 className="text-lg font-serif font-bold text-stone-900">{title}</h3>
       </div>
       <p className="text-stone-600 leading-relaxed font-light text-sm">
         {desc}
@@ -66,7 +67,7 @@ const App = () => {
   );
 
   // Project Accordion Component
-  const AccordionProject = ({ title, summary, challenge, intervention, impact }: { title: string; summary: string; challenge: string; intervention: string; impact: string }) => {
+  const AccordionProject = ({ title, summary, challenge, intervention, impact }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -111,7 +112,7 @@ const App = () => {
     );
   };
 
-  const ProjectCategory = ({ category, description, children }: { category: string; description: string; children: React.ReactNode }) => (
+  const ProjectCategory = ({ category, description, children }) => (
     <div className="mb-24">
       <div className="mb-8 border-l-4 border-emerald-900 pl-6">
         <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-stone-400 mb-2">{category}</h3>
@@ -194,7 +195,7 @@ const App = () => {
             <div className="md:col-span-8 space-y-8">
               <Quote className="w-8 h-8 text-emerald-900 opacity-20" />
               <h2 className="text-3xl font-serif leading-tight text-stone-800">
-                &ldquo;Strategy without execution is just theory. Execution without strategy is just noise.&rdquo;
+                "Strategy without execution is just theory. Execution without strategy is just noise."
               </h2>
               
               <div className="space-y-6 text-stone-600 font-light leading-relaxed text-lg">
@@ -205,7 +206,7 @@ const App = () => {
                   Currently, I am living this truth as the <strong>Lead for Strategic Initiatives at APD</strong>. My role is to build the big picture—to turn ambitious ideas into sustainable ecosystems. I am architecting flagship initiatives like “The Disability NGO Excellence and Ecosystem Strengthening Initiative” and the “Centre of Excellence for Persons with Disabilities (Social Campus),” designed to anchor APD as a Thought Leader and an Ecosystem Enabler in the sector.
                 </p>
                 <div className="pl-6 border-l-2 border-emerald-900/30 italic text-stone-500 text-base">
-                  &ldquo;I don’t just plan; I drive the strategy execution cycle. My focus is aligning internal capacities with external opportunities.&rdquo;
+                  "I don’t just plan; I drive the strategy execution cycle. My focus is aligning internal capacities with external opportunities."
                 </div>
               </div>
             </div>
@@ -410,7 +411,7 @@ const App = () => {
       {/* Footer */}
       <section id="contact" className="py-24 px-6 bg-stone-900 text-stone-300">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">Let&apos;s connect dots.</h2>
+          <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">Let's connect dots.</h2>
           <p className="text-lg font-light mb-12 max-w-xl mx-auto opacity-80">
             Available for strategic consulting, ecosystem partnerships, and speaking engagements.
           </p>

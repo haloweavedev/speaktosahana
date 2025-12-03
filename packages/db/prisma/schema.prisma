@@ -1,0 +1,82 @@
+datasource db {
+  provider   = "postgresql"
+  extensions = [postgis]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+  binaryTargets   = ["native", "rhel-openssl-3.0.x"]
+}
+
+model Ngo {
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  darpanId         String?  @unique @map("darpan_id")
+  name             String
+  normalizedName   String?  @map("normalized_name")
+  registrationNumber String? @map("registration_number")
+  registrationType String?  @map("registration_type")
+  email            String?
+  phone            String?  @map("phone")
+  website          String?
+  address          String?
+  city             String?
+  district         String?
+  state            String?
+  pincode          String?
+  registrationDate DateTime? @map("registration_date") @db.Date
+  latitude         Decimal? @map("latitude") @db.Decimal(10, 7)
+  longitude        Decimal? @map("longitude") @db.Decimal(10, 7)
+  location         Unsupported("geography(Point, 4326)")? // PostGIS geography point (Long, Lat)
+  sourceUrl        String? @map("source_url")
+  scrapedAt        DateTime? @map("scraped_at") @db.Timestamptz
+  hash             String? @map("hash")
+  raw              Json?   @map("raw")
+
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  sectors          NgoSector[]
+
+  @@map("ngos")
+  @@index([pincode])
+  @@index([district, state])
+}
+
+model ScrapeRun {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  status          String
+  startedAt       DateTime @default(now()) @map("started_at") @db.Timestamptz
+  finishedAt      DateTime? @map("finished_at") @db.Timestamptz
+  durationMs      Int?     @map("duration_ms")
+  totalDiscovered Int?     @map("total_discovered")
+  totalProcessed  Int?     @map("total_processed")
+  inserted        Int?
+  updated         Int?
+  skipped         Int?
+  errors          Json?
+  message         String?
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  @@map("scrape_runs")
+  @@index([startedAt])
+}
+
+model Sector {
+  id    BigInt      @id @default(autoincrement())
+  name  String      @unique
+  ngos  NgoSector[]
+
+  @@map("sectors")
+}
+
+model NgoSector {
+  ngoId    String @map("ngo_id") @db.Uuid
+  sectorId BigInt @map("sector_id")
+
+  ngo    Ngo    @relation(fields: [ngoId], references: [id], onDelete: Cascade)
+  sector Sector @relation(fields: [sectorId], references: [id], onDelete: Cascade)
+
+  @@id([ngoId, sectorId])
+  @@map("ngo_sectors")
+}

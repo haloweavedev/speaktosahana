@@ -1,0 +1,816 @@
+{
+  "capturedAt": "2025-12-02T19:43:15.148Z",
+  "selections": {
+    "selectedState": "Karnataka",
+    "selectedDistrict": "BENGALURU URBAN",
+    "selectedSectors": [
+      "Differently Abled"
+    ],
+    "selectedNgoTypes": [
+      "Section 8 Company",
+      "Society",
+      "Trust"
+    ]
+  },
+  "headers": [
+    "Sr. No.",
+    "Name of NPO",
+    "Registration No, District (State)",
+    "Address",
+    "Sectors working in"
+  ],
+  "totalRows": null,
+  "rows": [
+    {
+      "Sr. No.": "1",
+      "Name of NPO": "A Hundred Hands",
+      "Registration No, District (State)": "IN KA275887416941221 BENGALURU URBAN (Karnataka)",
+      "Address": "4 Ashley Road Off MG Road Bangalore 560025, bangalore, BENGALURU URBAN (Karnataka) - 560025",
+      "Sectors working in": "Art & Culture, Differently Abled, Rural Development & Poverty Alleviation, Tourism, Tribal Affairs, Vocational Training"
+    },
+    {
+      "Sr. No.": "2",
+      "Name of NPO": "A R N GROWTH CHARITABLE TRUST",
+      "Registration No, District (State)": "KRI-4-00539-2025-26 BENGALURU URBAN (Karnataka)",
+      "Address": "# 50/51 2nd Main Behind Maruthi Vidyalaya Balaji Layout Kalyan Nagar Post Bangalore 560043, Bengaluru East, BENGALURU URBAN (Karnataka) - 560043",
+      "Sectors working in": "Aged/Elderly, Agriculture, Art & Culture, Children, Differently Abled, Drinking Water, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Nutrition, Panchayati Raj, Prisoner's Issues, Rural Development & Poverty Alleviation, Skill Development, Tribal Affairs, Vocational Training, Women's Development & Empowerment"
+    },
+    {
+      "Sr. No.": "3",
+      "Name of NPO": "A2Z Foundation Trust",
+      "Registration No, District (State)": "VJN-04-00382-2021-22 BENGALURU URBAN (Karnataka)",
+      "Address": "No 30, 1st floor, 8th main, RPC layout , vijayanagar, bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560040",
+      "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests, Food Processing, Micro Small & Medium Enterprises, Skill Development, Women's Development & Empowerment"
+    },
+    {
+      "Sr. No.": "4",
+      "Name of NPO": "Aadhana education foundation",
+      "Registration No, District (State)": "U88900KA2025NPL198836 BENGALURU URBAN (Karnataka)",
+      "Address": "#569, 2nd Cross, 3rd Stage, 1st Block Basaveshwarnagar, Bengaluru North, BENGALURU URBAN (Karnataka) - 560079",
+      "Sectors working in": "Aged/Elderly, Children, Differently Abled, Drinking Water, Education & Literacy, Health & Family Welfare, Human Rights, Labour & Employment, Nutrition, Rural Development & Poverty Alleviation"
+    },
+    {
+      "Sr. No.": "5",
+      "Name of NPO": "AADHYA CHARITABLE FOUNDATION",
+      "Registration No, District (State)": "156897 BENGALURU URBAN (Karnataka)",
+      "Address": "K. NO. 515, HENUR VILLAGE BANGALORE Bangalore KA 560043 IN, BANGALORE, BENGALURU URBAN (Karnataka) - 560043",
+      "Sectors working in": "Children, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Health & Family Welfare, Nutrition, Rural Development & Poverty Alleviation, Skill Development, Tribal Affairs, Water Resources, Women's Development & Empowerment"
+    },
+    {
+      "Sr. No.": "6",
+      "Name of NPO": "AAFIEA CHARITABLE TRUST",
+      "Registration No, District (State)": "BOOK-IV/325/2024-25 BENGALURU URBAN (Karnataka)",
+      "Address": "No 434 MCECHS 1st phase 4th Cross 1st Main, Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+      "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests"
+    },
+    {
+      "Sr. No.": "7",
+      "Name of NPO": "AAGAMI FOUNDATION",
+      "Registration No, District (State)": "U88900KA2024NPL183216 BENGALURU URBAN (Karnataka)",
+      "Address": "PLATINUM NO 47, Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+      "Sectors working in": "Agriculture, Art & Culture, Civic Issues, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Panchayati Raj, Rural Development & Poverty Alleviation, Scientific & Industrial Research, Skill Development, Sports, Tourism"
+    },
+    {
+      "Sr. No.": "8",
+      "Name of NPO": "AAHWAHAN FOUNDATION",
+      "Registration No, District (State)": "BSG-4-00351/2016-17 BENGALURU URBAN (Karnataka)",
+      "Address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069, BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+      "Sectors working in": "Aged/Elderly, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Micro Finance (SHGs), Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Sports, Tourism, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+    },
+    {
+      "Sr. No.": "9",
+      "Name of NPO": "AAKRITII NGO",
+      "Registration No, District (State)": "GAN-4-00052-2024-25 BENGALURU URBAN (Karnataka)",
+      "Address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024, BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+      "Sectors working in": "Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Children, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, Human Rights, Rural Development & Poverty Alleviation, Science & Technology, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Water Resources, Women's Development & Empowerment, Youth Affairs"
+    },
+    {
+      "Sr. No.": "10",
+      "Name of NPO": "AAMANTRAN WELFARE ASSOCIATION TRUST",
+      "Registration No, District (State)": "KRI-4-00244-2022-23 BENGALURU URBAN (Karnataka)",
+      "Address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036, Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+      "Sectors working in": "Aged/Elderly, Children, Differently Abled, Education & Literacy, Religious"
+    },
+    {
+      "Sr. No.": "11",
+      "Name of NPO": "A Hundred Hands",
+      "Registration No, District (State)": "IN KA275887416941221 BENGALURU URBAN (Karnataka)",
+      "Address": "4 Ashley Road Off MG Road Bangalore 560025, bangalore, BENGALURU URBAN (Karnataka) - 560025",
+      "Sectors working in": "Art & Culture, Differently Abled, Rural Development & Poverty Alleviation, Tourism, Tribal Affairs, Vocational Training"
+    },
+    {
+      "Sr. No.": "12",
+      "Name of NPO": "A R N GROWTH CHARITABLE TRUST",
+      "Registration No, District (State)": "KRI-4-00539-2025-26 BENGALURU URBAN (Karnataka)",
+      "Address": "# 50/51 2nd Main Behind Maruthi Vidyalaya Balaji Layout Kalyan Nagar Post Bangalore 560043, Bengaluru East, BENGALURU URBAN (Karnataka) - 560043",
+      "Sectors working in": "Aged/Elderly, Agriculture, Art & Culture, Children, Differently Abled, Drinking Water, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Nutrition, Panchayati Raj, Prisoner's Issues, Rural Development & Poverty Alleviation, Skill Development, Tribal Affairs, Vocational Training, Women's Development & Empowerment"
+    },
+    {
+      "Sr. No.": "13",
+      "Name of NPO": "A2Z Foundation Trust",
+      "Registration No, District (State)": "VJN-04-00382-2021-22 BENGALURU URBAN (Karnataka)",
+      "Address": "No 30, 1st floor, 8th main, RPC layout , vijayanagar, bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560040",
+      "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests, Food Processing, Micro Small & Medium Enterprises, Skill Development, Women's Development & Empowerment"
+    },
+    {
+      "Sr. No.": "14",
+      "Name of NPO": "Aadhana education foundation",
+      "Registration No, District (State)": "U88900KA2025NPL198836 BENGALURU URBAN (Karnataka)",
+      "Address": "#569, 2nd Cross, 3rd Stage, 1st Block Basaveshwarnagar, Bengaluru North, BENGALURU URBAN (Karnataka) - 560079",
+      "Sectors working in": "Aged/Elderly, Children, Differently Abled, Drinking Water, Education & Literacy, Health & Family Welfare, Human Rights, Labour & Employment, Nutrition, Rural Development & Poverty Alleviation"
+    },
+    {
+      "Sr. No.": "15",
+      "Name of NPO": "AADHYA CHARITABLE FOUNDATION",
+      "Registration No, District (State)": "156897 BENGALURU URBAN (Karnataka)",
+      "Address": "K. NO. 515, HENUR VILLAGE BANGALORE Bangalore KA 560043 IN, BANGALORE, BENGALURU URBAN (Karnataka) - 560043",
+      "Sectors working in": "Children, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Health & Family Welfare, Nutrition, Rural Development & Poverty Alleviation, Skill Development, Tribal Affairs, Water Resources, Women's Development & Empowerment"
+    },
+    {
+      "Sr. No.": "16",
+      "Name of NPO": "AAFIEA CHARITABLE TRUST",
+      "Registration No, District (State)": "BOOK-IV/325/2024-25 BENGALURU URBAN (Karnataka)",
+      "Address": "No 434 MCECHS 1st phase 4th Cross 1st Main, Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+      "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests"
+    },
+    {
+      "Sr. No.": "17",
+      "Name of NPO": "AAGAMI FOUNDATION",
+      "Registration No, District (State)": "U88900KA2024NPL183216 BENGALURU URBAN (Karnataka)",
+      "Address": "PLATINUM NO 47, Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+      "Sectors working in": "Agriculture, Art & Culture, Civic Issues, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Panchayati Raj, Rural Development & Poverty Alleviation, Scientific & Industrial Research, Skill Development, Sports, Tourism"
+    },
+    {
+      "Sr. No.": "18",
+      "Name of NPO": "AAHWAHAN FOUNDATION",
+      "Registration No, District (State)": "BSG-4-00351/2016-17 BENGALURU URBAN (Karnataka)",
+      "Address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069, BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+      "Sectors working in": "Aged/Elderly, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Micro Finance (SHGs), Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Sports, Tourism, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+    },
+    {
+      "Sr. No.": "19",
+      "Name of NPO": "AAKRITII NGO",
+      "Registration No, District (State)": "GAN-4-00052-2024-25 BENGALURU URBAN (Karnataka)",
+      "Address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024, BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+      "Sectors working in": "Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Children, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, Human Rights, Rural Development & Poverty Alleviation, Science & Technology, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Water Resources, Women's Development & Empowerment, Youth Affairs"
+    },
+    {
+      "Sr. No.": "20",
+      "Name of NPO": "AAMANTRAN WELFARE ASSOCIATION TRUST",
+      "Registration No, District (State)": "KRI-4-00244-2022-23 BENGALURU URBAN (Karnataka)",
+      "Address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036, Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+      "Sectors working in": "Aged/Elderly, Children, Differently Abled, Education & Literacy, Religious"
+    },
+    {
+      "Sr. No.": "21",
+      "Name of NPO": "Aarambh Foundation",
+      "Registration No, District (State)": "SHV-4-00646-2018-19 -SHVD334 BENGALURU URBAN (Karnataka)",
+      "Address": "RF-503, Purva Riviera Marathahalli Bengaluru-560037 KARNATAKA, INDIA, bangalore, BENGALURU URBAN (Karnataka) - 560037",
+      "Sectors working in": "Children, Differently Abled, Skill Development"
+    },
+    {
+      "Sr. No.": "22",
+      "Name of NPO": "AARNA AAYU FOUNDATION",
+      "Registration No, District (State)": "BSK-04-504-2019-20 BENGALURU URBAN (Karnataka)",
+      "Address": "no. 2, Muneshwaranagar, kerekodi main Road, Hosakerehalli, BSK 3rd Stage, Bangalore, Bengaluru South, BENGALURU URBAN (Karnataka) - 560085",
+      "Sectors working in": "Aged/Elderly, Differently Abled, Health & Family Welfare"
+    },
+    {
+      "Sr. No.": "23",
+      "Name of NPO": "Aarohana Foundation",
+      "Registration No, District (State)": "DRB4/SOR/19/2025-2026 BENGALURU URBAN (Karnataka)",
+      "Address": "No. 122/16, Unit No. F-5, Monarch chambers, Infantry Road, Bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560001",
+      "Sectors working in": "Aged/Elderly, Children, Civic Issues, Differently Abled, Disaster Management, Education & Literacy, Human Rights, Nutrition, Skill Development, Women's Development & Empowerment, Youth Affairs"
+    },
+    {
+      "Sr. No.": "24",
+      "Name of NPO": "AAROHITA LEARNING CENTER EDUCATIONAL TRUST",
+      "Registration No, District (State)": "BNG-U-JNR-611-2025-26-IV BENGALURU URBAN (Karnataka)",
+      "Address": "No 460, 14th cross, 1st main Balaji Layout, Raghuvanahalli Kanakapura road, Bangalore-560061, Bengaluru South, BENGALURU URBAN (Karnataka) - 560061",
+      "Sectors working in": "Differently Abled, Education & Literacy, Skill Development"
+    },
+    {
+      "Sr. No.": "25",
+      "Name of NPO": "AASARE FOUNDATION",
+      "Registration No, District (State)": "BNG/BSK/19/2017/18 BENGALURU URBAN (Karnataka)",
+      "Address": "# 3913 1st Floor 12th Main Road 16th Cross Kumaraswamy layout Bengaluru 560111, Bengaluru South, BENGALURU URBAN (Karnataka) - 560111",
+      "Sectors working in": "Aged/Elderly, Agriculture, Animal Husbandry, Dairying & Fisheries, Animal Welfare, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Land Resources, Legal Awareness & Aid, Micro Finance (SHGs), Micro Small & Medium Enterprises, Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Prisoner's Issues, Religious, Right to Information & Advocacy, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Skill Development, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+    },
+    {
+      "Sr. No.": "26",
+      "Name of NPO": "AASHIKA SOCIAL SERVICE EDUCATIONAL TRUST",
+      "Registration No, District (State)": "INR-4-00098-2020-21 BENGALURU URBAN (Karnataka)",
+      "Address": "No 27th, 5th Cross, 2nd Main, Gowthamapuram, Halasuru, Bengaluru 560008, Bengaluru, BENGALURU URBAN (Karnataka) - 560009",
+      "Sectors working in": "Aged/Elderly, Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Land Resources, Legal Awareness & Aid, Micro Finance (SHGs), Micro Small & Medium Enterprises, Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Prisoner's Issues, Right to Information & Advocacy, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment"
+    }
+  ],
+  "records": [
+    {
+      "summary": {
+        "serialNumber": 1,
+        "name": "A Hundred Hands",
+        "address": "4 Ashley Road Off MG Road Bangalore 560025, bangalore, BENGALURU URBAN (Karnataka) - 560025",
+        "pincode": "560025",
+        "sectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Rural Development & Poverty Alleviation",
+          "Tourism",
+          "Tribal Affairs",
+          "Vocational Training"
+        ],
+        "registration": {
+          "raw": "IN KA275887416941221 BENGALURU URBAN (Karnataka)",
+          "number": "IN KA275887416941221 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "1",
+          "Name of NPO": "A Hundred Hands",
+          "Registration No, District (State)": "IN KA275887416941221 BENGALURU URBAN (Karnataka)",
+          "Address": "4 Ashley Road Off MG Road Bangalore 560025, bangalore, BENGALURU URBAN (Karnataka) - 560025",
+          "Sectors working in": "Art & Culture, Differently Abled, Rural Development & Poverty Alleviation, Tourism, Tribal Affairs, Vocational Training"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "27-09-2010",
+        "email": "a100hands@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 2,
+        "name": "A R N GROWTH CHARITABLE TRUST",
+        "address": "# 50/51 2nd Main Behind Maruthi Vidyalaya Balaji Layout Kalyan Nagar Post Bangalore 560043, Bengaluru East, BENGALURU URBAN (Karnataka) - 560043",
+        "pincode": "560043",
+        "sectors": [
+          "Aged/Elderly",
+          "Agriculture",
+          "Art & Culture",
+          "Children",
+          "Differently Abled",
+          "Drinking Water",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Labour & Employment",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Rural Development & Poverty Alleviation",
+          "Skill Development",
+          "Tribal Affairs",
+          "Vocational Training",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "KRI-4-00539-2025-26 BENGALURU URBAN (Karnataka)",
+          "number": "KRI-4-00539-2025-26 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "2",
+          "Name of NPO": "A R N GROWTH CHARITABLE TRUST",
+          "Registration No, District (State)": "KRI-4-00539-2025-26 BENGALURU URBAN (Karnataka)",
+          "Address": "# 50/51 2nd Main Behind Maruthi Vidyalaya Balaji Layout Kalyan Nagar Post Bangalore 560043, Bengaluru East, BENGALURU URBAN (Karnataka) - 560043",
+          "Sectors working in": "Aged/Elderly, Agriculture, Art & Culture, Children, Differently Abled, Drinking Water, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Nutrition, Panchayati Raj, Prisoner's Issues, Rural Development & Poverty Alleviation, Skill Development, Tribal Affairs, Vocational Training, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "13-11-2025",
+        "email": "arngrowthcharitabletrust@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 3,
+        "name": "A2Z Foundation Trust",
+        "address": "No 30, 1st floor, 8th main, RPC layout , vijayanagar, bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560040",
+        "pincode": "560040",
+        "sectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Micro Small & Medium Enterprises",
+          "Skill Development",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "VJN-04-00382-2021-22 BENGALURU URBAN (Karnataka)",
+          "number": "VJN-04-00382-2021-22 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "3",
+          "Name of NPO": "A2Z Foundation Trust",
+          "Registration No, District (State)": "VJN-04-00382-2021-22 BENGALURU URBAN (Karnataka)",
+          "Address": "No 30, 1st floor, 8th main, RPC layout , vijayanagar, bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560040",
+          "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests, Food Processing, Micro Small & Medium Enterprises, Skill Development, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "19-03-2022",
+        "email": "a2zfoundationtrust@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 4,
+        "name": "Aadhana education foundation",
+        "address": "#569, 2nd Cross, 3rd Stage, 1st Block Basaveshwarnagar, Bengaluru North, BENGALURU URBAN (Karnataka) - 560079",
+        "pincode": "560079",
+        "sectors": [
+          "Aged/Elderly",
+          "Children",
+          "Differently Abled",
+          "Drinking Water",
+          "Education & Literacy",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Labour & Employment",
+          "Nutrition",
+          "Rural Development & Poverty Alleviation"
+        ],
+        "registration": {
+          "raw": "U88900KA2025NPL198836 BENGALURU URBAN (Karnataka)",
+          "number": "U88900KA2025NPL198836 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "4",
+          "Name of NPO": "Aadhana education foundation",
+          "Registration No, District (State)": "U88900KA2025NPL198836 BENGALURU URBAN (Karnataka)",
+          "Address": "#569, 2nd Cross, 3rd Stage, 1st Block Basaveshwarnagar, Bengaluru North, BENGALURU URBAN (Karnataka) - 560079",
+          "Sectors working in": "Aged/Elderly, Children, Differently Abled, Drinking Water, Education & Literacy, Health & Family Welfare, Human Rights, Labour & Employment, Nutrition, Rural Development & Poverty Alleviation"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "28-02-2025",
+        "email": "Sowmyamurthy1988@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 5,
+        "name": "AADHYA CHARITABLE FOUNDATION",
+        "address": "K. NO. 515, HENUR VILLAGE BANGALORE Bangalore KA 560043 IN, BANGALORE, BENGALURU URBAN (Karnataka) - 560043",
+        "pincode": "560043",
+        "sectors": [
+          "Children",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Nutrition",
+          "Rural Development & Poverty Alleviation",
+          "Skill Development",
+          "Tribal Affairs",
+          "Water Resources",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "156897 BENGALURU URBAN (Karnataka)",
+          "number": "156897 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "5",
+          "Name of NPO": "AADHYA CHARITABLE FOUNDATION",
+          "Registration No, District (State)": "156897 BENGALURU URBAN (Karnataka)",
+          "Address": "K. NO. 515, HENUR VILLAGE BANGALORE Bangalore KA 560043 IN, BANGALORE, BENGALURU URBAN (Karnataka) - 560043",
+          "Sectors working in": "Children, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Health & Family Welfare, Nutrition, Rural Development & Poverty Alleviation, Skill Development, Tribal Affairs, Water Resources, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "21-01-2022",
+        "email": "aadhyacharitablefoundation@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 6,
+        "name": "AAFIEA CHARITABLE TRUST",
+        "address": "No 434 MCECHS 1st phase 4th Cross 1st Main, Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+        "pincode": "560077",
+        "sectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Education & Literacy",
+          "Environment & Forests"
+        ],
+        "registration": {
+          "raw": "BOOK-IV/325/2024-25 BENGALURU URBAN (Karnataka)",
+          "number": "BOOK-IV/325/2024-25 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "6",
+          "Name of NPO": "AAFIEA CHARITABLE TRUST",
+          "Registration No, District (State)": "BOOK-IV/325/2024-25 BENGALURU URBAN (Karnataka)",
+          "Address": "No 434 MCECHS 1st phase 4th Cross 1st Main, Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+          "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "16-07-2024",
+        "email": "muddassir59@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 7,
+        "name": "AAGAMI FOUNDATION",
+        "address": "PLATINUM NO 47, Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+        "pincode": "560022",
+        "sectors": [
+          "Agriculture",
+          "Art & Culture",
+          "Civic Issues",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Labour & Employment",
+          "Panchayati Raj",
+          "Rural Development & Poverty Alleviation",
+          "Scientific & Industrial Research",
+          "Skill Development",
+          "Sports",
+          "Tourism"
+        ],
+        "registration": {
+          "raw": "U88900KA2024NPL183216 BENGALURU URBAN (Karnataka)",
+          "number": "U88900KA2024NPL183216 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "7",
+          "Name of NPO": "AAGAMI FOUNDATION",
+          "Registration No, District (State)": "U88900KA2024NPL183216 BENGALURU URBAN (Karnataka)",
+          "Address": "PLATINUM NO 47, Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+          "Sectors working in": "Agriculture, Art & Culture, Civic Issues, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Panchayati Raj, Rural Development & Poverty Alleviation, Scientific & Industrial Research, Skill Development, Sports, Tourism"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "07-01-2024",
+        "email": "suprithbasim@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 8,
+        "name": "AAHWAHAN FOUNDATION",
+        "address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069, BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+        "pincode": "560069",
+        "sectors": [
+          "Aged/Elderly",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Micro Finance (SHGs)",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "BSG-4-00351/2016-17 BENGALURU URBAN (Karnataka)",
+          "number": "BSG-4-00351/2016-17 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "8",
+          "Name of NPO": "AAHWAHAN FOUNDATION",
+          "Registration No, District (State)": "BSG-4-00351/2016-17 BENGALURU URBAN (Karnataka)",
+          "Address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069, BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+          "Sectors working in": "Aged/Elderly, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Micro Finance (SHGs), Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Sports, Tourism, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "18-02-2017",
+        "email": "info@aahwahan.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 9,
+        "name": "AAKRITII NGO",
+        "address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024, BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+        "pincode": "560024",
+        "sectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Children",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "GAN-4-00052-2024-25 BENGALURU URBAN (Karnataka)",
+          "number": "GAN-4-00052-2024-25 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "9",
+          "Name of NPO": "AAKRITII NGO",
+          "Registration No, District (State)": "GAN-4-00052-2024-25 BENGALURU URBAN (Karnataka)",
+          "Address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024, BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+          "Sectors working in": "Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Children, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, Human Rights, Rural Development & Poverty Alleviation, Science & Technology, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "09-08-2024",
+        "email": "AAKRITIINGO@GMAIL.COM"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 10,
+        "name": "AAMANTRAN WELFARE ASSOCIATION TRUST",
+        "address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036, Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+        "pincode": "560036",
+        "sectors": [
+          "Aged/Elderly",
+          "Children",
+          "Differently Abled",
+          "Education & Literacy",
+          "Religious"
+        ],
+        "registration": {
+          "raw": "KRI-4-00244-2022-23 BENGALURU URBAN (Karnataka)",
+          "number": "KRI-4-00244-2022-23 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "10",
+          "Name of NPO": "AAMANTRAN WELFARE ASSOCIATION TRUST",
+          "Registration No, District (State)": "KRI-4-00244-2022-23 BENGALURU URBAN (Karnataka)",
+          "Address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036, Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+          "Sectors working in": "Aged/Elderly, Children, Differently Abled, Education & Literacy, Religious"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "20-08-2022",
+        "email": "aamantran2022@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 21,
+        "name": "Aarambh Foundation",
+        "address": "RF-503, Purva Riviera Marathahalli Bengaluru-560037 KARNATAKA, INDIA, bangalore, BENGALURU URBAN (Karnataka) - 560037",
+        "pincode": "560037",
+        "sectors": [
+          "Children",
+          "Differently Abled",
+          "Skill Development"
+        ],
+        "registration": {
+          "raw": "SHV-4-00646-2018-19 -SHVD334 BENGALURU URBAN (Karnataka)",
+          "number": "SHV-4-00646-2018-19 -SHVD334 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "21",
+          "Name of NPO": "Aarambh Foundation",
+          "Registration No, District (State)": "SHV-4-00646-2018-19 -SHVD334 BENGALURU URBAN (Karnataka)",
+          "Address": "RF-503, Purva Riviera Marathahalli Bengaluru-560037 KARNATAKA, INDIA, bangalore, BENGALURU URBAN (Karnataka) - 560037",
+          "Sectors working in": "Children, Differently Abled, Skill Development"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "27-06-2007",
+        "email": "aktpl.2012@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 22,
+        "name": "AARNA AAYU FOUNDATION",
+        "address": "no. 2, Muneshwaranagar, kerekodi main Road, Hosakerehalli, BSK 3rd Stage, Bangalore, Bengaluru South, BENGALURU URBAN (Karnataka) - 560085",
+        "pincode": "560085",
+        "sectors": [
+          "Aged/Elderly",
+          "Differently Abled",
+          "Health & Family Welfare"
+        ],
+        "registration": {
+          "raw": "BSK-04-504-2019-20 BENGALURU URBAN (Karnataka)",
+          "number": "BSK-04-504-2019-20 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "22",
+          "Name of NPO": "AARNA AAYU FOUNDATION",
+          "Registration No, District (State)": "BSK-04-504-2019-20 BENGALURU URBAN (Karnataka)",
+          "Address": "no. 2, Muneshwaranagar, kerekodi main Road, Hosakerehalli, BSK 3rd Stage, Bangalore, Bengaluru South, BENGALURU URBAN (Karnataka) - 560085",
+          "Sectors working in": "Aged/Elderly, Differently Abled, Health & Family Welfare"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "21-04-2025",
+        "email": "kashyapmjani@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 23,
+        "name": "Aarohana Foundation",
+        "address": "No. 122/16, Unit No. F-5, Monarch chambers, Infantry Road, Bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560001",
+        "pincode": "560001",
+        "sectors": [
+          "Aged/Elderly",
+          "Children",
+          "Civic Issues",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Human Rights",
+          "Nutrition",
+          "Skill Development",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "DRB4/SOR/19/2025-2026 BENGALURU URBAN (Karnataka)",
+          "number": "DRB4/SOR/19/2025-2026 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "23",
+          "Name of NPO": "Aarohana Foundation",
+          "Registration No, District (State)": "DRB4/SOR/19/2025-2026 BENGALURU URBAN (Karnataka)",
+          "Address": "No. 122/16, Unit No. F-5, Monarch chambers, Infantry Road, Bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560001",
+          "Sectors working in": "Aged/Elderly, Children, Civic Issues, Differently Abled, Disaster Management, Education & Literacy, Human Rights, Nutrition, Skill Development, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "23-06-1990",
+        "email": "abhyudayaedutrust@gmail.com"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 24,
+        "name": "AAROHITA LEARNING CENTER EDUCATIONAL TRUST",
+        "address": "No 460, 14th cross, 1st main Balaji Layout, Raghuvanahalli Kanakapura road, Bangalore-560061, Bengaluru South, BENGALURU URBAN (Karnataka) - 560061",
+        "pincode": "560061",
+        "sectors": [
+          "Differently Abled",
+          "Education & Literacy",
+          "Skill Development"
+        ],
+        "registration": {
+          "raw": "BNG-U-JNR-611-2025-26-IV BENGALURU URBAN (Karnataka)",
+          "number": "BNG-U-JNR-611-2025-26-IV BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "24",
+          "Name of NPO": "AAROHITA LEARNING CENTER EDUCATIONAL TRUST",
+          "Registration No, District (State)": "BNG-U-JNR-611-2025-26-IV BENGALURU URBAN (Karnataka)",
+          "Address": "No 460, 14th cross, 1st main Balaji Layout, Raghuvanahalli Kanakapura road, Bangalore-560061, Bengaluru South, BENGALURU URBAN (Karnataka) - 560061",
+          "Sectors working in": "Differently Abled, Education & Literacy, Skill Development"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "26-11-2023",
+        "email": "venu@abhyudayakkss.org"
+      }
+    },
+    {
+      "summary": {
+        "serialNumber": 25,
+        "name": "AASARE FOUNDATION",
+        "address": "# 3913 1st Floor 12th Main Road 16th Cross Kumaraswamy layout Bengaluru 560111, Bengaluru South, BENGALURU URBAN (Karnataka) - 560111",
+        "pincode": "560111",
+        "sectors": [
+          "Aged/Elderly",
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Animal Welfare",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Religious",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Skill Development",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "BNG/BSK/19/2017/18 BENGALURU URBAN (Karnataka)",
+          "number": "BNG/BSK/19/2017/18 BENGALURU URBAN",
+          "district": null,
+          "state": "Karnataka"
+        },
+        "raw": {
+          "Sr. No.": "25",
+          "Name of NPO": "AASARE FOUNDATION",
+          "Registration No, District (State)": "BNG/BSK/19/2017/18 BENGALURU URBAN (Karnataka)",
+          "Address": "# 3913 1st Floor 12th Main Road 16th Cross Kumaraswamy layout Bengaluru 560111, Bengaluru South, BENGALURU URBAN (Karnataka) - 560111",
+          "Sectors working in": "Aged/Elderly, Agriculture, Animal Husbandry, Dairying & Fisheries, Animal Welfare, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Land Resources, Legal Awareness & Aid, Micro Finance (SHGs), Micro Small & Medium Enterprises, Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Prisoner's Issues, Religious, Right to Information & Advocacy, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Skill Development, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "dateOfRegistration": "19-05-2017",
+        "email": "abilityunlimited@gmail.com"
+      }
+    }
+  ]
+}

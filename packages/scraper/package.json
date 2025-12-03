@@ -1,0 +1,20 @@
+{
+  "name": "@repo/scraper",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "collect": "tsx src/saas-scraper.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@repo/db": "workspace:*",
+    "dotenv": "^17.2.1",
+    "playwright": "^1.50.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "tsx": "^4.19.3",
+    "typescript": "5.8.2"
+  }
+}

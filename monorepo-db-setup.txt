@@ -1,0 +1,75 @@
+# Monorepo Prisma + Supabase Setup
+
+Use this as a blueprint for running Prisma against Supabase in a pnpm/turbo monorepo.
+
+## Layout
+- Apps live under `apps/*`; shared code lives under `packages/*`.
+- Prisma schema and migrations are centralized in `prisma/schema.prisma` and `prisma/migrations/*`.
+- Supabase-only SQL (tables or helpers created outside Prisma) is tracked in `supabase/migrations/*`.
+- The shared Prisma client wrapper is published as `@repo/db` at `packages/db`.
+
+## Environment & tooling
+- DB connection: `DATABASE_URL` (Supabase Postgres). Prefer the pooler host on port `6543` with `pgbouncer=true&connection_limit=1&connect_timeout=15&sslmode=require`.
+- Optional direct connection: `DIRECT_URL` if you need non-pooled access (not required today).
+- Supabase auth/storage: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_JWT_SECRET` (surfaced via `turbo.json` `globalEnv`).
+- Toolchain: `pnpm` workspaces + `turbo`; `postinstall` runs `prisma generate` so every workspace sees the generated client. Each app’s `build` also runs `pnpm prisma generate` before `next build`.
+
+## Prisma client wrapper (`@repo/db`)
+- Location: `packages/db/src/index.ts`; exported via the package `exports` map.
+- Behavior:
+  - Singleton `PrismaClient` cached on `globalThis.__prisma` to avoid hot-reload connection storms.
+  - Dev logging: `['query','error']`; prod: `['error']`; `errorFormat: 'pretty'`.
+  - `withRetry(operation, maxRetries=3, delay=1000)` retries common Supabase pooler hiccups (`P1001`, `P2024`, and “Can’t reach database” messages).
+- Usage across the monorepo:
+  - Import directly: `import prisma, { withRetry } from '@repo/db'`.
+  - Server components, Route Handlers, server actions, and `tsx` scripts all reuse the same client; no manual `$disconnect` needed in long-lived processes.
+
+## Schema & migrations
+- `prisma/schema.prisma` uses `provider = "postgresql"` with `url = env("DATABASE_URL")`; `generator client` targets `["native", "rhel-openssl-3.0.x"]` for local + Vercel parity.
+- Models map to Supabase snake_case via `@@map`/`@map`. RLS-aware objects (e.g., `AppointmentType`, `LaineConfig`, `LaineCallLog`) match the Supabase public schema.
+- Migrations under `prisma/migrations/*` include DDL and Supabase RLS helpers/policies (e.g., `is_org_member`, `is_staff_user`, `ENABLE ROW LEVEL SECURITY`).
+- Create/update flow:
+  1) Edit `prisma/schema.prisma`.
+  2) `pnpm prisma migrate dev --name <change>` (writes SQL to `prisma/migrations/*`).
+  3) Commit both the schema and migration folder.
+  4) Deploy with `pnpm prisma migrate deploy` in CI/prod.
+
+## Supabase SQL outside Prisma
+- SQL that was created directly in Supabase or doesn’t map cleanly via Prisma lives in `supabase/migrations/*` (e.g., `nexhealth_token_cache`, `laine_configs` bootstrap).
+- Apply these files via Supabase CLI or `psql` alongside Prisma migrations when provisioning environments to keep Supabase artifacts in sync.
+
+## Common commands
+- Generate client: `pnpm prisma generate` (also runs on install and per-app builds).
+- Local migrate: `pnpm prisma migrate dev --name <change>`.
+- Deploy migrations: `pnpm prisma migrate deploy`.
+- DB diagnostics: `pnpm diagnose:db` (or `pnpm diagnose:db --prisma` to run `SELECT 1` through Prisma).
+- DB tests/fixtures: `pnpm db:test`, `pnpm db:seed-appointment-types`.
+
+## Usage patterns
+- Simple query in a Route Handler:
+```ts
+import prisma from '@repo/db'
+
+export async function GET() {
+  const orgs = await prisma.organization.findMany()
+  return Response.json(orgs)
+}
+```
+- Safer queries with retry (for pooler blips):
+```ts
+import prisma, { withRetry } from '@repo/db'
+
+const member = await withRetry(() =>
+  prisma.orgMember.findFirst({
+    where: { userId },
+    include: { organization: true },
+  })
+)
+```
+- Scripts (run via `tsx`): import the same `@repo/db` client; no special teardown required.
+
+## Gotchas & tips
+- Always regenerate the client after schema edits; stale clients surface as missing properties at runtime.
+- Keep `DATABASE_URL` pooler-friendly; port 5432 on the pooler host will fail—use 6543 with pgbouncer params.
+- Commit both Prisma migrations and Supabase SQL files so new environments can be reproduced deterministically.
+- Keep RLS logic in migrations (not ad-hoc in the dashboard) so policy drift doesn’t surprise API requests.
