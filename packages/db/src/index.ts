@@ -1,5 +1,6 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import { Pool } from "pg";
 
 const connectionString =
   process.env.DIRECT_DATABASE_URL || process.env.DIRECT_URL || process.env.DATABASE_URL;
@@ -17,18 +18,19 @@ const prismaClientSingleton = () => {
     try {
       const url = new URL(connectionString);
       const display = `${url.hostname}:${url.port || "5432"}${url.pathname}`;
-      console.info(
-        `[prisma] init adapter host=${display} ssl=${allowSelfSigned ? "relaxed" : "strict"}`
-      );
+      const sslMode = allowSelfSigned ? "relaxed" : "strict";
+      console.info(`[prisma] init adapter host=${display} ssl=${sslMode}`);
     } catch {
       // ignore parsing issues to avoid blocking client creation
     }
   }
 
-  const adapter = new PrismaPg({
+  const pool = new Pool({
     connectionString,
-    ...(allowSelfSigned ? { ssl: { rejectUnauthorized: false } } : {}),
+    ssl: allowSelfSigned ? { rejectUnauthorized: false } : undefined,
   });
+
+  const adapter = new PrismaPg(pool);
 
   return new PrismaClient({
     adapter,
