@@ -8,6 +8,7 @@ const DETAIL_OUTPUT_PATH = path.join(OUTPUT_DIR, 'optimized-detail-records.json'
 const SERVER_PORT = Number(process.env.COLLECTOR_PORT || process.env.SCRAPER_PORT || 4173);
 const HEADLESS = process.env.PLAYWRIGHT_HEADLESS !== 'false';
 const MAX_RECORDS = Number(process.env.MAX_DETAIL_RECORDS) || 5;
+const INCLUDE_RAW = process.env.INCLUDE_RAW === 'true';
 
 const SELECTIONS = {
   selectedState: 'Karnataka',
@@ -69,10 +70,29 @@ async function decodeCaptchaText(imageBase64) {
 async function selectDropdownOption(page, formControlName, optionText) {
   const dropdown = page.locator(`p-dropdown[formcontrolname="${formControlName}"]`);
   await dropdown.waitFor({ state: 'visible', timeout: 20000 });
-  await dropdown.locator('.p-dropdown-trigger').click();
+  const trigger = dropdown.locator('.p-dropdown-trigger');
+
+  // Some dropdowns briefly block pointer events; retry with a forced click if needed.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      await page
+        .locator('.p-component-overlay.p-component-overlay-leave-active, .p-component-overlay')
+        .first()
+        .waitFor({ state: 'hidden', timeout: 3000 })
+        .catch(() => {});
+      await trigger.scrollIntoViewIfNeeded();
+      await trigger.click({ timeout: 5000 });
+      break;
+    } catch (err) {
+      if (attempt === 2) throw err;
+      await page.waitForTimeout(200 + attempt * 150);
+      await trigger.click({ force: true, timeout: 5000 }).catch(() => {});
+    }
+  }
+
   const option = page.locator('.p-dropdown-items li', { hasText: optionText }).first();
   await option.waitFor({ state: 'visible', timeout: 20000 });
-  await option.click();
+  await option.click({ timeout: 10000 });
   // Wait for overlay to close or just short pause
   await page.waitForTimeout(200); 
 }
@@ -100,16 +120,104 @@ function normalizeRow(row) {
   const name = row['Name of NPO'] || row['Name'] || null;
   const registrationRaw = row['Registration No, District (State)'] || null;
   const address = row['Address'] || null;
-  const sectors = (row['Sectors working in'] || '').split(',').map((item) => item.trim()).filter(Boolean);
+  const sectors = Array.from(
+    new Set((row['Sectors working in'] || '').split(',').map((item) => item.trim()).filter(Boolean))
+  );
   
-  return {
+  const base = {
     serialNumber: serial,
     name,
     address,
     sectors,
     registration: { raw: registrationRaw },
-    raw: row,
   };
+
+  if (INCLUDE_RAW) {
+    base.raw = row;
+  }
+
+  return base;
+}
+
+function dedupeArray(values = []) {
+  return Array.from(
+    new Set(
+      values
+        .map((v) => (typeof v === 'string' ? v.trim() : v))
+        .filter((v) => v !== undefined && v !== null && v !== '' && v !== '--')
+    )
+  );
+}
+
+function cleanValue(value) {
+  if (value === undefined || value === null) return null;
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    if (!trimmed || trimmed === '--') return null;
+    return trimmed;
+  }
+  return value;
+}
+
+function buildOutputRecord(index, summary, detail) {
+  const cleanedDetail = {
+    ...detail,
+    email: normalizeEmail(cleanValue(detail.email)),
+    mobile: cleanValue(detail.mobile),
+    website: cleanValue(detail.website),
+    address: cleanValue(detail.address),
+    registrationNo: cleanValue(detail.registrationNo),
+    registeredWith: cleanValue(detail.registeredWith),
+    typeOfNPO: cleanValue(detail.typeOfNPO),
+    actName: cleanValue(detail.actName),
+    cityOfRegistration: cleanValue(detail.cityOfRegistration),
+    stateOfRegistration: cleanValue(detail.stateOfRegistration),
+    dateOfRegistration: cleanValue(detail.dateOfRegistration),
+    darpanId: cleanValue(detail.darpanId),
+    darpanRegistrationDate: cleanValue(detail.darpanRegistrationDate),
+    operationalStates: cleanValue(detail.operationalStates),
+    operationalDistrict: cleanValue(detail.operationalDistrict),
+    primarySectors: dedupeArray(detail.primarySectors || []),
+    secondarySectors: dedupeArray(detail.secondarySectors || []),
+    officeBearers: (detail.officeBearers || []).filter(Boolean),
+  };
+
+  const record = {
+    index,
+    serialNumber: cleanValue(summary.serialNumber),
+    name: cleanValue(summary.name),
+    address: cleanedDetail.address || cleanValue(summary.address),
+    registration: {
+      number: cleanedDetail.registrationNo || cleanValue(summary.registration?.raw),
+      registeredWith: cleanedDetail.registeredWith,
+      type: cleanedDetail.typeOfNPO,
+      actName: cleanedDetail.actName,
+      city: cleanedDetail.cityOfRegistration,
+      state: cleanedDetail.stateOfRegistration,
+      date: cleanedDetail.dateOfRegistration,
+      darpanId: cleanedDetail.darpanId,
+      darpanRegistrationDate: cleanedDetail.darpanRegistrationDate,
+    },
+    contact: {
+      email: cleanedDetail.email,
+      mobile: cleanedDetail.mobile,
+      website: cleanedDetail.website,
+    },
+    primarySectors: cleanedDetail.primarySectors,
+    secondarySectors: cleanedDetail.secondarySectors,
+    operationalStates: cleanedDetail.operationalStates,
+    operationalDistrict: cleanedDetail.operationalDistrict,
+    officeBearers: cleanedDetail.officeBearers,
+  };
+
+  if (INCLUDE_RAW) {
+    record.raw = {
+      tableRow: summary.raw || summary,
+      scrapedSections: detail._rawScrapedDetails,
+    };
+  }
+
+  return record;
 }
 
 // --- Detail Extraction ---
@@ -215,24 +323,39 @@ async function fetchDateAndEmailFallback(page) {
 }
 
 async function gatherDetailForRow(page, rowIndex) {
-  // Locate link fresh per attempt to avoid stale handles when the table re-renders
-  const getNameLink = () =>
-    page.locator('table tbody tr').nth(rowIndex).locator('td:nth-child(2) a').first();
+  // Locate targets fresh per attempt to avoid stale handles when the table re-renders
+  const resolveClickTarget = async () => {
+    const row = page.locator('table tbody tr').nth(rowIndex);
+    await row.waitFor({ state: 'visible', timeout: 60000 });
 
-  await page.locator('table tbody tr').nth(rowIndex).waitFor({ state: 'visible', timeout: 60000 });
+    const candidates = [
+      row.locator('td:nth-child(2) a').first(),
+      row.locator('td:nth-child(2) button').first(),
+      row.locator('a', { hasText: /view/i }).first(),
+      row.locator('button', { hasText: /view/i }).first(),
+    ];
+
+    for (const candidate of candidates) {
+      if ((await candidate.count()) > 0) return candidate;
+    }
+
+    return row;
+  };
+
+  let clickTarget = await resolveClickTarget();
 
   let clicked = false;
   for (let attempt = 0; attempt < 2; attempt++) {
-    const nameLink = getNameLink();
-    await nameLink.waitFor({ state: 'visible', timeout: 30000 });
     try {
-      await nameLink.click({ timeout: 30000 });
+      await clickTarget.scrollIntoViewIfNeeded();
+      await clickTarget.click({ timeout: 30000 });
       clicked = true;
       break;
     } catch (err) {
       if (attempt === 1) throw err;
-      // Small delay before retrying with a fresh locator
+      // Re-resolve in case the table rerendered or the target was missing
       await page.waitForTimeout(300);
+      clickTarget = await resolveClickTarget();
     }
   }
 
@@ -285,9 +408,12 @@ async function gatherDetailForRow(page, rowIndex) {
 
         const sectionData = {};
         if (header === 'Office Bearers') {
-          const rows = Array.from(content.querySelectorAll('table tbody tr'));
+          const table = content.querySelector('table');
+          const rows = table ? Array.from(table.querySelectorAll('tr')) : [];
           sectionData.officeBearers = rows
             .map((tr) => {
+              // Skip header rows containing <th>
+              if (tr.querySelectorAll('th').length) return null;
               const cols = Array.from(tr.querySelectorAll('td'));
               if (cols.length >= 2) {
                 return {
@@ -478,11 +604,7 @@ async function runCollector() {
         const summary = normalizeRow(tableData.rows[i]);
         const detail = await gatherDetailForRow(page, i);
 
-        writer.write({
-          index: processedRecords + 1,
-          summary,
-          detail,
-        });
+        writer.write(buildOutputRecord(processedRecords + 1, summary, detail));
         processedRecords++;
       }
 

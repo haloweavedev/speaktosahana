@@ -12,7 +12,10 @@
       "@/components/*": ["./components/*"],
       "@/lib/*": ["./lib/*"],
       "@/hooks/*": ["./hooks/*"],
-      "@/app/*": ["./app/*"]
+      "@/app/*": ["./app/*"],
+      "@repo/ui/*": ["../../packages/ui/src/*"],
+      "@/components/ui/*": ["../../packages/ui/src/components/ui/*"],
+      "@/lib/utils": ["../../packages/ui/src/lib/utils"]
     }
   },
   "include": [
