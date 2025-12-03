@@ -1,6 +1,6 @@
 [
   {
-    "ngoId": "a06a0ab0ce08407101b4d27ed33f0ef4",
+    "ngoId": "f0ff04c03f0f40350a14da79731408f4",
     "darpanId": "KA/2018/0186513",
     "ngoName": "A Hundred Hands",
     "ngoType": "Trust",
@@ -15,10 +15,12 @@
     "migrated": true,
     "email": null,
     "mobile": null,
-    "registrationDate": null
+    "website": null,
+    "registrationDate": null,
+    "officeBearers": []
   },
   {
-    "ngoId": "309408504a0a404d82390c8e66ac28e3",
+    "ngoId": "10cf0910130b40558149218286072043",
     "darpanId": "KA/2025/0898623",
     "ngoName": "A R N GROWTH CHARITABLE TRUST",
     "ngoType": "Trust",
@@ -33,10 +35,12 @@
     "migrated": false,
     "email": null,
     "mobile": null,
-    "registrationDate": null
+    "website": null,
+    "registrationDate": null,
+    "officeBearers": []
   },
   {
-    "ngoId": "909d02506102407e6d55706945be41c3",
+    "ngoId": "f04e07d0a507402f6405336805414d43",
     "darpanId": "KA/2025/0656543",
     "ngoName": "A2Z Foundation Trust",
     "ngoType": "Trust",
@@ -51,6 +55,8 @@
     "migrated": false,
     "email": null,
     "mobile": null,
-    "registrationDate": null
+    "website": null,
+    "registrationDate": null,
+    "officeBearers": []
   }
 ]

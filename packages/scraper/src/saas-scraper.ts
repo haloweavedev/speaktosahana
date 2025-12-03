@@ -47,8 +47,10 @@ interface ApiNgoSummary {
 
 interface EnrichedNgo extends ApiNgoSummary {
   email: string | null;
-  mobile: string | null; // Sometimes available in details
-  registrationDate: Date | null;
+  mobile: string | null;
+  website: string | null;
+  registrationDate: string | null; // Changed to string to keep raw format initially
+  officeBearers: Array<{ name: string; designation: string }>;
   detailsRaw?: any;
 }
 
@@ -211,43 +213,121 @@ async function enrichNgo(context: BrowserContext, ngo: ApiNgoSummary): Promise<E
   page.on('console', msg => console.log(`   [Browser Console - NGO ${ngo.darpanId}] ${msg.text()}`));
 
   let email: string | null = null;
-  let mobile: string | null = null; // If we want it
+  let mobile: string | null = null;
+  let website: string | null = null;
+  let registrationDate: string | null = null;
+  let officeBearers: Array<{ name: string; designation: string }> = [];
 
   try {
     const detailUrl = `https://ngodarpan.gov.in/#/ngo/view?id=${ngo.darpanId}`;
     await page.goto(detailUrl, { waitUntil: "networkidle", timeout: 30000 });
 
-    // Wait for Email Label
-    const emailLabel = page.locator('span', { hasText: "NPO Contact Email" });
-    await emailLabel.waitFor({ timeout: 15000 });
-    console.log(`   [Enrich] NGO ${ngo.darpanId}: Email label found.`);
+    // Wait for "NPO Details" card to ensure page loaded
+    const npoDetailsHeader = page.locator('.p-card-title', { hasText: "NPO Details" });
+    await npoDetailsHeader.waitFor({ timeout: 20000 });
+    console.log(`   [Enrich] NGO ${ngo.darpanId}: Page loaded.`);
 
-    // FORCE CLICK "View NPO Email" if present
-    const foundEmail = await page.evaluate(async (darpanId: string) => {
-        const buttons = Array.from(document.querySelectorAll('a'));
-        const viewBtn = buttons.find(b => b.textContent?.trim() === 'View NPO Email');
+    // Scrape all details in one go
+    const scrapedData = await page.evaluate(async (darpanId: string) => {
+        // Helper to extract text cleanly
+        const cleanText = (el: Element | null) => el?.textContent?.replace(/\s+/g, ' ').trim() || null;
+
+        // 1. Handle Email Click
+        const emailButtons = Array.from(document.querySelectorAll('a'));
+        const viewBtn = emailButtons.find(b => b.textContent?.trim() === 'View NPO Email');
         if (viewBtn) {
             console.log(`   [Enrich:PageEval] NGO ${darpanId}: Clicking 'View NPO Email'.`);
             (viewBtn as HTMLElement).click();
-            await new Promise(r => setTimeout(r, 1500));
+            // Small wait for Angular/Zone.js to update DOM
+            await new Promise(r => setTimeout(r, 1500)); 
         } else {
             console.log(`   [Enrich:PageEval] NGO ${darpanId}: 'View NPO Email' button not found.`);
         }
-        const card = Array.from(document.querySelectorAll('p-card')).find(c => (c as HTMLElement).innerText.includes('NPO Contact Email'));
-        const rawCardText = card ? (card as HTMLElement).innerText : null;
-        console.log(`   [Enrich:PageEval] NGO ${darpanId}: Raw card text: ${rawCardText ? rawCardText.substring(0, 100) + '...' : 'null'}`);
-        return rawCardText;
-    }, ngo.darpanId); // Pass darpanId to page.evaluate
 
-    console.log(`   [Enrich] NGO ${ngo.darpanId}: Raw foundEmail from page.evaluate: ${foundEmail ? foundEmail.substring(0, 100) + '...' : 'null'}`);
+        // 2. Parse all Cards
+        const cards = Array.from(document.querySelectorAll('p-card'));
+        const result = {
+            email: null as string | null,
+            mobile: null as string | null,
+            website: null as string | null,
+            regDate: null as string | null,
+            bearers: [] as Array<{ name: string; designation: string }>
+        };
 
-    if (foundEmail) {
-         const emailMatch = foundEmail.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/);
-         console.log(`   [Enrich] NGO ${ngo.darpanId}: Email match result: ${emailMatch ? emailMatch[0] : 'null'}`);
+        cards.forEach(card => {
+            const header = card.querySelector('.p-card-title')?.textContent?.trim();
+            const content = card.querySelector('.p-card-content');
+            if (!header || !content) return;
+
+            if (header.includes('Contact Details')) {
+                // Parse Grid Items
+                const items = Array.from(content.querySelectorAll('.col-12 p'));
+                items.forEach(p => {
+                    const labelSpan = p.querySelector('span.label-head');
+                    if (!labelSpan) return;
+                    const label = labelSpan.textContent?.trim() || '';
+                    
+                    // Remove label from text to get value
+                    const fullText = p.textContent?.trim() || '';
+                    let value = fullText.replace(label, '').trim();
+
+                    // Handle Links explicitly
+                    const link = p.querySelector('a');
+                    if (link && link.href && !link.href.includes('javascript:void')) {
+                        value = link.href;
+                    }
+
+                    if (label.includes('NPO Contact Email')) {
+                        result.email = value;
+                    } else if (label.includes('NPO Contact Mobile No.')) {
+                        result.mobile = value;
+                    } else if (label.includes('Website Url')) {
+                         if (value !== '--' && value.length > 5) result.website = value;
+                    }
+                });
+            } else if (header.includes('Registration Details')) {
+                const items = Array.from(content.querySelectorAll('.col-12 p'));
+                items.forEach(p => {
+                    const labelSpan = p.querySelector('span.label-head');
+                    if (!labelSpan) return;
+                    const label = labelSpan.textContent?.trim() || '';
+                    if (label.includes('Date of Registration')) {
+                         let value = p.textContent?.replace(label, '').trim();
+                         if (value) result.regDate = value;
+                    }
+                });
+            } else if (header.includes('Office Bearers')) {
+                const rows = Array.from(content.querySelectorAll('table tbody tr'));
+                rows.forEach(tr => {
+                    const cols = Array.from(tr.querySelectorAll('td'));
+                    if (cols.length >= 2) {
+                        result.bearers.push({
+                            name: cleanText(cols[0]) || '',
+                            designation: cleanText(cols[1]) || ''
+                        });
+                    }
+                });
+            }
+        });
+
+        return result;
+    }, ngo.darpanId);
+
+    // Post-process extracted data
+    if (scrapedData.email) {
+         const emailMatch = scrapedData.email.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z0-9_-]+)/);
          if (emailMatch) email = emailMatch[0];
-    } else {
-        console.log(`   [Enrich] NGO ${ngo.darpanId}: No raw email text found.`);
+         else if (scrapedData.email.includes('[at]')) {
+             email = scrapedData.email.replace(/\[at\]/gi, '@').replace(/\[dot\]/gi, '.').replace(/\s+/g, '');
+         }
     }
+    
+    mobile = scrapedData.mobile;
+    website = scrapedData.website;
+    registrationDate = scrapedData.regDate;
+    officeBearers = scrapedData.bearers;
+    
+    console.log(`   [Enrich] NGO ${ngo.darpanId}: Found Email=${email}, Mobile=${mobile}, Web=${website}, RegDate=${registrationDate}`);
 
   } catch (e: any) { // Add ': any' to 'e' to handle it as an error object
     console.warn(`   ⚠️ Failed to enrich ${ngo.ngoName} (Darpan ID: ${ngo.darpanId}): ${e.message}`);
@@ -259,7 +339,9 @@ async function enrichNgo(context: BrowserContext, ngo: ApiNgoSummary): Promise<E
     ...ngo,
     email,
     mobile,
-    registrationDate: null // We will parse this from `ngo.registrationNo` or API if available
+    website,
+    registrationDate,
+    officeBearers
   };
 }
 
@@ -285,6 +367,16 @@ async function ingestBatch(ngos: EnrichedNgo[]) {
   let count = 0;
   for (const n of ngos) {
       const sectors = n.sectors.split(",").map(s => s.trim()).filter(Boolean);
+      
+      // Parse Registration Date
+      let regDateObj: Date | null = null;
+      if (n.registrationDate) {
+          const parts = n.registrationDate.split('-'); // dd-mm-yyyy
+          if (parts.length === 3) {
+              regDateObj = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+          }
+      }
+
       const normalizedPayload = {
           darpanId: n.darpanId,
           name: n.ngoName,
@@ -293,12 +385,15 @@ async function ingestBatch(ngos: EnrichedNgo[]) {
           state: n.stateName,
           pincode: n.pinCode?.toString(),
           email: n.email,
+          mobile: n.mobile,
+          website: n.website,
+          registrationDate: regDateObj,
           registrationNumber: n.registrationNo,
           latitude: n.latitude,
           longitude: n.longitude,
           sourceUrl: `https://ngodarpan.gov.in/#/ngo/view?id=${n.darpanId}`,
           scrapedAt: new Date(),
-          raw: n as any
+          raw: { ...n, officeBearers: n.officeBearers } as any // Store bearers in raw for now
       };
       const hash = computeHash(normalizedPayload);
 

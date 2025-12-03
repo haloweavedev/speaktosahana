@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NGO Collector Control Room</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0f172a;
+        --surface: #1e293b;
+        --muted: #94a3b8;
+        --accent: #34d399;
+        --accent-muted: rgba(52, 211, 153, 0.25);
+        --danger: #f87171;
+        --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font);
+        background: radial-gradient(circle at top, rgba(52, 211, 153, 0.08), transparent),
+          var(--bg);
+        color: #f8fafc;
+        min-height: 100vh;
+        padding: 2rem clamp(1.5rem, 3vw, 4rem);
+      }
+
+      .shell {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        backdrop-filter: blur(8px);
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+      }
+
+      .status-text {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+      }
+
+      button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.65rem 1.4rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 120ms ease, box-shadow 120ms ease;
+        background: rgba(148, 163, 184, 0.2);
+        color: #f8fafc;
+      }
+
+      button.primary {
+        background: linear-gradient(120deg, #34d399, #22d3ee);
+        color: #022c22;
+      }
+
+      button.ghost {
+        background: transparent;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        transform: none;
+      }
+
+      button:not(:disabled):active {
+        transform: scale(0.98);
+      }
+
+      .progress-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 16px;
+        background: rgba(148, 163, 184, 0.2);
+        border-radius: 999px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(120deg, rgba(52, 211, 153, 0.9), rgba(14, 165, 233, 0.9));
+        width: 0%;
+        border-radius: inherit;
+        transition: width 250ms ease;
+      }
+
+      .progress-meta {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+      }
+
+      .metric-card {
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 0.75rem;
+        padding: 1rem;
+      }
+
+      .metric-label {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 0.25rem;
+      }
+
+      .metric-value {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .metric-note {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 0.2rem;
+      }
+
+      .logs {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .log-feed {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-height: 220px;
+        overflow-y: auto;
+        font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+        font-size: 0.85rem;
+      }
+
+      .log-feed li {
+        padding: 0.35rem 0;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      }
+
+      .log-feed span {
+        color: var(--muted);
+        margin-right: 0.5rem;
+      }
+
+      .errors-card {
+        border: 1px solid rgba(248, 113, 113, 0.3);
+        background: rgba(248, 113, 113, 0.1);
+      }
+
+      .errors-card h2 {
+        margin-top: 0;
+      }
+
+      .error-list {
+        margin: 0;
+        padding-left: 1.25rem;
+        color: #fecaca;
+      }
+
+      .runtime-hints {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      @media (max-width: 640px) {
+        .controls {
+          flex-direction: column;
+        }
+        .metrics-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="card hero">
+        <h1>NGO Collector Control Room</h1>
+        <p class="status-text">
+          <strong id="phase-label">Booting</strong> |
+          <span id="status-text">Initializing collector...</span>
+        </p>
+        <div class="controls">
+          <button id="pause-btn">Pause</button>
+          <button id="resume-btn" class="primary">Resume</button>
+          <button id="download-btn" class="ghost">Download JSON</button>
+        </div>
+        <p class="runtime-hints">
+          Output path: <span id="output-path">...</span>
+        </p>
+      </section>
+
+      <section class="card progress-card">
+        <div class="progress-meta">
+          <span id="progress-label">0 / ? records</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">Speed</div>
+          <div class="metric-value" id="metric-rpm">0</div>
+          <div class="metric-note">records/min</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Session</div>
+          <div class="metric-value" id="metric-runtime">00:00</div>
+          <div class="metric-note">duration</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Discovered</div>
+          <div class="metric-value" id="metric-discovered">0</div>
+          <div class="metric-note">rows in table</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Current</div>
+          <div class="metric-value" id="metric-current">...</div>
+          <div class="metric-note">processing</div>
+        </div>
+      </section>
+
+      <section class="card logs">
+        <h3>Live Logs</h3>
+        <ul class="log-feed" id="log-feed">
+          <li>Waiting for server connection...</li>
+        </ul>
+      </section>
+
+      <section class="card errors-card" id="errors-card" style="display: none">
+        <h3>Errors</h3>
+        <ul class="error-list" id="error-list"></ul>
+      </section>
+    </main>
+
+    <script>
+      const elements = {
+        phaseLabel: document.getElementById("phase-label"),
+        statusText: document.getElementById("status-text"),
+        pauseBtn: document.getElementById("pause-btn"),
+        resumeBtn: document.getElementById("resume-btn"),
+        downloadBtn: document.getElementById("download-btn"),
+        outputPath: document.getElementById("output-path"),
+        progressLabel: document.getElementById("progress-label"),
+        progressPercent: document.getElementById("progress-percent"),
+        progressFill: document.getElementById("progress-fill"),
+        metricRpm: document.getElementById("metric-rpm"),
+        metricRuntime: document.getElementById("metric-runtime"),
+        metricDiscovered: document.getElementById("metric-discovered"),
+        metricCurrent: document.getElementById("metric-current"),
+        logFeed: document.getElementById("log-feed"),
+        errorsCard: document.getElementById("errors-card"),
+        errorList: document.getElementById("error-list"),
+      };
+
+      let eventSource = null;
+
+      function connect() {
+        eventSource = new EventSource("/events");
+
+        eventSource.onmessage = (event) => {
+          const data = JSON.parse(event.data);
+          updateUI(data);
+        };
+
+        eventSource.onerror = () => {
+          elements.statusText.textContent = "Connection lost. Reconnecting...";
+          eventSource.close();
+          setTimeout(connect, 2000);
+        };
+      }
+
+      function updateUI(state) {
+        elements.phaseLabel.textContent = state.phase.toUpperCase();
+        elements.statusText.textContent = state.lastMessage;
+        elements.outputPath.textContent = state.outputPath;
+
+        // Buttons
+        elements.pauseBtn.disabled = state.paused || state.phase === "completed";
+        elements.resumeBtn.disabled = !state.paused || state.phase === "completed";
+
+        // Progress
+        const total = state.totalRows || state.maxRecords || 0;
+        const current = state.processedRecords;
+        const percent = total > 0 ? Math.round((current / total) * 100) : 0;
+        elements.progressLabel.textContent = `${current} / ${total || "?"} records`;
+        elements.progressPercent.textContent = `${percent}%`;
+        elements.progressFill.style.width = `${percent}%`;
+
+        // Metrics
+        elements.metricRpm.textContent = state.recordsPerMinute;
+        elements.metricRuntime.textContent = formatDuration(state.runtimeMs);
+        elements.metricDiscovered.textContent = state.discoveredRows;
+        elements.metricCurrent.textContent = state.currentRecord || "idle";
+
+        // Logs
+        renderLogs(state.logs);
+
+        // Errors
+        if (state.errors.length > 0) {
+          elements.errorsCard.style.display = "block";
+          elements.errorList.innerHTML = state.errors
+            .map((e) => `<li>[${formatTime(e.ts)}] ${e.message}</li>`)
+            .join("");
+        } else {
+          elements.errorsCard.style.display = "none";
+        }
+      }
+
+      function renderLogs(logs) {
+        const html = logs
+          .slice()
+          .reverse()
+          .map(
+            (l) =>
+              `<li><span style="color:${l.level === "error" ? "#f87171" : "#94a3b8"}">[${formatTime(l.ts)}]</span> ${l.message}</li>`
+          )
+          .join("");
+        elements.logFeed.innerHTML = html;
+      }
+
+      function formatDuration(ms) {
+        const s = Math.floor(ms / 1000);
+        const m = Math.floor(s / 60);
+        const h = Math.floor(m / 60);
+        const mm = m % 60;
+        const ss = s % 60;
+        return `${h > 0 ? h + ":" : ""}${pad(mm)}:${pad(ss)}`;
+      }
+
+      function formatTime(iso) {
+        return new Date(iso).toLocaleTimeString();
+      }
+
+      function pad(n) {
+        return n.toString().padStart(2, "0");
+      }
+
+      elements.pauseBtn.addEventListener("click", () => {
+        fetch("/pause", { method: "POST" });
+      });
+
+      elements.resumeBtn.addEventListener("click", () => {
+        fetch("/resume", { method: "POST" });
+      });
+
+      elements.downloadBtn.addEventListener("click", () => {
+        window.open("/records", "_blank");
+      });
+
+      connect();
+    </script>
+  </body>
+</html>
