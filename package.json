@@ -12,7 +12,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "postinstall": "pnpm --filter @repo/db prisma generate",
+    "postinstall": "pnpm --filter @repo/db run generate",
     "geo-seed": "tsx scripts/geo-seed.ts"
   },
   "devDependencies": {
