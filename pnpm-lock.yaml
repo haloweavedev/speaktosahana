@@ -215,6 +215,9 @@ importers:
       '@prisma/client':
         specifier: ^7.0.1
         version: 7.0.1(prisma@7.0.1(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.8.2))(typescript@5.8.2)
+      pg:
+        specifier: ^8.16.3
+        version: 8.16.3
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -225,6 +228,9 @@ importers:
       '@types/node':
         specifier: ^22.13.9
         version: 22.19.1
+      '@types/pg':
+        specifier: ^8.11.10
+        version: 8.15.6
       eslint:
         specifier: ^9.21.0
         version: 9.39.1(jiti@2.6.1)
@@ -1600,6 +1606,9 @@ packages:
 
   '@types/pbf@3.0.5':
     resolution: {integrity: sha512-j3pOPiEcWZ34R6a6mN07mUkM4o4Lwf6hPNt8eilOeZhTFbxFXmKhvXl9Y28jotFPaI1bpPDJsbCprUoNke6OrA==}
+
+  '@types/pg@8.15.6':
+    resolution: {integrity: sha512-NoaMtzhxOrubeL/7UZuNTrejB4MPAJ0RpxZqXQf2qXuVlTPuG6Y8p4u9dKRaue4yjmC7ZhzVO2/Yyyn25znrPQ==}
 
   '@types/prompts@2.4.9':
     resolution: {integrity: sha512-qTxFi6Buiu8+50/+3DGIWLHM6QuWsEKugJnnP6iv2Mc4ncxE4A/OJkjuVOA+5X0X1S/nq5VJRa8Lu+nwcvbrKA==}
@@ -5134,6 +5143,12 @@ snapshots:
       undici-types: 6.21.0
 
   '@types/pbf@3.0.5': {}
+
+  '@types/pg@8.15.6':
+    dependencies:
+      '@types/node': 22.19.1
+      pg-protocol: 1.10.3
+      pg-types: 2.2.0
 
   '@types/prompts@2.4.9':
     dependencies:

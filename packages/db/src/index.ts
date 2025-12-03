@@ -1,5 +1,6 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import type { PoolConfig } from "pg";
 import { Pool } from "pg";
 
 const connectionString =
@@ -25,10 +26,12 @@ const prismaClientSingleton = () => {
     }
   }
 
-  const pool = new Pool({
+  const poolConfig: PoolConfig = {
     connectionString,
     ssl: allowSelfSigned ? { rejectUnauthorized: false } : undefined,
-  });
+  };
+
+  const pool = new Pool(poolConfig);
 
   const adapter = new PrismaPg(pool);
 
