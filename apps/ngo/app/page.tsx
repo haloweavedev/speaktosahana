@@ -68,33 +68,22 @@ export default async function Page() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#1b0b3d] via-[#0f0828] to-[#09051c] text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10">
-        <header className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-violet-200">
-              Purple Pages · GIS Signal
-            </p>
-            <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
-              33 Bengaluru NGOs on the map
-            </h1>
-            <p className="max-w-2xl text-sm text-violet-100/80">
-              Seeded, geocoded, and rendered live. This is the working prototype of the “Radar”
-              described in the vision doc: map-first, sector-aware, and PostGIS-backed.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Button className="bg-white/10 text-white hover:bg-white/20">
-                Radius search · {DEFAULT_RADIUS_KM} km around MG Road
-              </Button>
-              <Button variant="secondary" className="border border-white/20 bg-white/5 text-white hover:bg-white/15">
-                Uses Mapbox + PostGIS
-              </Button>
-            </div>
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12">
+        <header className="flex flex-col items-center gap-6 text-center">
+          <div className="text-4xl font-[700] text-white tracking-wide font-serif">
+            purplePages
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-violet-100/90 shadow-lg">
-            <p className="font-semibold">Live inputs</p>
-            <p className="text-xs text-violet-100/70">
-              DB: Supabase Postgres · Dataset: optimized-detail-records.json · Tokens: Mapbox + .env
-            </p>
+          <div className="flex flex-col gap-3 text-sm text-violet-100/85 max-w-3xl">
+            <p>🧩 For Donors: Identify NGOs by the intersections that matter (e.g., Disability × Livelihood).</p>
+            <p>🤝 For NGOs: Find peers and partners to strengthen programs (e.g., Education → Inclusive Education expert).</p>
+            <p>📍 For Volunteers: Discover organizations close to your home and heart (pincode-based search).</p>
+            <p>♿ For Persons with Disabilities: Locate services and support systems that are truly accessible.</p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Button className="bg-white/15 text-white hover:bg-white/25">Explore the map</Button>
+            <Button variant="secondary" className="border border-white/25 bg-white/10 text-white hover:bg-white/20">
+              Filter by distance or sector
+            </Button>
           </div>
         </header>
 
@@ -126,9 +115,9 @@ export default async function Page() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-violet-200/80">Incoming queue</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-violet-200/80">NGO snapshots</p>
                 <h3 className="text-lg font-semibold text-white/90">
-                  First {localData.records.length} rows from the file
+                  A few examples from the current dataset
                 </h3>
               </div>
               <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-violet-100/90">
@@ -159,29 +148,15 @@ export default async function Page() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
-            <p className="text-xs uppercase tracking-[0.2em] text-violet-200/80">Pipeline</p>
-            <h3 className="mt-2 text-lg font-semibold text-white/90">How this demo is wired</h3>
-            <ol className="mt-4 space-y-3 text-sm text-violet-100/80">
-              <li>
-                <span className="font-semibold text-white">Data</span> — 33 rows from
-                <code className="mx-1 rounded bg-white/10 px-2 py-1 text-xs">outputs/optimized-detail-records.json</code>{" "}
-                landed in Postgres.
-              </li>
-              <li>
-                <span className="font-semibold text-white">Geocode</span> —{" "}
-                <code className="rounded bg-white/10 px-2 py-1 text-xs">pnpm geo-seed</code> hit Nominatim (pincode → city
-                fallback), tagged APPROXIMATE where needed.
-              </li>
-              <li>
-                <span className="font-semibold text-white">Spatial</span> — PostGIS powers{" "}
-                <code className="rounded bg-white/10 px-2 py-1 text-xs">getNGOsInRadius</code> for “near me” slices.
-              </li>
-              <li>
-                <span className="font-semibold text-white">UI</span> — Mapbox + shadcn button from{" "}
-                <code className="rounded bg-white/10 px-2 py-1 text-xs">@repo/ui</code>, purple command-center skin.
-              </li>
-            </ol>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg space-y-3">
+            <p className="text-xs uppercase tracking-[0.2em] text-violet-200/80">Why purplePages</p>
+            <h3 className="mt-2 text-lg font-semibold text-white/90">Built for real decisions</h3>
+            <ul className="mt-2 space-y-2 text-sm text-violet-100/85">
+              <li>• See who is closest to a neighborhood or pin code.</li>
+              <li>• Filter by sector intersections that matter to you.</li>
+              <li>• Find partners who share or complement your focus areas.</li>
+              <li>• Spot accessible services for persons with disabilities.</li>
+            </ul>
           </div>
         </section>
       </div>
