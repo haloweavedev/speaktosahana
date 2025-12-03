@@ -45,14 +45,6 @@ const App = () => {
     </button>
   );
 
-  // Photo Placeholder Component
-  const PhotoPlaceholder = ({ label, className }) => (
-    <div className={`bg-stone-200 border border-stone-300 flex flex-col items-center justify-center text-stone-400 p-8 ${className}`}>
-      <Camera className="w-8 h-8 mb-2 opacity-50" />
-      <span className="text-xs font-bold uppercase tracking-widest text-center">{label}</span>
-    </div>
-  );
-
   // Elegant Lens Card for About Section
   const LensCard = ({ title, role, desc, icon: Icon }) => (
     <div className="bg-stone-50 p-8 border-l-2 border-emerald-800/30 hover:border-emerald-800 transition-colors duration-500 group">
@@ -67,7 +59,7 @@ const App = () => {
   );
 
   // Project Accordion Component
-  const AccordionProject = ({ title, summary, challenge, intervention, impact }) => {
+  const AccordionProject = ({ title, summary, challenge, intervention, impact, imageSrc, imageCaption }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -87,8 +79,24 @@ const App = () => {
           </div>
         </button>
         
-        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100 pb-8' : 'max-h-0 opacity-0'}`}>
+        {/* Increased max-height to accommodate images */}
+        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[2000px] opacity-100 pb-8' : 'max-h-0 opacity-0'}`}>
           <div className="px-4 md:px-8 py-8 bg-stone-50 rounded-sm space-y-6 text-sm">
+            
+            {/* Optional Image Section */}
+            {imageSrc && (
+              <div className="mb-8">
+                <div className="aspect-video w-full overflow-hidden rounded-sm bg-stone-200 mb-2">
+                  <img 
+                    src={imageSrc} 
+                    alt={imageCaption || title} 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                {imageCaption && <p className="text-xs text-stone-500 italic">{imageCaption}</p>}
+              </div>
+            )}
+
             <div className="grid md:grid-cols-12 gap-4">
               <span className="md:col-span-2 text-xs font-bold uppercase tracking-widest text-stone-400 mt-1">Challenge</span>
               <p className="md:col-span-10 text-stone-700 font-light leading-relaxed">{challenge}</p>
@@ -175,9 +183,12 @@ const App = () => {
           </div>
 
           <div className="md:col-span-5 relative">
-            <div className="aspect-[3/4] relative">
-              {/* Photo Recommendation: Professional Portrait */}
-              <PhotoPlaceholder label="Professional Portrait" className="w-full h-full rounded-sm shadow-xl" />
+            <div className="aspect-[3/4] relative rounded-sm shadow-xl overflow-hidden bg-stone-200">
+              <img 
+                src="PSX_20251009_175556.jpg" 
+                alt="Sahana L - Professional Portrait" 
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Decorative Element */}
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-emerald-900/5 -z-10 rounded-full blur-xl"></div>
@@ -212,10 +223,16 @@ const App = () => {
             </div>
 
             <div className="md:col-span-4 mt-8 md:mt-0">
-               {/* Photo Recommendation: Candid Field Photo */}
-               <div className="aspect-square relative">
-                 <PhotoPlaceholder label="Candid Field / Workshop Photo" className="w-full h-full rounded-sm" />
-                 <p className="text-[10px] text-stone-400 mt-2 text-center uppercase tracking-widest">Bridging Boardroom & Grassroots</p>
+               {/* Candid Photo */}
+               <div className="aspect-square relative rounded-sm overflow-hidden bg-stone-200 shadow-lg">
+                 <img 
+                   src="Photos for Website.jpg" 
+                   alt="Winning TISS Awards - Grassroots & Academic Excellence" 
+                   className="w-full h-full object-cover"
+                 />
+                 <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-stone-900/80 to-transparent p-4">
+                    <p className="text-[10px] text-white/90 text-center uppercase tracking-widest">Bridging Boardroom & Grassroots</p>
+                 </div>
                </div>
             </div>
           </div>
@@ -259,9 +276,17 @@ const App = () => {
           <div className="mb-24 text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-medium text-stone-900 mb-4">Strategic Initiatives</h2>
             <p className="text-stone-500 font-light max-w-xl mx-auto mb-12">A curated portfolio of ecosystem building, strategic capital engineering, and operational scaling.</p>
-            {/* New Placeholder */}
-            <div className="aspect-[21/9] w-full relative">
-              <PhotoPlaceholder label="Impact Collage / Strategic Session" className="w-full h-full rounded-sm shadow-sm" />
+            
+            {/* Featured Project Image */}
+            <div className="aspect-[16/9] md:aspect-[21/9] w-full relative rounded-sm overflow-hidden bg-stone-200 shadow-sm border border-stone-200">
+              <img 
+                src="Strategic Initiatives.jpeg" 
+                alt="Strategic Initiatives Panel Discussion" 
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-stone-900/60 p-2 text-center">
+                  <p className="text-[10px] text-white/90 uppercase tracking-widest">Driving Sector-Wide Dialogue</p>
+              </div>
             </div>
           </div>
 
@@ -276,6 +301,8 @@ const App = () => {
               challenge="The Sector is driven by compassion but constrained by capacity- weak compliance, inconsistent quality, limited expertise - resulting in low scalability and sustainability."
               intervention="Designing a strategic blueprint that aligns ecosystem partners and internal capacities to create a unified support network."
               impact="Positioning APD as a definitive 'Sector Enabler' and 'Thought Leader' by building a sustainable ecosystem for NGOs."
+              imageSrc="/api/placeholder/800/400"
+              imageCaption="Example: Strategic planning session with NGO partners"
             />
             <AccordionProject 
               title="The Social Campus"

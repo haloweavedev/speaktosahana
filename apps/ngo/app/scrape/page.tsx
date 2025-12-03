@@ -1,5 +1,7 @@
 import prisma from "@repo/db";
 
+export const dynamic = "force-dynamic";
+
 async function getLatestRun() {
   return prisma.scrapeRun.findFirst({
     orderBy: { startedAt: "desc" },

@@ -1,13 +1,11 @@
 datasource db {
   provider   = "postgresql"
-  url        = env("DATABASE_URL")
   extensions = [postgis]
 }
 
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["postgresqlExtensions"]
-  binaryTargets   = ["native", "rhel-openssl-3.0.x"]
 }
 
 model Ngo {
@@ -25,6 +23,9 @@ model Ngo {
   website          String?
   summaryAddress   String?  @map("summary_address")
   address          String?
+  district         String?  @map("district")
+  state            String?  @map("state")
+  pincode          String?  @map("pincode")
   darpanRegistrationDate DateTime? @map("darpan_registration_date") @db.Date
   registeredWith   String?  @map("registered_with")
   typeOfNPO        String?  @map("type_of_npo")
@@ -32,6 +33,7 @@ model Ngo {
   cityOfRegistration   String? @map("city_of_registration")
   stateOfRegistration  String? @map("state_of_registration")
   dateOfRegistration   DateTime? @map("date_of_registration") @db.Date
+  registrationDate     DateTime? @map("registration_date") @db.Date
   summarySectors   String[] @map("summary_sectors")
   primarySectors   String[] @map("primary_sectors")
   secondarySectors String[] @map("secondary_sectors")
@@ -40,6 +42,8 @@ model Ngo {
   officeBearers    Json?   @map("office_bearers")
   latitude         Decimal? @map("latitude") @db.Decimal(10, 7)
   longitude        Decimal? @map("longitude") @db.Decimal(10, 7)
+  geocodingStatus  String  @default("PENDING") @map("geocoding_status")
+  geocodedPincode  String? @map("geocoded_pincode")
 
   sourceUrl        String? @map("source_url")
   scrapedAt        DateTime? @map("scraped_at") @db.Timestamptz
@@ -55,6 +59,7 @@ model Ngo {
   @@map("ngos")
   @@index([pincode])
   @@index([district, state])
+  @@index([geocodingStatus])
 }
 
 model ScrapeRun {

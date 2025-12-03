@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { 
-  ArrowRight, 
-  Mail, 
+/* eslint-disable @next/next/no-img-element */
+
+import React, { useEffect, useState } from 'react';
+import {
+  ArrowRight,
+  Mail,
   ArrowUpRight,
   Quote,
   Layout,
@@ -12,8 +14,20 @@ import {
   MapPin,
   Plus,
   Minus,
-  Camera
 } from 'lucide-react';
+
+type NavLinkProps = { to: string; label: string };
+type LensCardProps = { title: string; desc: string; icon: React.ElementType };
+type AccordionProjectProps = {
+  title: string;
+  summary: string;
+  challenge: string;
+  intervention: string;
+  impact: string;
+  imageSrc?: string;
+  imageCaption?: string;
+};
+type ProjectCategoryProps = { category: string; description: string; children: React.ReactNode };
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,8 +47,8 @@ const App = () => {
     }
   };
 
-  const NavLink = ({ to, label }: { to: string; label: string }) => (
-    <button 
+  const NavLink = ({ to, label }: NavLinkProps) => (
+    <button
       onClick={() => scrollToSection(to)}
       className="text-sm font-medium text-stone-500 hover:text-emerald-900 transition-colors uppercase tracking-widest relative group py-2 font-sans"
     >
@@ -42,22 +56,11 @@ const App = () => {
     </button>
   );
 
-  const PhotoPlaceholder = ({ label, className = '' }: { label: string; className?: string }) => (
-    <div className={`bg-stone-200 border border-stone-300 flex flex-col items-center justify-center text-stone-400 p-8 ${className}`}>
-      <Camera className="w-8 h-8 mb-2 opacity-50" />
-      <span className="text-xs font-bold uppercase tracking-widest text-center">{label}</span>
-    </div>
-  );
-
-  // Elegant Lens Card for About Section
-  const LensCard = ({ title, role, desc, icon: Icon }: { title: string; role?: string; desc: string; icon: React.ElementType }) => (
+  const LensCard = ({ title, desc, icon: Icon }: LensCardProps) => (
     <div className="bg-stone-50 p-8 border-l-2 border-emerald-800/30 hover:border-emerald-800 transition-colors duration-500 group">
-      <div className="flex items-center gap-3 mb-3">
+      <div className="flex items-center gap-3 mb-4">
         <Icon className="w-5 h-5 text-emerald-800 opacity-60 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
-        <div>
-          <h3 className="text-lg font-serif font-bold text-stone-900">{title}</h3>
-          {role && <p className="text-[11px] font-bold uppercase tracking-widest text-stone-400">{role}</p>}
-        </div>
+        <h3 className="text-lg font-serif font-bold text-stone-900">{title}</h3>
       </div>
       <p className="text-stone-600 leading-relaxed font-light text-sm">
         {desc}
@@ -65,13 +68,12 @@ const App = () => {
     </div>
   );
 
-  // Project Accordion Component
-  const AccordionProject = ({ title, summary, challenge, intervention, impact }: { title: string; summary: string; challenge: string; intervention: string; impact: string }) => {
+  const AccordionProject = ({ title, summary, challenge, intervention, impact, imageSrc, imageCaption }: AccordionProjectProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
       <div className="border-b border-stone-200 last:border-0 group">
-        <button 
+        <button
           onClick={() => setIsOpen(!isOpen)}
           className="w-full py-8 text-left flex justify-between items-start gap-6 hover:bg-stone-50 transition-colors px-4 -mx-4 rounded-sm"
         >
@@ -85,9 +87,22 @@ const App = () => {
             {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
           </div>
         </button>
-        
-        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100 pb-8' : 'max-h-0 opacity-0'}`}>
+
+        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[2000px] opacity-100 pb-8' : 'max-h-0 opacity-0'}`}>
           <div className="px-4 md:px-8 py-8 bg-stone-50 rounded-sm space-y-6 text-sm">
+            {imageSrc && (
+              <div className="mb-8">
+                <div className="aspect-video w-full overflow-hidden rounded-sm bg-stone-200 mb-2">
+                  <img
+                    src={imageSrc}
+                    alt={imageCaption || title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                {imageCaption && <p className="text-xs text-stone-500 italic">{imageCaption}</p>}
+              </div>
+            )}
+
             <div className="grid md:grid-cols-12 gap-4">
               <span className="md:col-span-2 text-xs font-bold uppercase tracking-widest text-stone-400 mt-1">Challenge</span>
               <p className="md:col-span-10 text-stone-700 font-light leading-relaxed">{challenge}</p>
@@ -111,7 +126,7 @@ const App = () => {
     );
   };
 
-  const ProjectCategory = ({ category, description, children }: { category: string; description: string; children: React.ReactNode }) => (
+  const ProjectCategory = ({ category, description, children }: ProjectCategoryProps) => (
     <div className="mb-24">
       <div className="mb-8 border-l-4 border-emerald-900 pl-6">
         <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-stone-400 mb-2">{category}</h3>
@@ -174,9 +189,12 @@ const App = () => {
           </div>
 
           <div className="md:col-span-5 relative">
-            <div className="aspect-[3/4] relative">
-              {/* Photo Recommendation: Professional Portrait */}
-              <PhotoPlaceholder label="Professional Portrait" className="w-full h-full rounded-sm shadow-xl" />
+            <div className="aspect-[3/4] relative rounded-sm shadow-xl overflow-hidden bg-stone-200">
+              <img 
+                src="/PSX_20251009_175556.jpg" 
+                alt="Sahana L - Professional Portrait" 
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Decorative Element */}
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-emerald-900/5 -z-10 rounded-full blur-xl"></div>
@@ -211,10 +229,16 @@ const App = () => {
             </div>
 
             <div className="md:col-span-4 mt-8 md:mt-0">
-               {/* Photo Recommendation: Candid Field Photo */}
-               <div className="aspect-square relative">
-                 <PhotoPlaceholder label="Candid Field / Workshop Photo" className="w-full h-full rounded-sm" />
-                 <p className="text-[10px] text-stone-400 mt-2 text-center uppercase tracking-widest">Bridging Boardroom & Grassroots</p>
+               {/* Candid Photo */}
+               <div className="aspect-square relative rounded-sm overflow-hidden bg-stone-200 shadow-lg">
+                 <img 
+                   src="/Photos for Website.jpg" 
+                   alt="Winning TISS Awards - Grassroots & Academic Excellence" 
+                   className="w-full h-full object-cover"
+                 />
+                 <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-stone-900/80 to-transparent p-4">
+                    <p className="text-[10px] text-white/90 text-center uppercase tracking-widest">Bridging Boardroom & Grassroots</p>
+                 </div>
                </div>
             </div>
           </div>
@@ -225,25 +249,21 @@ const App = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <LensCard 
                 title="The Funder’s Lens"
-                role="State Bank of India Foundation"
                 icon={Briefcase}
                 desc="Managed a portfolio of 15 projects worth over ₹35 Crore. I did more than allocate funds; I built a solid strategy that guided the investment of the Centre of Excellence for Persons with Disabilities, maximizing the Social Return on Investment (SROI)."
               />
               <LensCard 
                 title="The Operator’s Grit"
-                role="APD Ops & Innovation"
                 icon={Layout}
                 desc="Managed 14 skilling projects across 5 states. I learned that for inclusion to work, it must be scalable and rooted in everyday execution."
               />
               <LensCard 
                 title="The Field Immersion"
-                role="Tata Steel Foundation, Youth4Jobs, Inclusive CBR"
                 icon={MapPin}
                 desc="My strategic view is forged by execution. I have handled 25+ high-quality field projects. This diverse exposure ensures that my strategies are battle-tested against real-world complexities."
               />
               <LensCard 
                 title="The Academic Rigor"
-                role="TISS & Sociology Honors"
                 icon={Award}
                 desc="Masters in Disability Studies. Coupled with an Honours degree in Sociology, this education grounded my ability to design interventions rooted in both field realities and critical theory."
               />
@@ -258,9 +278,17 @@ const App = () => {
           <div className="mb-24 text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-medium text-stone-900 mb-4">Strategic Initiatives</h2>
             <p className="text-stone-500 font-light max-w-xl mx-auto mb-12">A curated portfolio of ecosystem building, strategic capital engineering, and operational scaling.</p>
-            {/* New Placeholder */}
-            <div className="aspect-[21/9] w-full relative">
-              <PhotoPlaceholder label="Impact Collage / Strategic Session" className="w-full h-full rounded-sm shadow-sm" />
+            
+            {/* Featured Project Image */}
+            <div className="aspect-[16/9] md:aspect-[21/9] w-full relative rounded-sm overflow-hidden bg-stone-200 shadow-sm border border-stone-200">
+              <img 
+                src="/Strategic Initiatives.jpeg" 
+                alt="Strategic Initiatives Panel Discussion" 
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-stone-900/60 p-2 text-center">
+                  <p className="text-[10px] text-white/90 uppercase tracking-widest">Driving Sector-Wide Dialogue</p>
+              </div>
             </div>
           </div>
 
@@ -275,6 +303,8 @@ const App = () => {
               challenge="The Sector is driven by compassion but constrained by capacity- weak compliance, inconsistent quality, limited expertise - resulting in low scalability and sustainability."
               intervention="Designing a strategic blueprint that aligns ecosystem partners and internal capacities to create a unified support network."
               impact="Positioning APD as a definitive 'Sector Enabler' and 'Thought Leader' by building a sustainable ecosystem for NGOs."
+              imageSrc="/api/placeholder/800/400"
+              imageCaption="Example: Strategic planning session with NGO partners"
             />
             <AccordionProject 
               title="The Social Campus"

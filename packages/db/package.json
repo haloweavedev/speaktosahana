@@ -2,6 +2,7 @@
   "name": "@repo/db",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
@@ -15,7 +16,7 @@
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.0.1",
-    "@prisma/client": "latest"
+    "@prisma/client": "^7.0.1"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -23,7 +24,7 @@
     "@types/node": "^22.13.9",
     "eslint": "^9.21.0",
     "prettier": "^3.5.3",
-    "prisma": "latest",
+    "prisma": "^7.0.1",
     "typescript": "5.8.2"
   }
 }

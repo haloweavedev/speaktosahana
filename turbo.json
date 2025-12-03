@@ -23,7 +23,10 @@
     "UMAMI_API_KEY",
     "VAPI_UNINTEGRATED_ASSISTANT_ID",
     "VAPI_MARKETING_ASSISTANT_ID",
-    "VAPI_EMAIL_EXPERIMENT_ASSISTANT_ID"
+    "VAPI_EMAIL_EXPERIMENT_ASSISTANT_ID",
+    "NEXT_PUBLIC_MAPBOX_TOKEN",
+    "NGO_MAP_LIMIT",
+    "NGO_DEFAULT_RADIUS"
   ],
   "tasks": {
     "build": {
@@ -49,11 +52,15 @@
         "UMAMI_API_KEY",
         "VAPI_UNINTEGRATED_ASSISTANT_ID",
         "VAPI_MARKETING_ASSISTANT_ID",
-        "VAPI_EMAIL_EXPERIMENT_ASSISTANT_ID"
+        "VAPI_EMAIL_EXPERIMENT_ASSISTANT_ID",
+        "NEXT_PUBLIC_MAPBOX_TOKEN",
+        "NGO_MAP_LIMIT",
+        "NGO_DEFAULT_RADIUS"
       ]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^lint"],
+      "env": ["NGO_MAP_LIMIT", "NEXT_PUBLIC_MAPBOX_TOKEN", "NGO_DEFAULT_RADIUS"]
     },
     "check-types": {
       "dependsOn": ["^check-types"]
