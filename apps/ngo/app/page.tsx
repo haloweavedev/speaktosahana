@@ -10,6 +10,17 @@ const MAP_LIMIT = Number.parseInt(process.env.NGO_MAP_LIMIT || "200", 10);
 const DEFAULT_RADIUS_KM = Number.parseFloat(process.env.NGO_DEFAULT_RADIUS || "7");
 const FOCUS_POINT = { lat: 12.9716, lng: 77.5946 }; // Bengaluru core for the demo
 
+type NgoRow = {
+  id: string;
+  name: string;
+  latitude: number | null;
+  longitude: number | null;
+  geocodingStatus: string;
+  primarySectors: string[];
+  cityOfRegistration: string | null;
+  stateOfRegistration: string | null;
+};
+
 async function getMapData(): Promise<{
   items: MapNgo[];
   stats: {
@@ -43,7 +54,9 @@ async function getMapData(): Promise<{
     prisma.ngo.count({ where: { geocodingStatus: "SUCCESS" } }),
   ]);
 
-  const items: MapNgo[] = rows
+  const typedRows = rows as NgoRow[];
+
+  const items: MapNgo[] = typedRows
     .filter((ngo) => ngo.latitude !== null && ngo.longitude !== null)
     .map((ngo) => ({
       id: ngo.id,
@@ -67,10 +80,10 @@ export default async function Page() {
   const geocodedCount = mapData.items.length;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#1b0b3d] via-[#0f0828] to-[#09051c] text-white">
+    <main className="min-h-screen bg-linear-to-br from-[#1b0b3d] via-[#0f0828] to-[#09051c] text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12">
         <header className="flex flex-col items-center gap-6 text-center">
-          <div className="text-4xl font-[700] text-white tracking-wide font-serif">
+          <div className="text-4xl text-white tracking-wide font-serif">
             purplePages
           </div>
           <div className="flex flex-col gap-3 text-sm text-violet-100/85 max-w-3xl">
