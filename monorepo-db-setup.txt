@@ -73,3 +73,5 @@ const member = await withRetry(() =>
 - Keep `DATABASE_URL` pooler-friendly; port 5432 on the pooler host will fail—use 6543 with pgbouncer params.
 - Commit both Prisma migrations and Supabase SQL files so new environments can be reproduced deterministically.
 - Keep RLS logic in migrations (not ad-hoc in the dashboard) so policy drift doesn’t surprise API requests.
+
+xyz
