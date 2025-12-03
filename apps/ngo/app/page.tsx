@@ -1,8 +1,8 @@
-import MapView, { type MapNgo } from "@/components/map-view";
+import { MapExplore } from "@/components/map-explore";
+import { type MapNgo } from "@/components/map-view";
 import { loadLocalRecordSamples } from "@/lib/local-records";
 import { Button } from "@repo/ui";
 import prisma from "@repo/db";
-import { getNGOsInRadius } from "./actions/get-ngos";
 
 export const dynamic = "force-dynamic";
 
@@ -62,21 +62,9 @@ async function getMapData(): Promise<{
   };
 }
 
-function formatDistance(meters: number) {
-  if (!meters && meters !== 0) return "—";
-  const km = meters / 1000;
-  return km < 1 ? `${meters.toFixed(0)} m` : `${km.toFixed(1)} km`;
-}
-
 export default async function Page() {
-  const [mapData, localData, nearby] = await Promise.all([
-    getMapData(),
-    loadLocalRecordSamples(10),
-    getNGOsInRadius(FOCUS_POINT.lat, FOCUS_POINT.lng, DEFAULT_RADIUS_KM),
-  ]);
-
+  const [mapData, localData] = await Promise.all([getMapData(), loadLocalRecordSamples(10)]);
   const geocodedCount = mapData.items.length;
-  const topNearby = nearby.slice(0, 10);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#1b0b3d] via-[#0f0828] to-[#09051c] text-white">
@@ -128,65 +116,11 @@ export default async function Page() {
           />
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-violet-200/80">Mapbox view</p>
-                <h2 className="text-lg font-semibold text-white/90">Live pins from Postgres</h2>
-              </div>
-              <p className="text-xs text-violet-100/70">
-                Token: <code className="rounded bg-white/10 px-1 py-0.5">NEXT_PUBLIC_MAPBOX_TOKEN</code>
-              </p>
-            </div>
-            <MapView data={mapData.items} />
-            {!geocodedCount ? (
-              <p className="text-sm text-violet-100/80">
-                No pins yet. Run <code className="rounded bg-white/10 px-1 py-0.5">pnpm geo-seed</code> after setting{" "}
-                <code className="rounded bg-white/10 px-1 py-0.5">DATABASE_URL</code>.
-              </p>
-            ) : null}
-          </div>
-
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-violet-200/80">Synergy shortlist</p>
-                <h3 className="text-lg font-semibold text-white/90">
-                  Within {DEFAULT_RADIUS_KM} km of MG Road
-                </h3>
-              </div>
-              <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-violet-100/80">
-                PostGIS radius
-              </span>
-            </div>
-            <div className="space-y-3">
-              {topNearby.map((ngo) => (
-                <article
-                  key={ngo.id}
-                  className="rounded-xl border border-white/10 bg-white/5 p-4 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.6)]"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="space-y-1">
-                      <p className="text-sm font-semibold text-white">{ngo.name}</p>
-                      <p className="text-xs text-violet-100/70">
-                        {ngo.primary_sectors.slice(0, 2).join(" · ") || "No sector listed"}
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold text-violet-100/90">
-                      {formatDistance(ngo.distance_meters)}
-                    </span>
-                  </div>
-                </article>
-              ))}
-              {!topNearby.length ? (
-                <p className="text-sm text-violet-100/80">
-                  No hits in this radius yet. Seed data or widen the search.
-                </p>
-              ) : null}
-            </div>
-          </div>
-        </section>
+        <MapExplore
+          data={mapData.items}
+          defaultRadiusKm={DEFAULT_RADIUS_KM}
+          defaultCenter={{ latitude: FOCUS_POINT.lat, longitude: FOCUS_POINT.lng }}
+        />
 
         <section className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">

@@ -1,6 +1,6 @@
 "use client";
 
-import Map, { Marker, NavigationControl, Popup } from "react-map-gl/mapbox";
+import Map, { Marker, NavigationControl, Popup, type MapMouseEvent } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useMemo, useState } from "react";
 
@@ -28,7 +28,21 @@ function colorForSectors(sectors: string[]) {
   return "#f97316";
 }
 
-export default function MapView({ data }: { data: MapNgo[] }) {
+type MapViewProps = {
+  data: MapNgo[];
+  selectedNgoId?: string | null;
+  focusPoint?: { latitude: number; longitude: number } | null;
+  onSelectNgo?: (ngo: MapNgo | null) => void;
+  onSelectLocation?: (coords: { latitude: number; longitude: number }) => void;
+};
+
+export default function MapView({
+  data,
+  selectedNgoId = null,
+  focusPoint = null,
+  onSelectNgo,
+  onSelectLocation,
+}: MapViewProps) {
   const [selected, setSelected] = useState<MapNgo | null>(null);
 
   const center = useMemo(() => {
@@ -64,7 +78,12 @@ export default function MapView({ data }: { data: MapNgo[] }) {
         projection="globe"
         scrollZoom
         dragRotate={false}
-        onClick={() => setSelected(null)}
+        onClick={(event: MapMouseEvent) => {
+          setSelected(null);
+          if (!onSelectLocation) return;
+          const { lng, lat } = event.lngLat;
+          onSelectLocation({ latitude: lat, longitude: lng });
+        }}
       >
         <NavigationControl position="bottom-right" />
 
@@ -78,9 +97,25 @@ export default function MapView({ data }: { data: MapNgo[] }) {
             onClick={(event) => {
               event.originalEvent.stopPropagation();
               setSelected(ngo);
+              onSelectNgo?.(ngo);
             }}
+            style={
+              ngo.id === selectedNgoId
+                ? { filter: "drop-shadow(0 0 6px rgba(255,255,255,0.9))" }
+                : undefined
+            }
           />
         ))}
+
+        {focusPoint ? (
+          <Marker
+            longitude={focusPoint.longitude}
+            latitude={focusPoint.latitude}
+            color="#ffffff"
+            anchor="center"
+            style={{ filter: "drop-shadow(0 0 12px rgba(255,255,255,0.8))" }}
+          />
+        ) : null}
 
         {selected ? (
           <Popup
