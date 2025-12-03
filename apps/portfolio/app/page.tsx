@@ -191,7 +191,7 @@ const App = () => {
           <div className="md:col-span-5 relative">
             <div className="aspect-[3/4] relative rounded-sm shadow-xl overflow-hidden bg-stone-200">
               <img 
-                src="/PSX_20251009_175556.jpg" 
+                src="/image-1.jpeg" 
                 alt="Sahana L - Professional Portrait" 
                 className="w-full h-full object-cover"
               />
@@ -232,7 +232,7 @@ const App = () => {
                {/* Candid Photo */}
                <div className="aspect-square relative rounded-sm overflow-hidden bg-stone-200 shadow-lg">
                  <img 
-                   src="/Photos for Website.jpg" 
+                   src="/image-3.jpeg" 
                    alt="Winning TISS Awards - Grassroots & Academic Excellence" 
                    className="w-full h-full object-cover"
                  />
@@ -282,7 +282,7 @@ const App = () => {
             {/* Featured Project Image */}
             <div className="aspect-[16/9] md:aspect-[21/9] w-full relative rounded-sm overflow-hidden bg-stone-200 shadow-sm border border-stone-200">
               <img 
-                src="/Strategic Initiatives.jpeg" 
+                src="/image-2.jpeg" 
                 alt="Strategic Initiatives Panel Discussion" 
                 className="w-full h-full object-cover object-top"
               />
