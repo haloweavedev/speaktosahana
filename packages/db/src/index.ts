@@ -13,6 +13,18 @@ const prismaClientSingleton = () => {
     process.env.PRISMA_ALLOW_SELF_SIGNED === "true" ||
     process.env.NODE_TLS_REJECT_UNAUTHORIZED === "0";
 
+  if (process.env.LOG_PRISMA_CONNECTION !== "false") {
+    try {
+      const url = new URL(connectionString);
+      const display = `${url.hostname}:${url.port || "5432"}${url.pathname}`;
+      console.info(
+        `[prisma] init adapter host=${display} ssl=${allowSelfSigned ? "relaxed" : "strict"}`
+      );
+    } catch {
+      // ignore parsing issues to avoid blocking client creation
+    }
+  }
+
   const adapter = new PrismaPg({
     connectionString,
     ...(allowSelfSigned ? { ssl: { rejectUnauthorized: false } } : {}),
