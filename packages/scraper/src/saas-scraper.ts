@@ -215,7 +215,7 @@ async function enrichNgo(context: BrowserContext, ngo: ApiNgoSummary): Promise<E
 
   try {
     const detailUrl = `https://ngodarpan.gov.in/#/ngo/view?id=${ngo.darpanId}`;
-    await page.goto(detailUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
+    await page.goto(detailUrl, { waitUntil: "networkidle", timeout: 30000 });
 
     // Wait for Email Label
     const emailLabel = page.locator('span', { hasText: "NPO Contact Email" });
