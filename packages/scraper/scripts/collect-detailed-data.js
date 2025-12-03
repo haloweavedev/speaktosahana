@@ -165,6 +165,17 @@ async function clickBackToTable(page) {
   await page.waitForTimeout(500);
 }
 
+async function goToNextPage(page) {
+  const nextButton = page.locator('button.p-paginator-next');
+  if (!(await nextButton.isVisible())) return false;
+  if (await nextButton.isDisabled()) return false;
+  await nextButton.click();
+  await page.waitForSelector('table tbody tr', { timeout: 60000 });
+  await page.waitForLoadState('domcontentloaded');
+  await page.waitForTimeout(400);
+  return true;
+}
+
 async function fetchDateAndEmailFallback(page) {
   let email = null;
   let dateOfRegistration = null;
@@ -442,37 +453,44 @@ async function runCollector() {
     await selectMultiOptions(page, 'selectedSectors', SELECTIONS.selectedSectors);
     await selectMultiOptions(page, 'selectedNgoTypes', SELECTIONS.selectedNgoTypes);
 
-    console.log('Solving captcha...');
-    const captchaImageBase64 = await captureCaptcha(page);
-    const captchaText = await decodeCaptchaText(captchaImageBase64);
-    console.log(`Captcha: ${captchaText}`);
-    await page.fill('#captchaInput', captchaText);
+  console.log('Solving captcha...');
+  const captchaImageBase64 = await captureCaptcha(page);
+  const captchaText = await decodeCaptchaText(captchaImageBase64);
+  console.log(`Captcha: ${captchaText}`);
+  await page.fill('#captchaInput', captchaText);
 
-    await (await page.locator('#commonScrollTo button', { hasText: 'Search' })).click();
-    console.log('Search submitted. Waiting for table...');
+  await (await page.locator('#commonScrollTo button', { hasText: 'Search' })).click();
+  console.log('Search submitted. Waiting for table...');
 
-    await page.waitForSelector('table tbody tr', { timeout: 60000 });
-    const firstPageData = await extractTable(page);
-    
-    writer = createRecordWriter({
-      path: DETAIL_OUTPUT_PATH,
-      selections: SELECTIONS,
-      headers: firstPageData.headers,
-    });
+  await page.waitForSelector('table tbody tr', { timeout: 60000 });
+  let tableData = await extractTable(page);
+  
+  writer = createRecordWriter({
+    path: DETAIL_OUTPUT_PATH,
+    selections: SELECTIONS,
+    headers: tableData.headers,
+  });
 
-    // Process Rows
-    // (Simplified: assuming single page for the test of 5 records)
-    for (let i = 0; i < Math.min(MAX_RECORDS, firstPageData.rows.length); i++) {
-        console.log(`Processing record ${i+1}/${MAX_RECORDS}...`);
-        const summary = normalizeRow(firstPageData.rows[i]);
+    // Process rows across pages
+    while (processedRecords < MAX_RECORDS && tableData.rows.length > 0) {
+      for (let i = 0; i < tableData.rows.length && processedRecords < MAX_RECORDS; i++) {
+        console.log(`Processing record ${processedRecords + 1}/${MAX_RECORDS}...`);
+        const summary = normalizeRow(tableData.rows[i]);
         const detail = await gatherDetailForRow(page, i);
-        
+
         writer.write({
-            index: i + 1,
-            summary,
-            detail
+          index: processedRecords + 1,
+          summary,
+          detail,
         });
         processedRecords++;
+      }
+
+      if (processedRecords >= MAX_RECORDS) break;
+
+      const moved = await goToNextPage(page);
+      if (!moved) break;
+      tableData = await extractTable(page);
     }
 
     const durationMs = Date.now() - startTime;

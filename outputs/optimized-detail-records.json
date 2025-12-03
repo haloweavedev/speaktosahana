@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2025-12-03T05:35:01.558Z",
+  "capturedAt": "2025-12-03T05:41:00.739Z",
   "selections": {
     "selectedState": "Karnataka",
     "selectedDistrict": "BENGALURU URBAN",
@@ -563,11 +563,3520 @@
           }
         }
       }
+    },
+    {
+      "index": 6,
+      "summary": {
+        "serialNumber": "6",
+        "name": "AAFIEA CHARITABLE TRUST",
+        "address": "No 434 MCECHS 1st phase 4th Cross 1st Main, Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+        "sectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Education & Literacy",
+          "Environment & Forests"
+        ],
+        "registration": {
+          "raw": "BOOK-IV/325/2024-25 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "6",
+          "Name of NPO": "AAFIEA CHARITABLE TRUST",
+          "Registration No, District (State)": "BOOK-IV/325/2024-25 BENGALURU URBAN (Karnataka)",
+          "Address": "No 434 MCECHS 1st phase 4th Cross 1st Main, Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+          "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2024/0446646",
+        "darpanRegistrationDate": "05-09-2024",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "BOOK-IV/325/2024-25",
+        "actName": "Indian Trust Act 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "16-07-2024",
+        "address": "No 434 MCECHS 1st phase 4th Cross 1st Main , Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+        "email": "muddassir59@gmail.com",
+        "mobile": "99**78**98",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Education & Literacy",
+          "Environment & Forests"
+        ],
+        "secondarySectors": [
+          "--"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2024/0446646",
+            "DARPAN Registration Date": "05-09-2024"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "BOOK-IV/325/2024-25",
+            "Act name": "Indian Trust Act 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "16-07-2024"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No 434 MCECHS 1st phase 4th Cross 1st Main , Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+            "NPO Contact Email": "muddassir59@gmail.com",
+            "NPO Contact Mobile No.": "99**78**98",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Art & Culture",
+              "Differently Abled",
+              "Education & Literacy",
+              "Environment & Forests"
+            ],
+            "secondarySectors": [
+              "--"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 7,
+      "summary": {
+        "serialNumber": "7",
+        "name": "AAGAMI FOUNDATION",
+        "address": "PLATINUM NO 47, Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+        "sectors": [
+          "Agriculture",
+          "Art & Culture",
+          "Civic Issues",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Labour & Employment",
+          "Panchayati Raj",
+          "Rural Development & Poverty Alleviation",
+          "Scientific & Industrial Research",
+          "Skill Development",
+          "Sports",
+          "Tourism"
+        ],
+        "registration": {
+          "raw": "U88900KA2024NPL183216 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "7",
+          "Name of NPO": "AAGAMI FOUNDATION",
+          "Registration No, District (State)": "U88900KA2024NPL183216 BENGALURU URBAN (Karnataka)",
+          "Address": "PLATINUM NO 47, Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+          "Sectors working in": "Agriculture, Art & Culture, Civic Issues, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Panchayati Raj, Rural Development & Poverty Alleviation, Scientific & Industrial Research, Skill Development, Sports, Tourism"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2024/0385824",
+        "darpanRegistrationDate": "25-01-2024",
+        "registeredWith": "Registrar of Companies",
+        "typeOfNPO": "Section 8 Company",
+        "registrationNo": "U88900KA2024NPL183216",
+        "actName": "Companies Act 2013",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "07-01-2024",
+        "address": "PLATINUM NO 47 , Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+        "email": "suprithbasim@gmail.com",
+        "mobile": "81**50**32",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Agriculture",
+          "Art & Culture",
+          "Civic Issues",
+          "Differently Abled",
+          "Disaster Management"
+        ],
+        "secondarySectors": [
+          "Education & Literacy",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Labour & Employment",
+          "Panchayati Raj",
+          "Rural Development & Poverty Alleviation",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Skill Development"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2024/0385824",
+            "DARPAN Registration Date": "25-01-2024"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Companies",
+            "Type of NPO": "Section 8 Company",
+            "Registration No": "U88900KA2024NPL183216",
+            "Act name": "Companies Act 2013",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "07-01-2024"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "PLATINUM NO 47 , Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+            "NPO Contact Email": "suprithbasim@gmail.com",
+            "NPO Contact Mobile No.": "81**50**32",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Agriculture",
+              "Art & Culture",
+              "Civic Issues",
+              "Differently Abled",
+              "Disaster Management"
+            ],
+            "secondarySectors": [
+              "Education & Literacy",
+              "Environment & Forests",
+              "Health & Family Welfare",
+              "Human Rights",
+              "Labour & Employment",
+              "Panchayati Raj",
+              "Rural Development & Poverty Alleviation",
+              "Scientific & Industrial Research",
+              "Sports",
+              "Tourism",
+              "Skill Development"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 8,
+      "summary": {
+        "serialNumber": "8",
+        "name": "AAHWAHAN FOUNDATION",
+        "address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069, BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+        "sectors": [
+          "Aged/Elderly",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Micro Finance (SHGs)",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "BSG-4-00351/2016-17 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "8",
+          "Name of NPO": "AAHWAHAN FOUNDATION",
+          "Registration No, District (State)": "BSG-4-00351/2016-17 BENGALURU URBAN (Karnataka)",
+          "Address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069, BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+          "Sectors working in": "Aged/Elderly, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Micro Finance (SHGs), Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Sports, Tourism, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2019/0240490",
+        "darpanRegistrationDate": "23-08-2019",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "BSG-4-00351/2016-17",
+        "actName": "INDIAN TRUST ACT-1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "18-02-2017",
+        "address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069 , BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+        "email": "info@aahwahan.com",
+        "mobile": "91**01**04",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues"
+        ],
+        "secondarySectors": [
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Micro Finance (SHGs)",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2019/0240490",
+            "DARPAN Registration Date": "23-08-2019"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "BSG-4-00351/2016-17",
+            "Act name": "INDIAN TRUST ACT-1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "18-02-2017"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069 , BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+            "NPO Contact Email": "info@aahwahan.com",
+            "NPO Contact Mobile No.": "91**01**04",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Art & Culture",
+              "Biotechnology",
+              "Children",
+              "Civic Issues"
+            ],
+            "secondarySectors": [
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Drinking Water",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Environment & Forests",
+              "Food Processing",
+              "Health & Family Welfare",
+              "HIV/AIDS",
+              "Housing",
+              "Human Rights",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Micro Finance (SHGs)",
+              "Minority Issues",
+              "New & Renewable Energy",
+              "Nutrition",
+              "Panchayati Raj",
+              "Rural Development & Poverty Alleviation",
+              "Science & Technology",
+              "Scientific & Industrial Research",
+              "Sports",
+              "Tourism",
+              "Urban Development & Poverty Alleviation",
+              "Vocational Training",
+              "Water Resources",
+              "Women's Development & Empowerment",
+              "Youth Affairs"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 9,
+      "summary": {
+        "serialNumber": "9",
+        "name": "AAKRITII NGO",
+        "address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024, BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+        "sectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Children",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "GAN-4-00052-2024-25 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "9",
+          "Name of NPO": "AAKRITII NGO",
+          "Registration No, District (State)": "GAN-4-00052-2024-25 BENGALURU URBAN (Karnataka)",
+          "Address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024, BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+          "Sectors working in": "Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Children, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, Human Rights, Rural Development & Poverty Alleviation, Science & Technology, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2024/0443432",
+        "darpanRegistrationDate": "21-08-2024",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "GAN-4-00052-2024-25",
+        "actName": "1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "09-08-2024",
+        "address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024 , BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+        "email": "AAKRITIINGO@GMAIL.COM",
+        "mobile": "90**54**24",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Children",
+          "Differently Abled"
+        ],
+        "secondarySectors": [
+          "Disaster Management",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2024/0443432",
+            "DARPAN Registration Date": "21-08-2024"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "GAN-4-00052-2024-25",
+            "Act name": "1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "09-08-2024"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024 , BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+            "NPO Contact Email": "AAKRITIINGO@GMAIL.COM",
+            "NPO Contact Mobile No.": "90**54**24",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Agriculture",
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Art & Culture",
+              "Children",
+              "Differently Abled"
+            ],
+            "secondarySectors": [
+              "Disaster Management",
+              "Education & Literacy",
+              "Environment & Forests",
+              "Food Processing",
+              "Health & Family Welfare",
+              "Human Rights",
+              "Rural Development & Poverty Alleviation",
+              "Science & Technology",
+              "Sports",
+              "Tourism",
+              "Tribal Affairs",
+              "Urban Development & Poverty Alleviation",
+              "Water Resources",
+              "Women's Development & Empowerment",
+              "Youth Affairs"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 10,
+      "summary": {
+        "serialNumber": "10",
+        "name": "AAMANTRAN WELFARE ASSOCIATION TRUST",
+        "address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036, Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+        "sectors": [
+          "Aged/Elderly",
+          "Children",
+          "Differently Abled",
+          "Education & Literacy",
+          "Religious"
+        ],
+        "registration": {
+          "raw": "KRI-4-00244-2022-23 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "10",
+          "Name of NPO": "AAMANTRAN WELFARE ASSOCIATION TRUST",
+          "Registration No, District (State)": "KRI-4-00244-2022-23 BENGALURU URBAN (Karnataka)",
+          "Address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036, Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+          "Sectors working in": "Aged/Elderly, Children, Differently Abled, Education & Literacy, Religious"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0758697",
+        "darpanRegistrationDate": "02-08-2025",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "KRI-4-00244-2022-23",
+        "actName": "The Charitable and Religious Trust Act, 1920",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "20-08-2022",
+        "address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036 , Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+        "email": "aamantran2022@gmail.com",
+        "mobile": "98**20**50",
+        "website": "https://ngodarpan.gov.in/www.aamantran.co.in",
+        "officeBearers": [],
+        "primarySectors": [
+          "Children",
+          "Differently Abled",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Religious"
+        ],
+        "secondarySectors": [
+          "--"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0758697",
+            "DARPAN Registration Date": "02-08-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "KRI-4-00244-2022-23",
+            "Act name": "The Charitable and Religious Trust Act, 1920",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "20-08-2022"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036 , Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+            "NPO Contact Email": "aamantran2022@gmail.com",
+            "NPO Contact Mobile No.": "98**20**50",
+            "Website Url": "https://ngodarpan.gov.in/www.aamantran.co.in"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Children",
+              "Differently Abled",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Religious"
+            ],
+            "secondarySectors": [
+              "--"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 11,
+      "summary": {
+        "serialNumber": "11",
+        "name": "A Hundred Hands",
+        "address": "4 Ashley Road Off MG Road Bangalore 560025, bangalore, BENGALURU URBAN (Karnataka) - 560025",
+        "sectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Rural Development & Poverty Alleviation",
+          "Tourism",
+          "Tribal Affairs",
+          "Vocational Training"
+        ],
+        "registration": {
+          "raw": "IN KA275887416941221 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "11",
+          "Name of NPO": "A Hundred Hands",
+          "Registration No, District (State)": "IN KA275887416941221 BENGALURU URBAN (Karnataka)",
+          "Address": "4 Ashley Road Off MG Road Bangalore 560025, bangalore, BENGALURU URBAN (Karnataka) - 560025",
+          "Sectors working in": "Art & Culture, Differently Abled, Rural Development & Poverty Alleviation, Tourism, Tribal Affairs, Vocational Training"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2022/0306954",
+        "darpanRegistrationDate": "01-03-2022",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "SHV-4-00646-2018-19 -SHVD334",
+        "actName": "Karnataka state Registration and stamps Department",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "05-02-2019",
+        "address": "RF-503, Purva Riviera Marathahalli Bengaluru-560037 KARNATAKA, INDIA , bangalore, BENGALURU URBAN (Karnataka) - 560037",
+        "email": "aarambhinclusion@gmail.com",
+        "mobile": "96**19**20",
+        "website": "https://aarambhfoundation.com/",
+        "officeBearers": [],
+        "primarySectors": [
+          "Children",
+          "Differently Abled",
+          "Skill Development"
+        ],
+        "secondarySectors": [
+          "--"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2022/0306954",
+            "DARPAN Registration Date": "01-03-2022"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "SHV-4-00646-2018-19 -SHVD334",
+            "Act name": "Karnataka state Registration and stamps Department",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "05-02-2019"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "RF-503, Purva Riviera Marathahalli Bengaluru-560037 KARNATAKA, INDIA , bangalore, BENGALURU URBAN (Karnataka) - 560037",
+            "NPO Contact Email": "aarambhinclusion@gmail.com",
+            "NPO Contact Mobile No.": "96**19**20",
+            "Website Url": "https://aarambhfoundation.com/"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Children",
+              "Differently Abled",
+              "Skill Development"
+            ],
+            "secondarySectors": [
+              "--"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 12,
+      "summary": {
+        "serialNumber": "12",
+        "name": "A R N GROWTH CHARITABLE TRUST",
+        "address": "# 50/51 2nd Main Behind Maruthi Vidyalaya Balaji Layout Kalyan Nagar Post Bangalore 560043, Bengaluru East, BENGALURU URBAN (Karnataka) - 560043",
+        "sectors": [
+          "Aged/Elderly",
+          "Agriculture",
+          "Art & Culture",
+          "Children",
+          "Differently Abled",
+          "Drinking Water",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Labour & Employment",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Rural Development & Poverty Alleviation",
+          "Skill Development",
+          "Tribal Affairs",
+          "Vocational Training",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "KRI-4-00539-2025-26 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "12",
+          "Name of NPO": "A R N GROWTH CHARITABLE TRUST",
+          "Registration No, District (State)": "KRI-4-00539-2025-26 BENGALURU URBAN (Karnataka)",
+          "Address": "# 50/51 2nd Main Behind Maruthi Vidyalaya Balaji Layout Kalyan Nagar Post Bangalore 560043, Bengaluru East, BENGALURU URBAN (Karnataka) - 560043",
+          "Sectors working in": "Aged/Elderly, Agriculture, Art & Culture, Children, Differently Abled, Drinking Water, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Nutrition, Panchayati Raj, Prisoner's Issues, Rural Development & Poverty Alleviation, Skill Development, Tribal Affairs, Vocational Training, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0724569",
+        "darpanRegistrationDate": "09-09-2025",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "BSK-04-504-2019-20",
+        "actName": "The Income Tax Act, 1961",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "12-03-2020",
+        "address": "no. 2, Muneshwaranagar, kerekodi main Road, Hosakerehalli, BSK 3rd Stage, Bangalore , Bengaluru South, BENGALURU URBAN (Karnataka) - 560085",
+        "email": "aarnaaayufoundation@gmail.com",
+        "mobile": "94**26**43",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Aged/Elderly",
+          "Health & Family Welfare"
+        ],
+        "secondarySectors": [
+          "Differently Abled"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0724569",
+            "DARPAN Registration Date": "09-09-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "BSK-04-504-2019-20",
+            "Act name": "The Income Tax Act, 1961",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "12-03-2020"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "no. 2, Muneshwaranagar, kerekodi main Road, Hosakerehalli, BSK 3rd Stage, Bangalore , Bengaluru South, BENGALURU URBAN (Karnataka) - 560085",
+            "NPO Contact Email": "aarnaaayufoundation@gmail.com",
+            "NPO Contact Mobile No.": "94**26**43",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Aged/Elderly",
+              "Health & Family Welfare"
+            ],
+            "secondarySectors": [
+              "Differently Abled"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 13,
+      "summary": {
+        "serialNumber": "13",
+        "name": "A2Z Foundation Trust",
+        "address": "No 30, 1st floor, 8th main, RPC layout , vijayanagar, bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560040",
+        "sectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Micro Small & Medium Enterprises",
+          "Skill Development",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "VJN-04-00382-2021-22 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "13",
+          "Name of NPO": "A2Z Foundation Trust",
+          "Registration No, District (State)": "VJN-04-00382-2021-22 BENGALURU URBAN (Karnataka)",
+          "Address": "No 30, 1st floor, 8th main, RPC layout , vijayanagar, bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560040",
+          "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests, Food Processing, Micro Small & Medium Enterprises, Skill Development, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0678885",
+        "darpanRegistrationDate": "13-06-2025",
+        "registeredWith": "Registrar of Societies",
+        "typeOfNPO": "Society",
+        "registrationNo": "DRB4/SOR/19/2025-2026",
+        "actName": "The Karnataka Societies Registration Act, 1960",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "05-05-2025",
+        "address": "No. 122/16, Unit No. F-5, Monarch chambers, Infantry Road, Bengaluru , Bengaluru North, BENGALURU URBAN (Karnataka) - 560001",
+        "email": "mohammedrayeed.3182@gmail.com",
+        "mobile": "63**26**84",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Children",
+          "Civic Issues",
+          "Differently Abled",
+          "Nutrition",
+          "Youth Affairs"
+        ],
+        "secondarySectors": [
+          "Disaster Management",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Human Rights",
+          "Women's Development & Empowerment",
+          "Skill Development"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0678885",
+            "DARPAN Registration Date": "13-06-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Societies",
+            "Type of NPO": "Society",
+            "Registration No": "DRB4/SOR/19/2025-2026",
+            "Act name": "The Karnataka Societies Registration Act, 1960",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "05-05-2025"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No. 122/16, Unit No. F-5, Monarch chambers, Infantry Road, Bengaluru , Bengaluru North, BENGALURU URBAN (Karnataka) - 560001",
+            "NPO Contact Email": "mohammedrayeed.3182@gmail.com",
+            "NPO Contact Mobile No.": "63**26**84",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Children",
+              "Civic Issues",
+              "Differently Abled",
+              "Nutrition",
+              "Youth Affairs"
+            ],
+            "secondarySectors": [
+              "Disaster Management",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Human Rights",
+              "Women's Development & Empowerment",
+              "Skill Development"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 14,
+      "summary": {
+        "serialNumber": "14",
+        "name": "Aadhana education foundation",
+        "address": "#569, 2nd Cross, 3rd Stage, 1st Block Basaveshwarnagar, Bengaluru North, BENGALURU URBAN (Karnataka) - 560079",
+        "sectors": [
+          "Aged/Elderly",
+          "Children",
+          "Differently Abled",
+          "Drinking Water",
+          "Education & Literacy",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Labour & Employment",
+          "Nutrition",
+          "Rural Development & Poverty Alleviation"
+        ],
+        "registration": {
+          "raw": "U88900KA2025NPL198836 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "14",
+          "Name of NPO": "Aadhana education foundation",
+          "Registration No, District (State)": "U88900KA2025NPL198836 BENGALURU URBAN (Karnataka)",
+          "Address": "#569, 2nd Cross, 3rd Stage, 1st Block Basaveshwarnagar, Bengaluru North, BENGALURU URBAN (Karnataka) - 560079",
+          "Sectors working in": "Aged/Elderly, Children, Differently Abled, Drinking Water, Education & Literacy, Health & Family Welfare, Human Rights, Labour & Employment, Nutrition, Rural Development & Poverty Alleviation"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0872059",
+        "darpanRegistrationDate": "06-11-2025",
+        "registeredWith": "Registrar of Cooperative Societies",
+        "typeOfNPO": "Trust",
+        "registrationNo": "BNG-U-JNR-611-2025-26-IV",
+        "actName": "The Public Trust Act, 1950",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "23-10-2025",
+        "address": "No 460, 14th cross, 1st main Balaji Layout, Raghuvanahalli Kanakapura road, Bangalore-560061 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560061",
+        "email": "shankaragboss475@gmail.com",
+        "mobile": "79**94**45",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Differently Abled"
+        ],
+        "secondarySectors": [
+          "Education & Literacy",
+          "Skill Development"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0872059",
+            "DARPAN Registration Date": "06-11-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Cooperative Societies",
+            "Type of NPO": "Trust",
+            "Registration No": "BNG-U-JNR-611-2025-26-IV",
+            "Act name": "The Public Trust Act, 1950",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "23-10-2025"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No 460, 14th cross, 1st main Balaji Layout, Raghuvanahalli Kanakapura road, Bangalore-560061 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560061",
+            "NPO Contact Email": "shankaragboss475@gmail.com",
+            "NPO Contact Mobile No.": "79**94**45",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Differently Abled"
+            ],
+            "secondarySectors": [
+              "Education & Literacy",
+              "Skill Development"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 15,
+      "summary": {
+        "serialNumber": "15",
+        "name": "AADHYA CHARITABLE FOUNDATION",
+        "address": "K. NO. 515, HENUR VILLAGE BANGALORE Bangalore KA 560043 IN, BANGALORE, BENGALURU URBAN (Karnataka) - 560043",
+        "sectors": [
+          "Children",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Nutrition",
+          "Rural Development & Poverty Alleviation",
+          "Skill Development",
+          "Tribal Affairs",
+          "Water Resources",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "156897 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "15",
+          "Name of NPO": "AADHYA CHARITABLE FOUNDATION",
+          "Registration No, District (State)": "156897 BENGALURU URBAN (Karnataka)",
+          "Address": "K. NO. 515, HENUR VILLAGE BANGALORE Bangalore KA 560043 IN, BANGALORE, BENGALURU URBAN (Karnataka) - 560043",
+          "Sectors working in": "Children, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Health & Family Welfare, Nutrition, Rural Development & Poverty Alleviation, Skill Development, Tribal Affairs, Water Resources, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0753703",
+        "darpanRegistrationDate": "20-11-2025",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "BNG/BSK/19/2017/18",
+        "actName": "The Indian Trusts Act, 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "06-04-2017",
+        "address": "# 3913 1st Floor 12th Main Road 16th Cross Kumaraswamy layout Bengaluru 560111 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560111",
+        "email": "7899799514sa@gmail.com",
+        "mobile": "91**12**55",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Aged/Elderly",
+          "Animal Welfare"
+        ],
+        "secondarySectors": [
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs",
+          "Skill Development",
+          "Religious"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU RURAL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0753703",
+            "DARPAN Registration Date": "20-11-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "BNG/BSK/19/2017/18",
+            "Act name": "The Indian Trusts Act, 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "06-04-2017"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "# 3913 1st Floor 12th Main Road 16th Cross Kumaraswamy layout Bengaluru 560111 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560111",
+            "NPO Contact Email": "7899799514sa@gmail.com",
+            "NPO Contact Mobile No.": "91**12**55",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Agriculture",
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Aged/Elderly",
+              "Animal Welfare"
+            ],
+            "secondarySectors": [
+              "Art & Culture",
+              "Biotechnology",
+              "Children",
+              "Civic Issues",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Drinking Water",
+              "Education & Literacy",
+              "Environment & Forests",
+              "Food Processing",
+              "Health & Family Welfare",
+              "HIV/AIDS",
+              "Housing",
+              "Human Rights",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Land Resources",
+              "Legal Awareness & Aid",
+              "Micro Finance (SHGs)",
+              "Micro Small & Medium Enterprises",
+              "Minority Issues",
+              "New & Renewable Energy",
+              "Nutrition",
+              "Panchayati Raj",
+              "Prisoner's Issues",
+              "Right to Information & Advocacy",
+              "Rural Development & Poverty Alleviation",
+              "Science & Technology",
+              "Scientific & Industrial Research",
+              "Sports",
+              "Tourism",
+              "Tribal Affairs",
+              "Urban Development & Poverty Alleviation",
+              "Vocational Training",
+              "Water Resources",
+              "Women's Development & Empowerment",
+              "Youth Affairs",
+              "Skill Development",
+              "Religious"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU RURAL"
+          }
+        }
+      }
+    },
+    {
+      "index": 16,
+      "summary": {
+        "serialNumber": "16",
+        "name": "AAFIEA CHARITABLE TRUST",
+        "address": "No 434 MCECHS 1st phase 4th Cross 1st Main, Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+        "sectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Education & Literacy",
+          "Environment & Forests"
+        ],
+        "registration": {
+          "raw": "BOOK-IV/325/2024-25 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "16",
+          "Name of NPO": "AAFIEA CHARITABLE TRUST",
+          "Registration No, District (State)": "BOOK-IV/325/2024-25 BENGALURU URBAN (Karnataka)",
+          "Address": "No 434 MCECHS 1st phase 4th Cross 1st Main, Bangalore, BENGALURU URBAN (Karnataka) - 560077",
+          "Sectors working in": "Art & Culture, Differently Abled, Education & Literacy, Environment & Forests"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2020/0261075",
+        "darpanRegistrationDate": "27-07-2020",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "INR-4-00098-2020-21",
+        "actName": "The Indian Trusts Act, 1882.",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "22-06-2020",
+        "address": "No 27th, 5th Cross, 2nd Main, Gowthamapuram, Halasuru, Bengaluru 560008 , Bengaluru, BENGALURU URBAN (Karnataka) - 560009",
+        "email": "asset.ngo@yahoo.com",
+        "mobile": "97**88**53",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children"
+        ],
+        "secondarySectors": [
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2020/0261075",
+            "DARPAN Registration Date": "27-07-2020"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "INR-4-00098-2020-21",
+            "Act name": "The Indian Trusts Act, 1882.",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "22-06-2020"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No 27th, 5th Cross, 2nd Main, Gowthamapuram, Halasuru, Bengaluru 560008 , Bengaluru, BENGALURU URBAN (Karnataka) - 560009",
+            "NPO Contact Email": "asset.ngo@yahoo.com",
+            "NPO Contact Mobile No.": "97**88**53",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Agriculture",
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Art & Culture",
+              "Biotechnology",
+              "Children"
+            ],
+            "secondarySectors": [
+              "Civic Issues",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Drinking Water",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Environment & Forests",
+              "Food Processing",
+              "Health & Family Welfare",
+              "HIV/AIDS",
+              "Housing",
+              "Human Rights",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Land Resources",
+              "Legal Awareness & Aid",
+              "Micro Finance (SHGs)",
+              "Micro Small & Medium Enterprises",
+              "Minority Issues",
+              "New & Renewable Energy",
+              "Nutrition",
+              "Panchayati Raj",
+              "Prisoner's Issues",
+              "Right to Information & Advocacy",
+              "Rural Development & Poverty Alleviation",
+              "Science & Technology",
+              "Scientific & Industrial Research",
+              "Sports",
+              "Tourism",
+              "Tribal Affairs",
+              "Urban Development & Poverty Alleviation",
+              "Vocational Training",
+              "Water Resources",
+              "Women's Development & Empowerment"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 17,
+      "summary": {
+        "serialNumber": "17",
+        "name": "AAGAMI FOUNDATION",
+        "address": "PLATINUM NO 47, Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+        "sectors": [
+          "Agriculture",
+          "Art & Culture",
+          "Civic Issues",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Labour & Employment",
+          "Panchayati Raj",
+          "Rural Development & Poverty Alleviation",
+          "Scientific & Industrial Research",
+          "Skill Development",
+          "Sports",
+          "Tourism"
+        ],
+        "registration": {
+          "raw": "U88900KA2024NPL183216 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "17",
+          "Name of NPO": "AAGAMI FOUNDATION",
+          "Registration No, District (State)": "U88900KA2024NPL183216 BENGALURU URBAN (Karnataka)",
+          "Address": "PLATINUM NO 47, Bengaluru, BENGALURU URBAN (Karnataka) - 560022",
+          "Sectors working in": "Agriculture, Art & Culture, Civic Issues, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Health & Family Welfare, Human Rights, Labour & Employment, Panchayati Raj, Rural Development & Poverty Alleviation, Scientific & Industrial Research, Skill Development, Sports, Tourism"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0846485",
+        "darpanRegistrationDate": "08-10-2025",
+        "registeredWith": "Registrar of Companies",
+        "typeOfNPO": "Section 8 Company",
+        "registrationNo": "U88900KA2025NPL208759",
+        "actName": "The Charitable and Religious Trust Act, 1920",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "19-09-2025",
+        "address": "no 16 2nd cross chikka Audugodi Bangalore-560029 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560029",
+        "email": "aashrayafoundation07@gmail.com",
+        "mobile": "99**16**46",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Children",
+          "Differently Abled",
+          "Education & Literacy",
+          "HIV/AIDS"
+        ],
+        "secondarySectors": [
+          "Agriculture",
+          "Art & Culture",
+          "Biotechnology",
+          "Dalit Upliftment",
+          "Women's Development & Empowerment",
+          "Skill Development"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0846485",
+            "DARPAN Registration Date": "08-10-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Companies",
+            "Type of NPO": "Section 8 Company",
+            "Registration No": "U88900KA2025NPL208759",
+            "Act name": "The Charitable and Religious Trust Act, 1920",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "19-09-2025"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "no 16 2nd cross chikka Audugodi Bangalore-560029 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560029",
+            "NPO Contact Email": "aashrayafoundation07@gmail.com",
+            "NPO Contact Mobile No.": "99**16**46",
+            "Website Url": "--"
+          },
+          "Details of Achievements": {
+            "Year": "2025",
+            "Working Sector": "Women's Development & Empowerment",
+            "Achievement": "WOMEN AND CHILLDRENS SAFTY PROGRAM CONDUCTED",
+            "Best Practices": "WOMEN AND CHILLDRENS SAFTY PROGRAM CONDUCTED"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Children",
+              "Differently Abled",
+              "Education & Literacy",
+              "HIV/AIDS"
+            ],
+            "secondarySectors": [
+              "Agriculture",
+              "Art & Culture",
+              "Biotechnology",
+              "Dalit Upliftment",
+              "Women's Development & Empowerment",
+              "Skill Development"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 18,
+      "summary": {
+        "serialNumber": "18",
+        "name": "AAHWAHAN FOUNDATION",
+        "address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069, BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+        "sectors": [
+          "Aged/Elderly",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Micro Finance (SHGs)",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "BSG-4-00351/2016-17 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "18",
+          "Name of NPO": "AAHWAHAN FOUNDATION",
+          "Registration No, District (State)": "BSG-4-00351/2016-17 BENGALURU URBAN (Karnataka)",
+          "Address": "No.40, South End Main Road, Jayanagar 9th Block, Bangalore-560069, BANGALORE, BENGALURU URBAN (Karnataka) - 560069",
+          "Sectors working in": "Aged/Elderly, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Micro Finance (SHGs), Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Sports, Tourism, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2021/0286895",
+        "darpanRegistrationDate": "01-07-2021",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "210/19-20",
+        "actName": "Indian Trusts Act, 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "27-05-2021",
+        "address": "NO 192 OPP ISKCON WEST OF CHORD ROAD MAHALAKSHMI LAYOUT BANGALORE , Bangalore, BENGALURU URBAN (Karnataka) - 560086",
+        "email": "info@abaran.in",
+        "mobile": "98**07**97",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Differently Abled",
+          "Disaster Management"
+        ],
+        "secondarySectors": [
+          "Education & Literacy",
+          "Environment & Forests",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Women's Development & Empowerment"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2021/0286895",
+            "DARPAN Registration Date": "01-07-2021"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "210/19-20",
+            "Act name": "Indian Trusts Act, 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "27-05-2021"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "NO 192 OPP ISKCON WEST OF CHORD ROAD MAHALAKSHMI LAYOUT BANGALORE , Bangalore, BENGALURU URBAN (Karnataka) - 560086",
+            "NPO Contact Email": "info@abaran.in",
+            "NPO Contact Mobile No.": "98**07**97",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Art & Culture",
+              "Biotechnology",
+              "Children",
+              "Differently Abled",
+              "Disaster Management"
+            ],
+            "secondarySectors": [
+              "Education & Literacy",
+              "Environment & Forests",
+              "Rural Development & Poverty Alleviation",
+              "Science & Technology",
+              "Scientific & Industrial Research",
+              "Women's Development & Empowerment"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 19,
+      "summary": {
+        "serialNumber": "19",
+        "name": "AAKRITII NGO",
+        "address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024, BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+        "sectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Children",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "Human Rights",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "GAN-4-00052-2024-25 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "19",
+          "Name of NPO": "AAKRITII NGO",
+          "Registration No, District (State)": "GAN-4-00052-2024-25 BENGALURU URBAN (Karnataka)",
+          "Address": "31, 2nd Main Rd, Venkatagowda Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024, BENGALURU, BENGALURU URBAN (Karnataka) - 560024",
+          "Sectors working in": "Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Children, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, Human Rights, Rural Development & Poverty Alleviation, Science & Technology, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0586358",
+        "darpanRegistrationDate": "10-04-2025",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "IV-237",
+        "actName": "The Indian Trusts Act, 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "03-12-2008",
+        "address": "Calvin Theological College and Seminary, Kyalasanahalli, Kothanur P O, , Bengaluru East, BENGALURU URBAN (Karnataka) - 560077",
+        "email": "samsondevadas12@gmail.com",
+        "mobile": "98**17**82",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Children",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Health & Family Welfare",
+          "Urban Development & Poverty Alleviation"
+        ],
+        "secondarySectors": [
+          "Differently Abled",
+          "Housing",
+          "Minority Issues",
+          "Vocational Training",
+          "Youth Affairs"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0586358",
+            "DARPAN Registration Date": "10-04-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "IV-237",
+            "Act name": "The Indian Trusts Act, 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "03-12-2008"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "Calvin Theological College and Seminary, Kyalasanahalli, Kothanur P O, , Bengaluru East, BENGALURU URBAN (Karnataka) - 560077",
+            "NPO Contact Email": "samsondevadas12@gmail.com",
+            "NPO Contact Mobile No.": "98**17**82",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Children",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Health & Family Welfare",
+              "Urban Development & Poverty Alleviation"
+            ],
+            "secondarySectors": [
+              "Differently Abled",
+              "Housing",
+              "Minority Issues",
+              "Vocational Training",
+              "Youth Affairs"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 20,
+      "summary": {
+        "serialNumber": "20",
+        "name": "AAMANTRAN WELFARE ASSOCIATION TRUST",
+        "address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036, Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+        "sectors": [
+          "Aged/Elderly",
+          "Children",
+          "Differently Abled",
+          "Education & Literacy",
+          "Religious"
+        ],
+        "registration": {
+          "raw": "KRI-4-00244-2022-23 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "20",
+          "Name of NPO": "AAMANTRAN WELFARE ASSOCIATION TRUST",
+          "Registration No, District (State)": "KRI-4-00244-2022-23 BENGALURU URBAN (Karnataka)",
+          "Address": "Ground Floor, # 19, 4th A Cross, Lakshmipura Layout, Baavanapura Main Road, KR Puram, Bangaluru - 560036, Bengaluru East, BENGALURU URBAN (Karnataka) - 560049",
+          "Sectors working in": "Aged/Elderly, Children, Differently Abled, Education & Literacy, Religious"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2018/0206345",
+        "darpanRegistrationDate": "03-09-2018",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "IV-436/95-96",
+        "actName": "INDIAN TRUST ACT, 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "28-08-1995",
+        "address": "69 10TH MAIN 2ND STG MARENAHALLI BINNY LAYOUT VIJAYANAGAR BENGALURU , BENGALURU, BENGALURU URBAN (Karnataka) - 560040",
+        "email": "contact@akftrust.org",
+        "mobile": "98**00**00",
+        "website": "https://www.akftrust.org/",
+        "officeBearers": [],
+        "primarySectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children"
+        ],
+        "secondarySectors": [
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Food Processing",
+          "Health & Family Welfare",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Minority Issues",
+          "Nutrition",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2018/0206345",
+            "DARPAN Registration Date": "03-09-2018"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "IV-436/95-96",
+            "Act name": "INDIAN TRUST ACT, 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "28-08-1995"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "69 10TH MAIN 2ND STG MARENAHALLI BINNY LAYOUT VIJAYANAGAR BENGALURU , BENGALURU, BENGALURU URBAN (Karnataka) - 560040",
+            "NPO Contact Email": "contact@akftrust.org",
+            "NPO Contact Mobile No.": "98**00**00",
+            "Website Url": "https://www.akftrust.org/"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Agriculture",
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Art & Culture",
+              "Biotechnology",
+              "Children"
+            ],
+            "secondarySectors": [
+              "Civic Issues",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Drinking Water",
+              "Education & Literacy",
+              "Food Processing",
+              "Health & Family Welfare",
+              "Housing",
+              "Human Rights",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Land Resources",
+              "Minority Issues",
+              "Nutrition",
+              "Urban Development & Poverty Alleviation",
+              "Vocational Training",
+              "Women's Development & Empowerment",
+              "Youth Affairs"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 21,
+      "summary": {
+        "serialNumber": "21",
+        "name": "Aarambh Foundation",
+        "address": "RF-503, Purva Riviera Marathahalli Bengaluru-560037 KARNATAKA, INDIA, bangalore, BENGALURU URBAN (Karnataka) - 560037",
+        "sectors": [
+          "Children",
+          "Differently Abled",
+          "Skill Development"
+        ],
+        "registration": {
+          "raw": "SHV-4-00646-2018-19 -SHVD334 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "21",
+          "Name of NPO": "Aarambh Foundation",
+          "Registration No, District (State)": "SHV-4-00646-2018-19 -SHVD334 BENGALURU URBAN (Karnataka)",
+          "Address": "RF-503, Purva Riviera Marathahalli Bengaluru-560037 KARNATAKA, INDIA, bangalore, BENGALURU URBAN (Karnataka) - 560037",
+          "Sectors working in": "Children, Differently Abled, Skill Development"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2017/0175314",
+        "darpanRegistrationDate": "27-11-2017",
+        "registeredWith": "Registrar of Companies",
+        "typeOfNPO": "Section 8 Company",
+        "registrationNo": "U30007KA2007PTC043253",
+        "actName": "Indian Companies Act 1956",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "27-06-2007",
+        "address": "69 10TH MAIN 2ND STG MARENAHALLI BINNY LAYOUT VIJAYANAGAR BENGALURU , BENGALURU, BENGALURU URBAN (Karnataka) - 560040",
+        "email": "aktpl.2012@gmail.com",
+        "mobile": "82**39**51",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children"
+        ],
+        "secondarySectors": [
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2017/0175314",
+            "DARPAN Registration Date": "27-11-2017"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Companies",
+            "Type of NPO": "Section 8 Company",
+            "Registration No": "U30007KA2007PTC043253",
+            "Act name": "Indian Companies Act 1956",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "27-06-2007"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "69 10TH MAIN 2ND STG MARENAHALLI BINNY LAYOUT VIJAYANAGAR BENGALURU , BENGALURU, BENGALURU URBAN (Karnataka) - 560040",
+            "NPO Contact Email": "aktpl.2012@gmail.com",
+            "NPO Contact Mobile No.": "82**39**51",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Agriculture",
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Art & Culture",
+              "Biotechnology",
+              "Children"
+            ],
+            "secondarySectors": [
+              "Civic Issues",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Drinking Water",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Environment & Forests",
+              "Food Processing",
+              "Health & Family Welfare",
+              "HIV/AIDS",
+              "Housing",
+              "Human Rights",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Land Resources",
+              "Legal Awareness & Aid",
+              "Micro Finance (SHGs)",
+              "Micro Small & Medium Enterprises",
+              "Minority Issues",
+              "New & Renewable Energy",
+              "Nutrition",
+              "Panchayati Raj",
+              "Prisoner's Issues",
+              "Right to Information & Advocacy",
+              "Rural Development & Poverty Alleviation",
+              "Science & Technology",
+              "Scientific & Industrial Research",
+              "Sports",
+              "Tourism",
+              "Tribal Affairs",
+              "Urban Development & Poverty Alleviation",
+              "Vocational Training",
+              "Water Resources",
+              "Women's Development & Empowerment",
+              "Youth Affairs"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 22,
+      "summary": {
+        "serialNumber": "22",
+        "name": "AARNA AAYU FOUNDATION",
+        "address": "no. 2, Muneshwaranagar, kerekodi main Road, Hosakerehalli, BSK 3rd Stage, Bangalore, Bengaluru South, BENGALURU URBAN (Karnataka) - 560085",
+        "sectors": [
+          "Aged/Elderly",
+          "Differently Abled",
+          "Health & Family Welfare"
+        ],
+        "registration": {
+          "raw": "BSK-04-504-2019-20 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "22",
+          "Name of NPO": "AARNA AAYU FOUNDATION",
+          "Registration No, District (State)": "BSK-04-504-2019-20 BENGALURU URBAN (Karnataka)",
+          "Address": "no. 2, Muneshwaranagar, kerekodi main Road, Hosakerehalli, BSK 3rd Stage, Bangalore, Bengaluru South, BENGALURU URBAN (Karnataka) - 560085",
+          "Sectors working in": "Aged/Elderly, Differently Abled, Health & Family Welfare"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0615473",
+        "darpanRegistrationDate": "02-05-2025",
+        "registeredWith": "Registrar of Companies",
+        "typeOfNPO": "Section 8 Company",
+        "registrationNo": "U88900KA2025NPL201664",
+        "actName": "The Companies Act 2013 – As a non-profit company under section 8 of Companies Act. (previously The Indian Companies Act (section 25) 1956",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "21-04-2025",
+        "address": "NO 80, K NO 126/537/80.10, KAMMANAHALLI VILLAGE, Begur, Bangalore South, Bangalore- 560068, Karnataka , Bengaluru South, BENGALURU URBAN (Karnataka) - 560068",
+        "email": "kashyapmjani@gmail.com",
+        "mobile": "98**35**01",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Art & Culture",
+          "Children",
+          "Drinking Water",
+          "Education & Literacy",
+          "Health & Family Welfare"
+        ],
+        "secondarySectors": [
+          "Agriculture",
+          "Biotechnology",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Aged/Elderly",
+          "Environment & Forests",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Animal Welfare"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0615473",
+            "DARPAN Registration Date": "02-05-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Companies",
+            "Type of NPO": "Section 8 Company",
+            "Registration No": "U88900KA2025NPL201664",
+            "Act name": "The Companies Act 2013 – As a non-profit company under section 8 of Companies Act. (previously The Indian Companies Act (section 25) 1956",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "21-04-2025"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "NO 80, K NO 126/537/80.10, KAMMANAHALLI VILLAGE, Begur, Bangalore South, Bangalore- 560068, Karnataka , Bengaluru South, BENGALURU URBAN (Karnataka) - 560068",
+            "NPO Contact Email": "kashyapmjani@gmail.com",
+            "NPO Contact Mobile No.": "98**35**01",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Art & Culture",
+              "Children",
+              "Drinking Water",
+              "Education & Literacy",
+              "Health & Family Welfare"
+            ],
+            "secondarySectors": [
+              "Agriculture",
+              "Biotechnology",
+              "Civic Issues",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Aged/Elderly",
+              "Environment & Forests",
+              "Housing",
+              "Human Rights",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Land Resources",
+              "Legal Awareness & Aid",
+              "Animal Welfare"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 23,
+      "summary": {
+        "serialNumber": "23",
+        "name": "Aarohana Foundation",
+        "address": "No. 122/16, Unit No. F-5, Monarch chambers, Infantry Road, Bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560001",
+        "sectors": [
+          "Aged/Elderly",
+          "Children",
+          "Civic Issues",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Human Rights",
+          "Nutrition",
+          "Skill Development",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "DRB4/SOR/19/2025-2026 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "23",
+          "Name of NPO": "Aarohana Foundation",
+          "Registration No, District (State)": "DRB4/SOR/19/2025-2026 BENGALURU URBAN (Karnataka)",
+          "Address": "No. 122/16, Unit No. F-5, Monarch chambers, Infantry Road, Bengaluru, Bengaluru North, BENGALURU URBAN (Karnataka) - 560001",
+          "Sectors working in": "Aged/Elderly, Children, Civic Issues, Differently Abled, Disaster Management, Education & Literacy, Human Rights, Nutrition, Skill Development, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0848595",
+        "darpanRegistrationDate": "16-10-2025",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "107/90-91",
+        "actName": "The Indian Trusts Act, 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "23-06-1990",
+        "address": "TARAKA, No170/A, 10 th main, RMV Extension, Opp to BWSSB water tank, Sadashivanagar, Bengaluru 560080 , Bengaluru North, BENGALURU URBAN (Karnataka) - 560080",
+        "email": "abhyudayaedutrust@gmail.com",
+        "mobile": "80**83**49",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Education & Literacy"
+        ],
+        "secondarySectors": [
+          "Differently Abled",
+          "Aged/Elderly"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0848595",
+            "DARPAN Registration Date": "16-10-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "107/90-91",
+            "Act name": "The Indian Trusts Act, 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "23-06-1990"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "TARAKA, No170/A, 10 th main, RMV Extension, Opp to BWSSB water tank, Sadashivanagar, Bengaluru 560080 , Bengaluru North, BENGALURU URBAN (Karnataka) - 560080",
+            "NPO Contact Email": "abhyudayaedutrust@gmail.com",
+            "NPO Contact Mobile No.": "80**83**49",
+            "Website Url": "--"
+          },
+          "Details of Achievements": {
+            "Year": "2024",
+            "Working Sector": "Civic Issues",
+            "Achievement": "created awareness regarding civic issues among the citizens",
+            "Best Practices": "traffic issues, cleaniness of surroundings, and others"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Education & Literacy"
+            ],
+            "secondarySectors": [
+              "Differently Abled",
+              "Aged/Elderly"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 24,
+      "summary": {
+        "serialNumber": "24",
+        "name": "AAROHITA LEARNING CENTER EDUCATIONAL TRUST",
+        "address": "No 460, 14th cross, 1st main Balaji Layout, Raghuvanahalli Kanakapura road, Bangalore-560061, Bengaluru South, BENGALURU URBAN (Karnataka) - 560061",
+        "sectors": [
+          "Differently Abled",
+          "Education & Literacy",
+          "Skill Development"
+        ],
+        "registration": {
+          "raw": "BNG-U-JNR-611-2025-26-IV BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "24",
+          "Name of NPO": "AAROHITA LEARNING CENTER EDUCATIONAL TRUST",
+          "Registration No, District (State)": "BNG-U-JNR-611-2025-26-IV BENGALURU URBAN (Karnataka)",
+          "Address": "No 460, 14th cross, 1st main Balaji Layout, Raghuvanahalli Kanakapura road, Bangalore-560061, Bengaluru South, BENGALURU URBAN (Karnataka) - 560061",
+          "Sectors working in": "Differently Abled, Education & Literacy, Skill Development"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2023/0374763",
+        "darpanRegistrationDate": "21-12-2023",
+        "registeredWith": "Registrar of Companies",
+        "typeOfNPO": "Section 8 Company",
+        "registrationNo": "U85500KA2023NPL181427",
+        "actName": "Private Sector Companies Sec 8 /25",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "26-11-2023",
+        "address": "No 75/76,4th cross, 2nd main, Soudamini layout, konanakunte, Bengaluru 560062 , Bengaluru, BENGALURU URBAN (Karnataka) - 560062",
+        "email": "venu@abhyudayakkss.org",
+        "mobile": "99**50**66",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Art & Culture",
+          "Children",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management"
+        ],
+        "secondarySectors": [
+          "Education & Literacy",
+          "Health & Family Welfare",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Nutrition",
+          "Scientific & Industrial Research",
+          "Women's Development & Empowerment",
+          "Youth Affairs",
+          "Skill Development"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2023/0374763",
+            "DARPAN Registration Date": "21-12-2023"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Companies",
+            "Type of NPO": "Section 8 Company",
+            "Registration No": "U85500KA2023NPL181427",
+            "Act name": "Private Sector Companies Sec 8 /25",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "26-11-2023"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No 75/76,4th cross, 2nd main, Soudamini layout, konanakunte, Bengaluru 560062 , Bengaluru, BENGALURU URBAN (Karnataka) - 560062",
+            "NPO Contact Email": "venu@abhyudayakkss.org",
+            "NPO Contact Mobile No.": "99**50**66",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Art & Culture",
+              "Children",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management"
+            ],
+            "secondarySectors": [
+              "Education & Literacy",
+              "Health & Family Welfare",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Nutrition",
+              "Scientific & Industrial Research",
+              "Women's Development & Empowerment",
+              "Youth Affairs",
+              "Skill Development"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 25,
+      "summary": {
+        "serialNumber": "25",
+        "name": "AASARE FOUNDATION",
+        "address": "# 3913 1st Floor 12th Main Road 16th Cross Kumaraswamy layout Bengaluru 560111, Bengaluru South, BENGALURU URBAN (Karnataka) - 560111",
+        "sectors": [
+          "Aged/Elderly",
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Animal Welfare",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Religious",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Skill Development",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "BNG/BSK/19/2017/18 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "25",
+          "Name of NPO": "AASARE FOUNDATION",
+          "Registration No, District (State)": "BNG/BSK/19/2017/18 BENGALURU URBAN (Karnataka)",
+          "Address": "# 3913 1st Floor 12th Main Road 16th Cross Kumaraswamy layout Bengaluru 560111, Bengaluru South, BENGALURU URBAN (Karnataka) - 560111",
+          "Sectors working in": "Aged/Elderly, Agriculture, Animal Husbandry, Dairying & Fisheries, Animal Welfare, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Land Resources, Legal Awareness & Aid, Micro Finance (SHGs), Micro Small & Medium Enterprises, Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Prisoner's Issues, Religious, Right to Information & Advocacy, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Skill Development, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2024/0413629",
+        "darpanRegistrationDate": "24-06-2024",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "BK IV BNG-BMH 124/2017-18",
+        "actName": "trust act",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "19-05-2017",
+        "address": "T004, Zed Enclave, Singasandra, Hosur Main Road , Bangalore, BENGALURU URBAN (Karnataka) - 560068",
+        "email": "abilityunlimited@gmail.com",
+        "mobile": "98**34**08",
+        "website": "https://abilityunlimited.com/",
+        "officeBearers": [],
+        "primarySectors": [
+          "Art & Culture",
+          "Differently Abled",
+          "Education & Literacy",
+          "Vocational Training",
+          "Skill Development"
+        ],
+        "secondarySectors": [
+          "--"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2024/0413629",
+            "DARPAN Registration Date": "24-06-2024"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "BK IV BNG-BMH 124/2017-18",
+            "Act name": "trust act",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "19-05-2017"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "T004, Zed Enclave, Singasandra, Hosur Main Road , Bangalore, BENGALURU URBAN (Karnataka) - 560068",
+            "NPO Contact Email": "abilityunlimited@gmail.com",
+            "NPO Contact Mobile No.": "98**34**08",
+            "Website Url": "https://abilityunlimited.com/"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Art & Culture",
+              "Differently Abled",
+              "Education & Literacy",
+              "Vocational Training",
+              "Skill Development"
+            ],
+            "secondarySectors": [
+              "--"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 26,
+      "summary": {
+        "serialNumber": "26",
+        "name": "AASHIKA SOCIAL SERVICE EDUCATIONAL TRUST",
+        "address": "No 27th, 5th Cross, 2nd Main, Gowthamapuram, Halasuru, Bengaluru 560008, Bengaluru, BENGALURU URBAN (Karnataka) - 560009",
+        "sectors": [
+          "Aged/Elderly",
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "INR-4-00098-2020-21 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "26",
+          "Name of NPO": "AASHIKA SOCIAL SERVICE EDUCATIONAL TRUST",
+          "Registration No, District (State)": "INR-4-00098-2020-21 BENGALURU URBAN (Karnataka)",
+          "Address": "No 27th, 5th Cross, 2nd Main, Gowthamapuram, Halasuru, Bengaluru 560008, Bengaluru, BENGALURU URBAN (Karnataka) - 560009",
+          "Sectors working in": "Aged/Elderly, Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Land Resources, Legal Awareness & Aid, Micro Finance (SHGs), Micro Small & Medium Enterprises, Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Prisoner's Issues, Right to Information & Advocacy, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0765987",
+        "darpanRegistrationDate": "07-08-2025",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "BKIV330/11-12",
+        "actName": "The Indian Trusts Act, 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "03-12-2012",
+        "address": "No.270/88-4-5, GROUND FLOOR, HOSUR ROAD, Singasandra, Singasandra B.O, BANGALORE , Bengaluru South, BENGALURU URBAN (Karnataka) - 560068",
+        "email": "foundationaid@gmail.com",
+        "mobile": "98**03**89",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Agriculture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Aged/Elderly"
+        ],
+        "secondarySectors": [
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs",
+          "Skill Development",
+          "Animal Welfare",
+          "Religious"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0765987",
+            "DARPAN Registration Date": "07-08-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "BKIV330/11-12",
+            "Act name": "The Indian Trusts Act, 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "03-12-2012"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No.270/88-4-5, GROUND FLOOR, HOSUR ROAD, Singasandra, Singasandra B.O, BANGALORE , Bengaluru South, BENGALURU URBAN (Karnataka) - 560068",
+            "NPO Contact Email": "foundationaid@gmail.com",
+            "NPO Contact Mobile No.": "98**03**89",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Agriculture",
+              "Biotechnology",
+              "Children",
+              "Civic Issues",
+              "Aged/Elderly"
+            ],
+            "secondarySectors": [
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Art & Culture",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Drinking Water",
+              "Education & Literacy",
+              "Environment & Forests",
+              "Food Processing",
+              "Health & Family Welfare",
+              "HIV/AIDS",
+              "Housing",
+              "Human Rights",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Land Resources",
+              "Legal Awareness & Aid",
+              "Micro Finance (SHGs)",
+              "Micro Small & Medium Enterprises",
+              "Minority Issues",
+              "New & Renewable Energy",
+              "Nutrition",
+              "Panchayati Raj",
+              "Prisoner's Issues",
+              "Right to Information & Advocacy",
+              "Rural Development & Poverty Alleviation",
+              "Science & Technology",
+              "Scientific & Industrial Research",
+              "Sports",
+              "Tourism",
+              "Tribal Affairs",
+              "Urban Development & Poverty Alleviation",
+              "Vocational Training",
+              "Water Resources",
+              "Women's Development & Empowerment",
+              "Youth Affairs",
+              "Skill Development",
+              "Animal Welfare",
+              "Religious"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 27,
+      "summary": {
+        "serialNumber": "27",
+        "name": "AASHRAYA CARE & SAFETY FOUNDATION",
+        "address": "no 16 2nd cross chikka Audugodi Bangalore-560029, Bengaluru South, BENGALURU URBAN (Karnataka) - 560029",
+        "sectors": [
+          "Agriculture",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Education & Literacy",
+          "HIV/AIDS",
+          "Skill Development",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "U88900KA2025NPL208759 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "27",
+          "Name of NPO": "AASHRAYA CARE & SAFETY FOUNDATION",
+          "Registration No, District (State)": "U88900KA2025NPL208759 BENGALURU URBAN (Karnataka)",
+          "Address": "no 16 2nd cross chikka Audugodi Bangalore-560029, Bengaluru South, BENGALURU URBAN (Karnataka) - 560029",
+          "Sectors working in": "Agriculture, Art & Culture, Biotechnology, Children, Dalit Upliftment, Differently Abled, Education & Literacy, HIV/AIDS, Skill Development, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0708089",
+        "darpanRegistrationDate": "03-07-2025",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "BNS-4-00423-2025-26",
+        "actName": "The Charitable and Religious Trust Act, 1920",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "19-06-2025",
+        "address": "NO 48 AND 49,2ND FLOOR,VINAYAKA LAYOUT,4TH CROSS, DODDANAGAMANGALA ROAD NAGANATHAPURA,RAYASANDRA,BANGALORE-560100 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560100",
+        "email": "myonline1313@gmail.com",
+        "mobile": "99**32**25",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Biotechnology",
+          "Children",
+          "Education & Literacy",
+          "Information & Communication Technology",
+          "Science & Technology"
+        ],
+        "secondarySectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Aged/Elderly",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs",
+          "Skill Development",
+          "Animal Welfare",
+          "Religious"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0708089",
+            "DARPAN Registration Date": "03-07-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "BNS-4-00423-2025-26",
+            "Act name": "The Charitable and Religious Trust Act, 1920",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "19-06-2025"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "NO 48 AND 49,2ND FLOOR,VINAYAKA LAYOUT,4TH CROSS, DODDANAGAMANGALA ROAD NAGANATHAPURA,RAYASANDRA,BANGALORE-560100 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560100",
+            "NPO Contact Email": "myonline1313@gmail.com",
+            "NPO Contact Mobile No.": "99**32**25",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Biotechnology",
+              "Children",
+              "Education & Literacy",
+              "Information & Communication Technology",
+              "Science & Technology"
+            ],
+            "secondarySectors": [
+              "Agriculture",
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Art & Culture",
+              "Civic Issues",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Drinking Water",
+              "Aged/Elderly",
+              "Environment & Forests",
+              "Food Processing",
+              "Health & Family Welfare",
+              "HIV/AIDS",
+              "Housing",
+              "Human Rights",
+              "Labour & Employment",
+              "Land Resources",
+              "Legal Awareness & Aid",
+              "Micro Finance (SHGs)",
+              "Micro Small & Medium Enterprises",
+              "Minority Issues",
+              "New & Renewable Energy",
+              "Nutrition",
+              "Panchayati Raj",
+              "Prisoner's Issues",
+              "Right to Information & Advocacy",
+              "Rural Development & Poverty Alleviation",
+              "Scientific & Industrial Research",
+              "Sports",
+              "Tourism",
+              "Tribal Affairs",
+              "Urban Development & Poverty Alleviation",
+              "Vocational Training",
+              "Water Resources",
+              "Women's Development & Empowerment",
+              "Youth Affairs",
+              "Skill Development",
+              "Animal Welfare",
+              "Religious"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 28,
+      "summary": {
+        "serialNumber": "28",
+        "name": "ABARAN FOUNDATION",
+        "address": "NO 192 OPP ISKCON WEST OF CHORD ROAD MAHALAKSHMI LAYOUT BANGALORE, Bangalore, BENGALURU URBAN (Karnataka) - 560086",
+        "sectors": [
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Differently Abled",
+          "Disaster Management",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Women's Development & Empowerment"
+        ],
+        "registration": {
+          "raw": "210/19-20 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "28",
+          "Name of NPO": "ABARAN FOUNDATION",
+          "Registration No, District (State)": "210/19-20 BENGALURU URBAN (Karnataka)",
+          "Address": "NO 192 OPP ISKCON WEST OF CHORD ROAD MAHALAKSHMI LAYOUT BANGALORE, Bangalore, BENGALURU URBAN (Karnataka) - 560086",
+          "Sectors working in": "Art & Culture, Biotechnology, Children, Differently Abled, Disaster Management, Education & Literacy, Environment & Forests, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Women's Development & Empowerment"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0802715",
+        "darpanRegistrationDate": "03-09-2025",
+        "registeredWith": "Registrar of Companies",
+        "typeOfNPO": "Section 8 Company",
+        "registrationNo": "U93000KA2014NPL074877",
+        "actName": "The Companies Act 2013 – As a non-profit company under section 8 of Companies Act. (previously The Indian Companies Act (section 25) 1956",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "16-06-2014",
+        "address": "B-406, ITTINA ABBY APTS, 8TH A MN, VIMANAPURA PO, BANGALORE - 560017, Karnataka, INDIA , Bengaluru East, BENGALURU URBAN (Karnataka) - 560017",
+        "email": "ashish@amonkar.com",
+        "mobile": "98**12**22",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Differently Abled"
+        ],
+        "secondarySectors": [
+          "Education & Literacy",
+          "Labour & Employment",
+          "Vocational Training",
+          "Skill Development"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0802715",
+            "DARPAN Registration Date": "03-09-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Companies",
+            "Type of NPO": "Section 8 Company",
+            "Registration No": "U93000KA2014NPL074877",
+            "Act name": "The Companies Act 2013 – As a non-profit company under section 8 of Companies Act. (previously The Indian Companies Act (section 25) 1956",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "16-06-2014"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "B-406, ITTINA ABBY APTS, 8TH A MN, VIMANAPURA PO, BANGALORE - 560017, Karnataka, INDIA , Bengaluru East, BENGALURU URBAN (Karnataka) - 560017",
+            "NPO Contact Email": "ashish@amonkar.com",
+            "NPO Contact Mobile No.": "98**12**22",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Differently Abled"
+            ],
+            "secondarySectors": [
+              "Education & Literacy",
+              "Labour & Employment",
+              "Vocational Training",
+              "Skill Development"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 29,
+      "summary": {
+        "serialNumber": "29",
+        "name": "Abba Presbyterian Church",
+        "address": "Calvin Theological College and Seminary, Kyalasanahalli, Kothanur P O,, Bengaluru East, BENGALURU URBAN (Karnataka) - 560077",
+        "sectors": [
+          "Aged/Elderly",
+          "Children",
+          "Differently Abled",
+          "Education & Literacy",
+          "Health & Family Welfare",
+          "Housing",
+          "Minority Issues",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "IV-237 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "29",
+          "Name of NPO": "Abba Presbyterian Church",
+          "Registration No, District (State)": "IV-237 BENGALURU URBAN (Karnataka)",
+          "Address": "Calvin Theological College and Seminary, Kyalasanahalli, Kothanur P O,, Bengaluru East, BENGALURU URBAN (Karnataka) - 560077",
+          "Sectors working in": "Aged/Elderly, Children, Differently Abled, Education & Literacy, Health & Family Welfare, Housing, Minority Issues, Urban Development & Poverty Alleviation, Vocational Training, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2021/0299085",
+        "darpanRegistrationDate": "23-11-2021",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "435",
+        "actName": "1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "20-11-2020",
+        "address": "3/90 kadrappa building 2, crass colony sagaypuram , Bangalore, BENGALURU URBAN (Karnataka) - 560005",
+        "email": "actoflove.india@gmail.com",
+        "mobile": "97**35**75",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Differently Abled",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Environment & Forests",
+          "Health & Family Welfare"
+        ],
+        "secondarySectors": [
+          "Women's Development & Empowerment",
+          "Skill Development"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2021/0299085",
+            "DARPAN Registration Date": "23-11-2021"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "435",
+            "Act name": "1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "20-11-2020"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "3/90 kadrappa building 2, crass colony sagaypuram , Bangalore, BENGALURU URBAN (Karnataka) - 560005",
+            "NPO Contact Email": "actoflove.india@gmail.com",
+            "NPO Contact Mobile No.": "97**35**75",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Differently Abled",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Environment & Forests",
+              "Health & Family Welfare"
+            ],
+            "secondarySectors": [
+              "Women's Development & Empowerment",
+              "Skill Development"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 30,
+      "summary": {
+        "serialNumber": "30",
+        "name": "ABHAYA KALPA FOUNDATION TRUST",
+        "address": "69 10TH MAIN 2ND STG MARENAHALLI BINNY LAYOUT VIJAYANAGAR BENGALURU, BENGALURU, BENGALURU URBAN (Karnataka) - 560040",
+        "sectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Food Processing",
+          "Health & Family Welfare",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Minority Issues",
+          "Nutrition",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "IV-436/95-96 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "30",
+          "Name of NPO": "ABHAYA KALPA FOUNDATION TRUST",
+          "Registration No, District (State)": "IV-436/95-96 BENGALURU URBAN (Karnataka)",
+          "Address": "69 10TH MAIN 2ND STG MARENAHALLI BINNY LAYOUT VIJAYANAGAR BENGALURU, BENGALURU, BENGALURU URBAN (Karnataka) - 560040",
+          "Sectors working in": "Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Food Processing, Health & Family Welfare, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Land Resources, Minority Issues, Nutrition, Urban Development & Poverty Alleviation, Vocational Training, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2016/0109956",
+        "darpanRegistrationDate": "28-11-2018",
+        "registeredWith": "Registrar of Societies",
+        "typeOfNPO": "Society",
+        "registrationNo": "317-89-90",
+        "actName": "Karnataka Society Registration Act 1960",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "03-10-1989",
+        "address": "No 4005, 19th Cross, Banashankari 2nd Stage, Bangalore -560070 , Bangalore, BENGALURU URBAN (Karnataka) - 560070",
+        "email": "contact@addindia.org",
+        "mobile": "98**96**41",
+        "website": "https://www.addindia.org/",
+        "officeBearers": [],
+        "primarySectors": [
+          "Differently Abled"
+        ],
+        "secondarySectors": [
+          "--"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2016/0109956",
+            "DARPAN Registration Date": "28-11-2018"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Societies",
+            "Type of NPO": "Society",
+            "Registration No": "317-89-90",
+            "Act name": "Karnataka Society Registration Act 1960",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "03-10-1989"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No 4005, 19th Cross, Banashankari 2nd Stage, Bangalore -560070 , Bangalore, BENGALURU URBAN (Karnataka) - 560070",
+            "NPO Contact Email": "contact@addindia.org",
+            "NPO Contact Mobile No.": "98**96**41",
+            "Website Url": "https://www.addindia.org/"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Differently Abled"
+            ],
+            "secondarySectors": [
+              "--"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
+    },
+    {
+      "index": 31,
+      "summary": {
+        "serialNumber": "31",
+        "name": "Abhaya Kalpa Technologies Private Limited",
+        "address": "69 10TH MAIN 2ND STG MARENAHALLI BINNY LAYOUT VIJAYANAGAR BENGALURU, BENGALURU, BENGALURU URBAN (Karnataka) - 560040",
+        "sectors": [
+          "Aged/Elderly",
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs"
+        ],
+        "registration": {
+          "raw": "U30007KA2007PTC043253 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "31",
+          "Name of NPO": "Abhaya Kalpa Technologies Private Limited",
+          "Registration No, District (State)": "U30007KA2007PTC043253 BENGALURU URBAN (Karnataka)",
+          "Address": "69 10TH MAIN 2ND STG MARENAHALLI BINNY LAYOUT VIJAYANAGAR BENGALURU, BENGALURU, BENGALURU URBAN (Karnataka) - 560040",
+          "Sectors working in": "Aged/Elderly, Agriculture, Animal Husbandry, Dairying & Fisheries, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Food Processing, Health & Family Welfare, HIV/AIDS, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Land Resources, Legal Awareness & Aid, Micro Finance (SHGs), Micro Small & Medium Enterprises, Minority Issues, New & Renewable Energy, Nutrition, Panchayati Raj, Prisoner's Issues, Right to Information & Advocacy, Rural Development & Poverty Alleviation, Science & Technology, Scientific & Industrial Research, Sports, Tourism, Tribal Affairs, Urban Development & Poverty Alleviation, Vocational Training, Water Resources, Women's Development & Empowerment, Youth Affairs"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0657433",
+        "darpanRegistrationDate": "29-05-2025",
+        "registeredWith": "Registrar of Companies",
+        "typeOfNPO": "Section 8 Company",
+        "registrationNo": "U85500KA2024NPL184982",
+        "actName": "The Companies Act 2013 – As a non-profit company under section 8 of Companies Act. (previously The Indian Companies Act (section 25) 1956",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "17-02-2024",
+        "address": "No 12 1st Floor, Lazar Road, Fraser Town, Bangalore North, Bangalore-560005 , Bengaluru North, BENGALURU URBAN (Karnataka) - 560005",
+        "email": "tauseefhere@gmail.com",
+        "mobile": "98**11**65",
+        "website": "https://activebengaluru.org/",
+        "officeBearers": [],
+        "primarySectors": [
+          "Health & Family Welfare"
+        ],
+        "secondarySectors": [
+          "Education & Literacy"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0657433",
+            "DARPAN Registration Date": "29-05-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Registrar of Companies",
+            "Type of NPO": "Section 8 Company",
+            "Registration No": "U85500KA2024NPL184982",
+            "Act name": "The Companies Act 2013 – As a non-profit company under section 8 of Companies Act. (previously The Indian Companies Act (section 25) 1956",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "17-02-2024"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No 12 1st Floor, Lazar Road, Fraser Town, Bangalore North, Bangalore-560005 , Bengaluru North, BENGALURU URBAN (Karnataka) - 560005",
+            "NPO Contact Email": "tauseefhere@gmail.com",
+            "NPO Contact Mobile No.": "98**11**65",
+            "Website Url": "https://activebengaluru.org/"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Health & Family Welfare"
+            ],
+            "secondarySectors": [
+              "Education & Literacy"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 32,
+      "summary": {
+        "serialNumber": "32",
+        "name": "ABHIVADYA FOUNDATION",
+        "address": "NO 80, K NO 126/537/80.10, KAMMANAHALLI VILLAGE, Begur, Bangalore South, Bangalore- 560068, Karnataka, Bengaluru South, BENGALURU URBAN (Karnataka) - 560068",
+        "sectors": [
+          "Aged/Elderly",
+          "Agriculture",
+          "Animal Welfare",
+          "Art & Culture",
+          "Biotechnology",
+          "Children",
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid"
+        ],
+        "registration": {
+          "raw": "U88900KA2025NPL201664 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "32",
+          "Name of NPO": "ABHIVADYA FOUNDATION",
+          "Registration No, District (State)": "U88900KA2025NPL201664 BENGALURU URBAN (Karnataka)",
+          "Address": "NO 80, K NO 126/537/80.10, KAMMANAHALLI VILLAGE, Begur, Bangalore South, Bangalore- 560068, Karnataka, Bengaluru South, BENGALURU URBAN (Karnataka) - 560068",
+          "Sectors working in": "Aged/Elderly, Agriculture, Animal Welfare, Art & Culture, Biotechnology, Children, Civic Issues, Dalit Upliftment, Differently Abled, Disaster Management, Drinking Water, Education & Literacy, Environment & Forests, Health & Family Welfare, Housing, Human Rights, Information & Communication Technology, Labour & Employment, Land Resources, Legal Awareness & Aid"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2025/0845453",
+        "darpanRegistrationDate": "08-10-2025",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "CMP-4-00155-2022-23",
+        "actName": "The Indian Trusts Act, 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "23-06-2022",
+        "address": "No.238, 13th Main, BSK 1st Stage, 2nd Block, Bengaluru - 560050 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560050",
+        "email": "deepavon@gmail.com",
+        "mobile": "99**40**66",
+        "website": "--",
+        "officeBearers": [],
+        "primarySectors": [
+          "Art & Culture",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Women's Development & Empowerment",
+          "Skill Development"
+        ],
+        "secondarySectors": [
+          "Children",
+          "Differently Abled",
+          "Environment & Forests",
+          "Health & Family Welfare",
+          "Animal Welfare"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "BENGALURU URBAN",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2025/0845453",
+            "DARPAN Registration Date": "08-10-2025"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "CMP-4-00155-2022-23",
+            "Act name": "The Indian Trusts Act, 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "23-06-2022"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "No.238, 13th Main, BSK 1st Stage, 2nd Block, Bengaluru - 560050 , Bengaluru South, BENGALURU URBAN (Karnataka) - 560050",
+            "NPO Contact Email": "deepavon@gmail.com",
+            "NPO Contact Mobile No.": "99**40**66",
+            "Website Url": "--"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Art & Culture",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Women's Development & Empowerment",
+              "Skill Development"
+            ],
+            "secondarySectors": [
+              "Children",
+              "Differently Abled",
+              "Environment & Forests",
+              "Health & Family Welfare",
+              "Animal Welfare"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "BENGALURU URBAN"
+          }
+        }
+      }
+    },
+    {
+      "index": 33,
+      "summary": {
+        "serialNumber": "33",
+        "name": "ABHYUDAYA EDUCATION TRUST",
+        "address": "TARAKA, No170/A, 10 th main, RMV Extension, Opp to BWSSB water tank, Sadashivanagar, Bengaluru 560080, Bengaluru North, BENGALURU URBAN (Karnataka) - 560080",
+        "sectors": [
+          "Aged/Elderly",
+          "Differently Abled",
+          "Education & Literacy"
+        ],
+        "registration": {
+          "raw": "107/90-91 BENGALURU URBAN (Karnataka)"
+        },
+        "raw": {
+          "Sr. No.": "33",
+          "Name of NPO": "ABHYUDAYA EDUCATION TRUST",
+          "Registration No, District (State)": "107/90-91 BENGALURU URBAN (Karnataka)",
+          "Address": "TARAKA, No170/A, 10 th main, RMV Extension, Opp to BWSSB water tank, Sadashivanagar, Bengaluru 560080, Bengaluru North, BENGALURU URBAN (Karnataka) - 560080",
+          "Sectors working in": "Aged/Elderly, Differently Abled, Education & Literacy"
+        }
+      },
+      "detail": {
+        "darpanId": "KA/2023/0380334",
+        "darpanRegistrationDate": "09-01-2024",
+        "registeredWith": "Sub-Registrar",
+        "typeOfNPO": "Trust",
+        "registrationNo": "542/18-19",
+        "actName": "INDIAN TRUST ACT- 1882",
+        "cityOfRegistration": "BENGALURU URBAN",
+        "stateOfRegistration": "Karnataka",
+        "dateOfRegistration": "22-03-2019",
+        "address": "10/2, 3RD CROSS, B.M. KRISHNAPPA LAYOUT, SHAMPURA, R.T NAGAR POST, BANGLORE- 560032 , BANGLORE, BENGALURU URBAN (Karnataka) - 560032",
+        "email": "info@adalfoundation.com",
+        "mobile": "74**33**15",
+        "website": "https://adalfoundation.com/",
+        "officeBearers": [],
+        "primarySectors": [
+          "Agriculture",
+          "Animal Husbandry",
+          "Dairying & Fisheries",
+          "Art & Culture",
+          "Biotechnology",
+          "Children"
+        ],
+        "secondarySectors": [
+          "Civic Issues",
+          "Dalit Upliftment",
+          "Differently Abled",
+          "Disaster Management",
+          "Drinking Water",
+          "Education & Literacy",
+          "Aged/Elderly",
+          "Environment & Forests",
+          "Food Processing",
+          "Health & Family Welfare",
+          "HIV/AIDS",
+          "Housing",
+          "Human Rights",
+          "Information & Communication Technology",
+          "Labour & Employment",
+          "Land Resources",
+          "Legal Awareness & Aid",
+          "Micro Finance (SHGs)",
+          "Micro Small & Medium Enterprises",
+          "Minority Issues",
+          "New & Renewable Energy",
+          "Nutrition",
+          "Panchayati Raj",
+          "Prisoner's Issues",
+          "Right to Information & Advocacy",
+          "Rural Development & Poverty Alleviation",
+          "Science & Technology",
+          "Scientific & Industrial Research",
+          "Sports",
+          "Tourism",
+          "Tribal Affairs",
+          "Urban Development & Poverty Alleviation",
+          "Vocational Training",
+          "Water Resources",
+          "Women's Development & Empowerment",
+          "Youth Affairs",
+          "Animal Welfare"
+        ],
+        "operationalStates": "Karnataka",
+        "operationalDistrict": "ALL",
+        "_rawScrapedDetails": {
+          "NPO Details": {
+            "DARPAN ID": "KA/2023/0380334",
+            "DARPAN Registration Date": "09-01-2024"
+          },
+          "Registration Details": {
+            "Registered With": "Sub-Registrar",
+            "Type of NPO": "Trust",
+            "Registration No": "542/18-19",
+            "Act name": "INDIAN TRUST ACT- 1882",
+            "City of Registration": "BENGALURU URBAN",
+            "State of Registration": "Karnataka",
+            "Date of Registration (Society / Trust / Entity)": "22-03-2019"
+          },
+          "Office Bearers": {
+            "officeBearers": []
+          },
+          "Contact Details": {
+            "Address": "10/2, 3RD CROSS, B.M. KRISHNAPPA LAYOUT, SHAMPURA, R.T NAGAR POST, BANGLORE- 560032 , BANGLORE, BENGALURU URBAN (Karnataka) - 560032",
+            "NPO Contact Email": "info@adalfoundation.com",
+            "NPO Contact Mobile No.": "74**33**15",
+            "Website Url": "https://adalfoundation.com/"
+          },
+          "Working Sectors": {
+            "primarySectors": [
+              "Agriculture",
+              "Animal Husbandry",
+              "Dairying & Fisheries",
+              "Art & Culture",
+              "Biotechnology",
+              "Children"
+            ],
+            "secondarySectors": [
+              "Civic Issues",
+              "Dalit Upliftment",
+              "Differently Abled",
+              "Disaster Management",
+              "Drinking Water",
+              "Education & Literacy",
+              "Aged/Elderly",
+              "Environment & Forests",
+              "Food Processing",
+              "Health & Family Welfare",
+              "HIV/AIDS",
+              "Housing",
+              "Human Rights",
+              "Information & Communication Technology",
+              "Labour & Employment",
+              "Land Resources",
+              "Legal Awareness & Aid",
+              "Micro Finance (SHGs)",
+              "Micro Small & Medium Enterprises",
+              "Minority Issues",
+              "New & Renewable Energy",
+              "Nutrition",
+              "Panchayati Raj",
+              "Prisoner's Issues",
+              "Right to Information & Advocacy",
+              "Rural Development & Poverty Alleviation",
+              "Science & Technology",
+              "Scientific & Industrial Research",
+              "Sports",
+              "Tourism",
+              "Tribal Affairs",
+              "Urban Development & Poverty Alleviation",
+              "Vocational Training",
+              "Water Resources",
+              "Women's Development & Empowerment",
+              "Youth Affairs",
+              "Animal Welfare"
+            ],
+            "operationalStates": "Karnataka",
+            "operationalDistrict": "ALL"
+          }
+        }
+      }
     }
   ],
   "stats": {
-    "durationMs": 20726,
+    "durationMs": 90103,
     "status": "completed",
-    "processedRecords": 5
+    "processedRecords": 33
   }
 }
