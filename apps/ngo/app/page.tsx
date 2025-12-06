@@ -190,7 +190,7 @@ export default async function NgoDashboardPage() {
                     <span className="text-xs uppercase tracking-[0.2em]">Indexed NGOs</span>
                     <Sparkles className="h-4 w-4 text-amber-300" />
                   </div>
-                  <p className="mt-3 font-display text-3xl text-white">{formatNumber(records.length)}</p>
+                  <p className="mt-3 text-3xl text-white">{formatNumber(records.length)}</p>
                   <p className="text-sm text-violet-100/75">Cleaned from optimized-detail-records.json</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-inner">
@@ -198,7 +198,7 @@ export default async function NgoDashboardPage() {
                     <span className="text-xs uppercase tracking-[0.2em]">Districts</span>
                     <MapPin className="h-4 w-4 text-rose-300" />
                   </div>
-                  <p className="mt-3 font-display text-3xl text-white">{formatNumber(insights.districtCoverage)}</p>
+                  <p className="mt-3 text-3xl text-white">{formatNumber(insights.districtCoverage)}</p>
                   <p className="text-sm text-violet-100/75">Operational districts mentioned</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-inner">
@@ -206,7 +206,7 @@ export default async function NgoDashboardPage() {
                     <span className="text-xs uppercase tracking-[0.2em]">Sector depth</span>
                     <Gauge className="h-4 w-4 text-cyan-300" />
                   </div>
-                  <p className="mt-3 font-display text-3xl text-white">{insights.avgSectorsPerNgo} / org</p>
+                  <p className="mt-3 text-3xl text-white">{insights.avgSectorsPerNgo} / org</p>
                   <p className="text-sm text-violet-100/75">Primary sector signals per NGO</p>
                 </div>
               </div>
