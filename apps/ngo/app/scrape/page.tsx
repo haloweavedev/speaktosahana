@@ -1,11 +1,33 @@
-import prisma from "@repo/db";
-
 export const dynamic = "force-dynamic";
 
+const hasDatabaseUrl = Boolean(
+  process.env.DATABASE_URL || process.env.DIRECT_URL || process.env.DIRECT_DATABASE_URL
+);
+
+let prismaClient: typeof import("@repo/db").default | null = null;
+
+async function getPrisma() {
+  if (!hasDatabaseUrl) return null;
+  if (prismaClient) return prismaClient;
+  const mod = await import("@repo/db");
+  prismaClient = mod.default;
+  return prismaClient;
+}
+
 async function getLatestRun() {
-  return prisma.scrapeRun.findFirst({
-    orderBy: { startedAt: "desc" },
-  });
+  if (!hasDatabaseUrl) return null;
+
+  try {
+    const prisma = await getPrisma();
+    if (!prisma) return null;
+
+    return prisma.scrapeRun.findFirst({
+      orderBy: { startedAt: "desc" },
+    });
+  } catch (error) {
+    console.error("Unable to load scrape runs", error);
+    return null;
+  }
 }
 
 export default async function ScrapePage() {
@@ -17,6 +39,11 @@ export default async function ScrapePage() {
         <div>
           <p className="text-sm text-gray-500">Purple Pages · Scraper</p>
           <h1 className="text-3xl font-semibold">Data Collection Control</h1>
+          {!hasDatabaseUrl ? (
+            <p className="text-sm text-amber-600">
+              Database URL is not configured — showing placeholder status only.
+            </p>
+          ) : null}
         </div>
         <div className="flex gap-2">
           <button

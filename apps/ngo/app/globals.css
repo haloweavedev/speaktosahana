@@ -4,72 +4,73 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 341 56% 49%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
+  --background: 257 53% 6%;
+  --foreground: 222 47% 97%;
+  --card: 256 44% 10%;
+  --card-foreground: 222 47% 97%;
+  --popover: 254 35% 14%;
+  --popover-foreground: 222 47% 97%;
+  --primary: 269 86% 67%;
+  --primary-foreground: 259 44% 12%;
+  --secondary: 249 33% 18%;
+  --secondary-foreground: 222 47% 97%;
+  --muted: 250 29% 24%;
+  --muted-foreground: 244 16% 75%;
+  --accent: 281 42% 18%;
+  --accent-foreground: 222 47% 97%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 10% 3.9%;
-  --radius: 0.5rem;
-  --chart-1: 12 76% 61%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
-  --sidebar-background: 0 0% 98%;
-  --sidebar-foreground: 240 5.3% 26.1%;
-  --sidebar-primary: 240 5.9% 10%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 240 4.8% 95.9%;
-  --sidebar-accent-foreground: 240 5.9% 10%;
-  --sidebar-border: 220 13% 91%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
-  --font-lato: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-geist-sans: var(--font-lato);
+  --border: 254 32% 26%;
+  --input: 255 26% 24%;
+  --ring: 269 86% 67%;
+  --radius: 1rem;
+  --chart-1: 268 85% 65%;
+  --chart-2: 210 92% 68%;
+  --chart-3: 160 84% 60%;
+  --chart-4: 48 96% 64%;
+  --chart-5: 340 82% 67%;
+  --sidebar-background: 251 33% 14%;
+  --sidebar-foreground: 222 47% 97%;
+  --sidebar-primary: 269 86% 67%;
+  --sidebar-primary-foreground: 259 44% 12%;
+  --sidebar-accent: 252 36% 18%;
+  --sidebar-accent-foreground: 222 47% 97%;
+  --sidebar-border: 255 26% 24%;
+  --sidebar-ring: 269 86% 67%;
+  --font-sans-stack: var(--font-manrope), "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading-stack: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-geist-sans: var(--font-sans-stack);
   --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 341 56% 49%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
+  --background: 258 50% 5%;
+  --foreground: 222 47% 97%;
+  --card: 256 44% 9%;
+  --card-foreground: 222 47% 97%;
+  --popover: 254 35% 12%;
+  --popover-foreground: 222 47% 97%;
+  --primary: 269 86% 67%;
+  --primary-foreground: 259 44% 12%;
+  --secondary: 249 33% 16%;
+  --secondary-foreground: 222 47% 97%;
+  --muted: 250 29% 22%;
+  --muted-foreground: 244 16% 75%;
+  --accent: 281 42% 18%;
+  --accent-foreground: 222 47% 97%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 240 4.9% 83.9%;
-  --sidebar-background: 240 5.9% 10%;
-  --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --border: 254 32% 24%;
+  --input: 255 26% 22%;
+  --ring: 269 86% 67%;
+  --sidebar-background: 251 33% 14%;
+  --sidebar-foreground: 222 47% 97%;
+  --sidebar-primary: 269 86% 67%;
+  --sidebar-primary-foreground: 259 44% 12%;
+  --sidebar-accent: 252 36% 18%;
+  --sidebar-accent-foreground: 222 47% 97%;
+  --sidebar-border: 255 26% 22%;
+  --sidebar-ring: 269 86% 67%;
 }
 
 @theme inline {
@@ -109,8 +110,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-lato);
-  --font-heading: var(--font-geist-sans);
+  --font-sans: var(--font-sans-stack);
+  --font-heading: var(--font-heading-stack);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -122,5 +123,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans-stack);
+  }
+
+  .font-display {
+    font-family: var(--font-heading-stack);
   }
 }

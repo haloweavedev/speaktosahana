@@ -1,10 +1,8 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table";
-import { Badge } from "@repo/ui/components/ui/badge";
-import { Checkbox } from "@repo/ui/components/ui/checkbox";
-import { DataTableColumnHeader } from "@repo/ui/components/data-table-column-header";
-import { MoreHorizontal } from "lucide-react";
+import { Badge, Checkbox, DataTableColumnHeader } from "@repo/ui";
+import { ArrowUpRight, MoreHorizontal } from "lucide-react";
 import { Ngo } from "./page";
 
 export const columns: ColumnDef<Ngo>[] = [
@@ -35,7 +33,11 @@ export const columns: ColumnDef<Ngo>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Sr. No." />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("serialNumber")}</div>,
+    cell: ({ row }) => (
+      <span className="inline-flex min-w-[60px] items-center justify-center rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-foreground/80 ring-1 ring-white/10">
+        #{row.getValue("serialNumber")}
+      </span>
+    ),
     enableSorting: true,
     enableHiding: true,
   },
@@ -45,11 +47,20 @@ export const columns: ColumnDef<Ngo>[] = [
       <DataTableColumnHeader column={column} title="NGO Name" />
     ),
     cell: ({ row }) => {
+      const ngo = row.original;
       return (
-        <div className="flex space-x-2">
-          <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("name")}
-          </span>
+        <div className="space-y-1">
+          <p className="max-w-[520px] truncate text-base font-semibold text-foreground">
+            {ngo.name}
+          </p>
+          <div className="flex flex-wrap items-center gap-2 text-[12px] text-muted-foreground">
+            {ngo.darpanId ? (
+              <Badge variant="secondary" className="bg-white/5 text-foreground/80 ring-1 ring-white/10">
+                Darpan {ngo.darpanId}
+              </Badge>
+            ) : null}
+            <span className="line-clamp-1 max-w-[520px] text-ellipsis">{ngo.address}</span>
+          </div>
         </div>
       );
     },
@@ -61,7 +72,11 @@ export const columns: ColumnDef<Ngo>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Reg. Type" />
     ),
-    cell: ({ row }) => <div className="w-[120px]">{row.getValue("registrationType")}</div>,
+    cell: ({ row }) => (
+      <Badge className="bg-gradient-to-r from-primary/80 to-primary text-primary-foreground shadow-sm">
+        {(row.getValue("registrationType") as string) || "—"}
+      </Badge>
+    ),
     enableSorting: true,
     enableHiding: true,
   },
@@ -71,14 +86,16 @@ export const columns: ColumnDef<Ngo>[] = [
       <DataTableColumnHeader column={column} title="Primary Sectors" />
     ),
     cell: ({ row }) => {
-      const sectors: string[] = row.getValue("primarySectors");
+      const sectors = row.original.primarySectors.slice(0, 3);
+      const overflow = row.original.primarySectors.length - sectors.length;
       return (
-        <div className="flex flex-wrap gap-1 max-w-[300px]">
+        <div className="flex max-w-[360px] flex-wrap gap-1">
           {sectors.map((sector) => (
-            <Badge key={sector} variant="secondary">
+            <Badge key={sector} variant="secondary" className="bg-white/5 text-foreground/80 ring-1 ring-white/10">
               {sector}
             </Badge>
           ))}
+          {overflow > 0 ? <span className="text-xs text-muted-foreground">+{overflow} more</span> : null}
         </div>
       );
     },
@@ -93,7 +110,11 @@ export const columns: ColumnDef<Ngo>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Operational District" />
     ),
-    cell: ({ row }) => <div>{row.getValue("operationalDistrict")}</div>,
+    cell: ({ row }) => (
+      <span className="rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-foreground/80 ring-1 ring-white/10">
+        {row.getValue("operationalDistrict") || "—"}
+      </span>
+    ),
     enableSorting: true,
     enableHiding: true,
   },
@@ -102,18 +123,46 @@ export const columns: ColumnDef<Ngo>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Email" />
     ),
-    cell: ({ row }) => <div>{row.getValue("contactEmail")}</div>,
+    cell: ({ row }) => <div className="text-sm text-foreground/80">{row.getValue("contactEmail")}</div>,
     enableSorting: true,
     enableHiding: true,
   },
   {
+    accessorKey: "contactWebsite",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Website" />
+    ),
+    cell: ({ row }) => {
+      const site = row.original.contactWebsite;
+      if (!site) {
+        return <span className="text-xs text-muted-foreground">—</span>;
+      }
+      const label = site.replace(/^https?:\/\//, "").replace(/\/$/, "");
+      return (
+        <a
+          href={site}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+        >
+          {label}
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
+      );
+    },
+    enableSorting: false,
+    enableHiding: true,
+  },
+  {
     id: "actions",
+    enableSorting: false,
+    enableHiding: false,
     cell: ({ row }) => {
       const ngo = row.original;
 
       return (
-        <div className="flex justify-end">
-          <MoreHorizontal className="h-4 w-4" />
+        <div className="flex justify-end text-muted-foreground">
+          <MoreHorizontal className="h-4 w-4" aria-label={`Actions for ${ngo.name}`} />
         </div>
       );
     },
