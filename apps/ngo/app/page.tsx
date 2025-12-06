@@ -238,14 +238,14 @@ export default async function NgoDashboardPage() {
                 </div>
                 <Filter className="h-5 w-5 text-violet-100/80" />
               </div>
-              <div className="mt-4 space-y-2">
+              <div className="mt-4 flex flex-wrap gap-3">
                 {insights.topSectors.map((sector) => (
                   <div
                     key={sector.name}
-                    className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-violet-100/85"
+                    className="flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-2 text-sm text-violet-100/90 shadow-inner"
                   >
                     <span className="font-semibold text-white">{sector.name}</span>
-                    <span className="rounded-full bg-white/10 px-2 py-1 text-[12px] text-violet-100/80">
+                    <span className="rounded-full bg-white/15 px-2 py-0.5 text-[12px] text-violet-50">
                       {sector.count} orgs
                     </span>
                   </div>
@@ -290,7 +290,7 @@ export default async function NgoDashboardPage() {
               data={records}
               filterColumnId="name"
               filterPlaceholder="Filter NGO names..."
-              className="rounded-2xl border border-white/10 bg-card/60 p-4 shadow-inner"
+              className="rounded-2xl border border-white/5 bg-card/60 p-4 shadow-inner"
             />
           </div>
         </section>
