@@ -141,7 +141,7 @@ export default async function NgoDashboardPage() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pt-14">
         <header className="flex flex-col items-center gap-4 text-center">
           <div className="rounded-full border border-white/15 bg-white/10 px-6 py-3 shadow-[0_15px_50px_rgba(0,0,0,0.35)] backdrop-blur">
-            <span className="font-display text-2xl tracking-tight text-white">purplePages</span>
+            <span className="font-display font-light text-2xl tracking-tight text-white">purplePages</span>
           </div>
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.25em] text-violet-100/80">NGO directory</p>
