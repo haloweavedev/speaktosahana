@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Ngo } from "../../lib/types";
-import { Search, MapPin, Building2, Heart, User, ArrowUpRight, Filter, X, Check } from "lucide-react";
+import { Search, MapPin, Building2, Heart, User, ArrowUpRight, Filter, X, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge, Button } from "@repo/ui"; // Assuming these exist from previous page.tsx
 import { cn } from "../../lib/utils"; // Need to ensure this exists or create it
 
@@ -13,12 +13,17 @@ interface DashboardProps {
   capturedAt?: string;
 }
 
+const ITEMS_PER_PAGE = 25;
+
 export default function Dashboard({ initialRecords, capturedAt }: DashboardProps) {
   const [persona, setPersona] = useState<Persona>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
   const [selectedDistricts, setSelectedDistricts] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
+  
+  const [currentPage, setCurrentPage] = useState(1);
+  const resultsTopRef = useRef<HTMLDivElement>(null);
 
   // Derived data for filters
   const allSectors = useMemo(() => {
@@ -42,6 +47,7 @@ export default function Dashboard({ initialRecords, capturedAt }: DashboardProps
 
   // Persona-based presets
   useEffect(() => {
+    setCurrentPage(1); // Reset page on persona change
     if (persona === "pwd") {
       setSelectedSectors(["Differently Abled"]);
     } else if (persona === "all") {
@@ -54,6 +60,10 @@ export default function Dashboard({ initialRecords, capturedAt }: DashboardProps
     }
   }, [persona]);
 
+  // Reset page on filter change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedSectors, selectedDistricts]);
 
   const filteredRecords = useMemo(() => {
     return initialRecords.filter((ngo) => {
@@ -95,6 +105,13 @@ export default function Dashboard({ initialRecords, capturedAt }: DashboardProps
     });
   }, [initialRecords, searchQuery, selectedSectors, selectedDistricts]);
 
+  const paginatedRecords = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredRecords.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [filteredRecords, currentPage]);
+
+  const totalPages = Math.ceil(filteredRecords.length / ITEMS_PER_PAGE);
+
   const toggleSector = (sector: string) => {
     setSelectedSectors((prev) =>
       prev.includes(sector) ? prev.filter((s) => s !== sector) : [...prev, sector]
@@ -105,6 +122,14 @@ export default function Dashboard({ initialRecords, capturedAt }: DashboardProps
     setSelectedDistricts((prev) =>
       prev.includes(district) ? prev.filter((d) => d !== district) : [...prev, district]
     );
+  };
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    // Scroll to top of results
+    if (resultsTopRef.current) {
+        resultsTopRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
@@ -163,7 +188,7 @@ export default function Dashboard({ initialRecords, capturedAt }: DashboardProps
              </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20 pb-20" ref={resultsTopRef}>
             
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 {/* Filters Sidebar */}
@@ -250,10 +275,10 @@ export default function Dashboard({ initialRecords, capturedAt }: DashboardProps
                     </div>
 
                     <div className="grid grid-cols-1 gap-4">
-                        {filteredRecords.map(ngo => (
+                        {paginatedRecords.map(ngo => (
                             <NgoCard key={ngo.id} ngo={ngo} />
                         ))}
-                        {filteredRecords.length === 0 && (
+                        {paginatedRecords.length === 0 && (
                             <div className="text-center py-20 bg-white rounded-2xl border border-dashed border-slate-200">
                                 <div className="bg-slate-50 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <Search className="h-8 w-8 text-slate-300" />
@@ -269,6 +294,31 @@ export default function Dashboard({ initialRecords, capturedAt }: DashboardProps
                             </div>
                         )}
                     </div>
+
+                    {/* Pagination Controls */}
+                    {totalPages > 1 && (
+                        <div className="flex items-center justify-center gap-4 mt-8">
+                            <Button
+                                variant="outline"
+                                onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+                                disabled={currentPage === 1}
+                                className="flex items-center gap-2"
+                            >
+                                <ChevronLeft className="h-4 w-4" /> Previous
+                            </Button>
+                            <span className="text-sm font-medium text-slate-600">
+                                Page <span className="text-slate-900">{currentPage}</span> of <span className="text-slate-900">{totalPages}</span>
+                            </span>
+                            <Button
+                                variant="outline"
+                                onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+                                disabled={currentPage === totalPages}
+                                className="flex items-center gap-2"
+                            >
+                                Next <ChevronRight className="h-4 w-4" />
+                            </Button>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
