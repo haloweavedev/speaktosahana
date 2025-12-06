@@ -31,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${playfair.variable} ${manrope.variable} font-sans antialiased bg-background text-foreground`}>
+    <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
+      <body className="font-sans antialiased bg-background text-foreground">
         {children}
       </body>
     </html>
