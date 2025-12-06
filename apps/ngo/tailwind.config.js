@@ -50,6 +50,10 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        sans: ["var(--font-sans-stack)", "Manrope", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading-stack)", "Playfair Display", "Georgia", "serif"],
+      },
     },
   },
   presets: [uiConfig],
