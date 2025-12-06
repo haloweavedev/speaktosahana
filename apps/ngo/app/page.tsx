@@ -144,13 +144,13 @@ export default async function NgoDashboardPage() {
             <span className="font-display text-2xl tracking-tight text-white">purplePages</span>
           </div>
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.25em] text-violet-100/80">NGO Intelligence Deck</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-violet-100/80">NGO directory</p>
             <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl">
-              Linktree-inspired cockpit for Karnataka&apos;s NGOs
+              Find NGOs that match your cause
             </h1>
             <p className="max-w-3xl text-base text-violet-100/85">
-              A curated view across {formatNumber(records.length)} organizations with the filters and polish of a modern
-              SaaS console. Tap into sector overlaps, proximity signals, and verified contact trails.
+              Filter by name, sector, or district. Each record shows registration type, contact trail, and focus areas so
+              you can shortlist fast.
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-violet-100/80">
@@ -160,11 +160,11 @@ export default async function NgoDashboardPage() {
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 shadow-inner">
               <CircleDot className="h-4 w-4 text-cyan-300" />
-              Primary filters tuned from sector + district coverage
+              {formatNumber(insights.districtCoverage)} districts represented
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 shadow-inner">
               <MapPin className="h-4 w-4 text-rose-300" />
-              Optimized for Linktree-style center alignment with curved edges
+              Search by name below
             </div>
           </div>
         </header>
@@ -174,15 +174,13 @@ export default async function NgoDashboardPage() {
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-violet-100/70">Coverage map</p>
-                  <h2 className="font-display text-2xl text-white sm:text-3xl">Operational signal at a glance</h2>
-                  <p className="text-sm text-violet-100/80">
-                    High trust visualization: sectors, districts, and web presence surfaced without breaking flow.
-                  </p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-violet-100/70">Dataset overview</p>
+                  <h2 className="font-display text-2xl text-white sm:text-3xl">Snapshot of this dataset</h2>
+                  <p className="text-sm text-violet-100/80">Counts refresh whenever optimized-detail-records.json updates.</p>
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-primary/30 via-white/5 to-secondary/30 px-4 py-2 text-sm text-white shadow-lg">
                   <Orbit className="h-4 w-4" />
-                  Map overlay primed for Mapbox drop-in
+                  Geographic view coming soon
                 </div>
               </div>
 
@@ -197,11 +195,11 @@ export default async function NgoDashboardPage() {
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-inner">
                   <div className="flex items-center justify-between text-violet-100/70">
-                    <span className="text-xs uppercase tracking-[0.2em]">District coverage</span>
+                    <span className="text-xs uppercase tracking-[0.2em]">Districts</span>
                     <MapPin className="h-4 w-4 text-rose-300" />
                   </div>
                   <p className="mt-3 font-display text-3xl text-white">{formatNumber(insights.districtCoverage)}</p>
-                  <p className="text-sm text-violet-100/75">Operational districts detected</p>
+                  <p className="text-sm text-violet-100/75">Operational districts mentioned</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-inner">
                   <div className="flex items-center justify-between text-violet-100/70">
@@ -214,7 +212,7 @@ export default async function NgoDashboardPage() {
               </div>
 
               <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 shadow-inner">
-                <span className="text-xs uppercase tracking-[0.25em] text-violet-100/70">Smart filters</span>
+                <span className="text-xs uppercase tracking-[0.25em] text-violet-100/70">Top sectors</span>
                 {insights.topSectors.map((sector) => (
                   <Badge
                     key={sector.name}
@@ -225,7 +223,7 @@ export default async function NgoDashboardPage() {
                   </Badge>
                 ))}
                 <Badge variant="secondary" className="bg-primary/20 text-primary-foreground ring-1 ring-primary/40">
-                  {Math.round(insights.websiteRatio * 100)}% have live websites
+                  {Math.round(insights.websiteRatio * 100)}% list a website
                 </Badge>
               </div>
             </div>
@@ -236,7 +234,7 @@ export default async function NgoDashboardPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.25em] text-violet-100/80">Sector spotlight</p>
-                  <h3 className="font-display text-xl text-white">Top intersections</h3>
+                  <h3 className="font-display text-xl text-white">Popular sectors</h3>
                 </div>
                 <Filter className="h-5 w-5 text-violet-100/80" />
               </div>
@@ -255,16 +253,16 @@ export default async function NgoDashboardPage() {
               </div>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_60px_rgba(0,0,0,0.35)] backdrop-blur">
-              <p className="text-xs uppercase tracking-[0.25em] text-violet-100/80">UX cues</p>
-              <h3 className="font-display text-xl text-white">Linktree-like flow</h3>
+              <p className="text-xs uppercase tracking-[0.25em] text-violet-100/80">How to use</p>
+              <h3 className="font-display text-xl text-white">Quick shortlist</h3>
               <p className="mt-2 text-sm text-violet-100/80">
-                Centered logo, curved edges, and pill-based controls mirror the familiarity of Linktree while keeping the
-                intelligence tone intact.
+                Use the search box to filter by NGO name. Open “Columns” to hide what you don&apos;t need. Sector pills hint
+                at where most work is happening.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <Badge className="bg-white/10 text-foreground/90 ring-1 ring-white/10">Glassmorphism</Badge>
-                <Badge className="bg-white/10 text-foreground/90 ring-1 ring-white/10">Gradient spine</Badge>
-                <Badge className="bg-white/10 text-foreground/90 ring-1 ring-white/10">Map-ready</Badge>
+                <Badge className="bg-white/10 text-foreground/90 ring-1 ring-white/10">Search by name</Badge>
+                <Badge className="bg-white/10 text-foreground/90 ring-1 ring-white/10">Toggle columns</Badge>
+                <Badge className="bg-white/10 text-foreground/90 ring-1 ring-white/10">Sector chips</Badge>
               </div>
             </div>
           </aside>
@@ -274,14 +272,12 @@ export default async function NgoDashboardPage() {
           <div className="flex flex-col items-start gap-3 rounded-[30px] border border-white/12 bg-white/10 px-6 py-5 shadow-[0_30px_80px_rgba(0,0,0,0.4)] backdrop-blur lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-violet-100/70">Live registry</p>
-              <h2 className="font-display text-2xl text-white sm:text-3xl">Curated NGO table with SaaS polish</h2>
-              <p className="text-sm text-violet-100/80">
-                Instant filtering on name plus column controls. Sector-aware chips and link-ready website surfaces.
-              </p>
+              <h2 className="font-display text-2xl text-white sm:text-3xl">All NGOs in this snapshot</h2>
+              <p className="text-sm text-violet-100/80">Search by name, scan sector chips, and open websites directly.</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="secondary" className="bg-primary/20 text-primary-foreground ring-1 ring-primary/30">
-                Ready for map + filters
+                Includes Darpan IDs where present
               </Badge>
               <Button variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10">
                 Export CSV (coming soon)
@@ -293,7 +289,7 @@ export default async function NgoDashboardPage() {
               columns={columns}
               data={records}
               filterColumnId="name"
-              filterPlaceholder="Filter NGO names or sectors..."
+              filterPlaceholder="Filter NGO names..."
               className="rounded-2xl border border-white/10 bg-card/60 p-4 shadow-inner"
             />
           </div>
