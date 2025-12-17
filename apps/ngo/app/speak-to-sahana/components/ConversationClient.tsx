@@ -87,7 +87,7 @@ export default function ConversationClient() {
           Speak to <span className="text-emerald-800">Sahana</span>
         </h1>
         <p className="text-lg md:text-xl text-stone-600 font-light max-w-2xl mx-auto leading-relaxed">
-          An AI voice assistant powered by Sahana's insights. Ask about her work, strategies for inclusion, or just say hello.
+          An AI voice assistant powered by Sahana&apos;s insights. Ask about her work, strategies for inclusion, or just say hello.
         </p>
       </div>
 
@@ -132,7 +132,7 @@ export default function ConversationClient() {
         {log.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-stone-400 opacity-60">
             <Mic className="w-12 h-12 mb-4" />
-            <p className="font-heading italic text-lg">"Click the mic to start the conversation..."</p>
+            <p className="font-heading italic text-lg">&quot;Click the mic to start the conversation...&quot;</p>
           </div>
         ) : (
           <div className="space-y-6">
