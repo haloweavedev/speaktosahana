@@ -1,7 +1,7 @@
 # Product Vision: PurplePages
-**Document Status:** Draft v1.0
-**Owner:** Product Engineering Lead
-**Date:** October 26, 2023
+**Document Status:** v1.0
+**Owner:** Vikash Denzil
+**Date:** 17th December 2025
 **Confidentiality:** Internal
 
 ---

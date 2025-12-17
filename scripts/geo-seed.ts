@@ -5,49 +5,52 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import prisma, { Prisma } from "@repo/db";
 
-type RawRecord = {
-  summary?: {
-    serialNumber?: string;
-    name?: string;
-    address?: string;
-    sectors?: string[];
-    registration?: { raw?: string };
-    raw?: Record<string, unknown>;
-  };
-  detail?: {
-    darpanId?: string;
-    darpanRegistrationDate?: string;
-    registeredWith?: string;
-    typeOfNPO?: string;
-    registrationNo?: string;
-    actName?: string;
-    cityOfRegistration?: string;
-    stateOfRegistration?: string;
-    dateOfRegistration?: string;
-    address?: string;
-    email?: string;
-    phone?: string;
-    mobile?: string;
-    website?: string;
-    officeBearers?: unknown;
-    primarySectors?: string[];
-    secondarySectors?: string[];
-    operationalStates?: string;
-    operationalDistrict?: string;
-    _rawScrapedDetails?: Record<string, unknown>;
-  };
-};
-
-type GeocodingStatus = "PENDING" | "SUCCESS" | "FAILED" | "APPROXIMATE";
-
+// --- Configuration & Constants ---
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const DEFAULT_DATA_PATH =
   process.env.NGO_SEED_FILE ||
   path.resolve(__dirname, "../outputs/optimized-detail-records.json");
-const BATCH_SIZE = Number.parseInt(process.env.BATCH_SIZE || "200", 10);
+
+const BATCH_SIZE = Number.parseInt(process.env.BATCH_SIZE || "2000", 10); // increased batch size to cover all records
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
+
+// --- Types ---
+
+type RawRecord = {
+  index?: number;
+  serialNumber?: string;
+  name?: string;
+  address?: string;
+  registration?: {
+    number?: string;
+    registeredWith?: string;
+    type?: string;
+    actName?: string;
+    city?: string;
+    state?: string;
+    date?: string;
+    darpanId?: string;
+    darpanRegistrationDate?: string;
+    raw?: string;
+  };
+  contact?: {
+    email?: string;
+    mobile?: string;
+    website?: string;
+    phone?: string;
+  };
+  primarySectors?: string[];
+  secondarySectors?: string[];
+  operationalStates?: string;
+  operationalDistrict?: string;
+  officeBearers?: unknown;
+};
+
+type GeocodingStatus = "PENDING" | "SUCCESS" | "FAILED" | "APPROXIMATE";
+
+// --- Helpers ---
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -74,53 +77,58 @@ function cleanAddress(raw?: string | null): string {
 }
 
 async function loadRecordsFromFile(filePath: string): Promise<RawRecord[]> {
-  const content = await fs.readFile(filePath, "utf-8");
-  const parsed = JSON.parse(content);
-  return parsed?.records ?? [];
+  try {
+    const content = await fs.readFile(filePath, "utf-8");
+    const parsed = JSON.parse(content);
+    return parsed?.records ?? [];
+  } catch (error) {
+    console.error(`Error reading file ${filePath}:`, error);
+    return [];
+  }
 }
 
 function toNgoCreatePayload(record: RawRecord) {
-  const detail = record.detail || {};
-  const summary = record.summary || {};
-  const pincode = extractPincode(detail.address || summary.address);
+  const reg = record.registration || {};
+  const contact = record.contact || {};
+  const pincode = extractPincode(record.address);
 
   const baseFields = {
-    name: summary.name || detail.actName || "Unknown NGO",
-    normalizedName: summary.name?.toLowerCase() || null,
-    serialNumber: summary.serialNumber || null,
-    registrationNumber: detail.registrationNo || null,
-    registrationRaw: summary.registration?.raw || null,
-    email: detail.email || null,
-    phone: detail.phone || null,
-    mobile: detail.mobile || null,
-    website: detail.website || null,
-    summaryAddress: summary.address || null,
-    address: detail.address || summary.address || null,
-    district: detail.cityOfRegistration || null,
-    state: detail.stateOfRegistration || null,
+    name: record.name || reg.actName || "Unknown NGO",
+    normalizedName: record.name?.toLowerCase() || null,
+    serialNumber: record.serialNumber || null,
+    registrationNumber: reg.number || null,
+    registrationRaw: reg.raw || null,
+    email: contact.email || null,
+    phone: contact.phone || null,
+    mobile: contact.mobile || null,
+    website: contact.website || null,
+    summaryAddress: record.address || null,
+    address: record.address || null,
+    district: reg.city || null,
+    state: reg.state || null,
     pincode,
-    darpanRegistrationDate: parseDate(detail.darpanRegistrationDate),
-    registeredWith: detail.registeredWith || null,
-    typeOfNPO: detail.typeOfNPO || null,
-    actName: detail.actName || null,
-    cityOfRegistration: detail.cityOfRegistration || null,
-    stateOfRegistration: detail.stateOfRegistration || null,
-    dateOfRegistration: parseDate(detail.dateOfRegistration),
-    registrationDate: parseDate(detail.dateOfRegistration),
-    summarySectors: normalizeArray(summary.sectors),
-    primarySectors: normalizeArray(detail.primarySectors || summary.sectors),
-    secondarySectors: normalizeArray(detail.secondarySectors),
-    operationalStates: detail.operationalStates || null,
-    operationalDistrict: detail.operationalDistrict || null,
-    officeBearers: detail.officeBearers || null,
-    raw: summary.raw || null,
-    rawScrapedDetails: detail._rawScrapedDetails || null,
+    darpanRegistrationDate: parseDate(reg.darpanRegistrationDate),
+    registeredWith: reg.registeredWith || null,
+    typeOfNPO: reg.type || null,
+    actName: reg.actName || null,
+    cityOfRegistration: reg.city || null,
+    stateOfRegistration: reg.state || null,
+    dateOfRegistration: parseDate(reg.date),
+    registrationDate: parseDate(reg.date),
+    summarySectors: normalizeArray(record.primarySectors),
+    primarySectors: normalizeArray(record.primarySectors),
+    secondarySectors: normalizeArray(record.secondarySectors),
+    operationalStates: record.operationalStates || null,
+    operationalDistrict: record.operationalDistrict || null,
+    officeBearers: record.officeBearers || null,
+    raw: record as unknown as Prisma.JsonObject,
+    rawScrapedDetails: null,
   };
 
   return {
     create: {
       ...baseFields,
-      darpanId: detail.darpanId || undefined,
+      darpanId: reg.darpanId || undefined,
       geocodingStatus: "PENDING" as GeocodingStatus,
       geocodedPincode: null,
       latitude: null,
@@ -133,39 +141,63 @@ function toNgoCreatePayload(record: RawRecord) {
       ...baseFields,
       pincode,
     },
-    darpanId: detail.darpanId,
+    darpanId: reg.darpanId,
   };
 }
 
 async function seedFromFile(filePath: string) {
+  console.log(`\n🚀 Starting Seed Process...`);
   const records = await loadRecordsFromFile(filePath);
+  
+  if (records.length === 0) {
+    console.warn("No records found in file. Exiting seed process.");
+    return;
+  }
+
+  console.log(`Found ${records.length} records. Processing...`);
+
   let created = 0;
   let updated = 0;
   let skipped = 0;
+  let errors = 0;
 
-  for (const record of records) {
+  for (let i = 0; i < records.length; i++) {
+    const record = records[i];
     const payload = toNgoCreatePayload(record);
+
     if (!payload.darpanId) {
       skipped += 1;
       continue;
     }
 
-    const result = await prisma.ngo.upsert({
-      where: { darpanId: payload.darpanId },
-      create: payload.create,
-      update: payload.update,
-    });
+    try {
+      const result = await prisma.ngo.upsert({
+        where: { darpanId: payload.darpanId },
+        create: payload.create,
+        update: payload.update,
+      });
 
-    if (result.createdAt.getTime() === result.updatedAt.getTime()) {
-      created += 1;
-    } else {
-      updated += 1;
+      if (result.createdAt.getTime() === result.updatedAt.getTime()) {
+        created += 1;
+      } else {
+        updated += 1;
+      }
+    } catch (e) {
+      console.error(`Error upserting ${payload.darpanId}:`, e);
+      errors += 1;
+    }
+
+    // Simple progress log every 100 records
+    if ((i + 1) % 100 === 0) {
+      console.log(`Processed ${i + 1}/${records.length} records...`);
     }
   }
 
-  console.log(
-    `Loaded ${created + updated} records from file (${created} created, ${updated} refreshed, ${skipped} skipped without darpanId).`
-  );
+  console.log(`\n✅ Seed Complete:`);
+  console.log(`   - Created: ${created}`);
+  console.log(`   - Updated: ${updated}`);
+  console.log(`   - Skipped (No ID): ${skipped}`);
+  console.log(`   - Errors: ${errors}`);
 }
 
 async function getCoordinates(query: string) {
@@ -179,11 +211,27 @@ async function getCoordinates(query: string) {
     }
     return null;
   } catch (error) {
+    // console.error("Geocoding API error:", error); 
     return null;
   }
 }
 
 async function processPendingGeocodes() {
+  console.log(`\n📍 Starting Geocoding Process...`);
+  
+  // Only process a limited batch to avoid timeouts/limits in one go
+  const pendingCount = await prisma.ngo.count({
+    where: { geocodingStatus: { in: ["PENDING", "FAILED"] } },
+  });
+
+  if (pendingCount === 0) {
+    console.log("No pending geocodes found.");
+    return;
+  }
+
+  console.log(`Total pending geocodes: ${pendingCount}`);
+  console.log(`Processing batch of ${BATCH_SIZE}...`);
+
   const pending = await prisma.ngo.findMany({
     where: {
       geocodingStatus: { in: ["PENDING", "FAILED"] },
@@ -198,7 +246,9 @@ async function processPendingGeocodes() {
     take: BATCH_SIZE,
   });
 
-  console.log(`📍 Processing ${pending.length} records (batch size ${BATCH_SIZE})...`);
+  let success = 0;
+  let failed = 0;
+  let approximate = 0;
 
   for (const ngo of pending) {
     let lat: string | null = null;
@@ -209,17 +259,18 @@ async function processPendingGeocodes() {
     const cleanedAddress = cleanAddress(ngo.address);
     const pinMatch = ngo.pincode || extractPincode(cleanedAddress);
 
+    // Strategy 1: Pincode (Most reliable for broad area)
     if (pinMatch) {
       usedPincode = pinMatch;
       const coords = await getCoordinates(`${pinMatch}, India`);
       if (coords) {
         lat = coords.lat;
         lon = coords.lon;
-        status = "SUCCESS";
-        console.log(`✅ [${ngo.id}] Found via pincode ${pinMatch}`);
+        status = "SUCCESS"; // Mapping to SUCCESS for now, but semantically might be APPROXIMATE
       }
     }
 
+    // Strategy 2: City/State Fallback
     if (!lat && (ngo.cityOfRegistration || ngo.stateOfRegistration)) {
       const coords = await getCoordinates(
         `${ngo.cityOfRegistration || ""}, ${ngo.stateOfRegistration || ""}, India`
@@ -228,17 +279,16 @@ async function processPendingGeocodes() {
         lat = coords.lat;
         lon = coords.lon;
         status = "APPROXIMATE";
-        console.log(`⚠️ [${ngo.id}] Fallback to city/state ${ngo.cityOfRegistration}`);
       }
     }
 
+    // Strategy 3: Full Address (Least reliable due to unstructured text)
     if (!lat && cleanedAddress) {
       const coords = await getCoordinates(`${cleanedAddress}, India`);
       if (coords) {
         lat = coords.lat;
         lon = coords.lon;
         status = "SUCCESS";
-        console.log(`✅ [${ngo.id}] Resolved via full address fallback`);
       }
     }
 
@@ -252,21 +302,36 @@ async function processPendingGeocodes() {
       },
     });
 
-    await sleep(1100);
+    if (status === 'SUCCESS') success++;
+    else if (status === 'APPROXIMATE') approximate++;
+    else failed++;
+
+    const currentIndex = success + failed + approximate;
+    const symbol = status === 'SUCCESS' ? '✅' : status === 'APPROXIMATE' ? '⚠️' : '❌';
+    console.log(`[${currentIndex}/${pending.length}] ${symbol} ${ngo.id} - ${status}`);
+
+    await sleep(1100); // Respect Nominatim Rate Limit (1 req/sec)
   }
+
+  console.log(`\n\n📍 Batch Complete:`);
+  console.log(`   - Resolved (Precise): ${success}`);
+  console.log(`   - Resolved (Approx): ${approximate}`);
+  console.log(`   - Failed: ${failed}`);
 }
 
 async function main() {
-  const datasetPath = DEFAULT_DATA_PATH;
-  console.log(`Using dataset: ${datasetPath}`);
+  console.log(`Using dataset: ${DEFAULT_DATA_PATH}`);
 
-  await seedFromFile(datasetPath);
+  // Step 1: Ingest Data
+  await seedFromFile(DEFAULT_DATA_PATH);
+
+  // Step 2: Geocode
   await processPendingGeocodes();
 }
 
 main()
   .catch((error) => {
-    console.error(error);
+    console.error("Fatal Error:", error);
     process.exit(1);
   })
   .finally(async () => {
