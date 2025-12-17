@@ -2,9 +2,8 @@
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src",
     "types": ["node"]
   },
-  "include": ["src"],
+  "include": ["src", "prisma/generated"],
   "exclude": ["node_modules", "dist"]
 }

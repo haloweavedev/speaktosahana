@@ -1,0 +1,102 @@
+datasource db {
+  provider   = "postgresql"
+  extensions = [postgis]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  output          = "./generated/prisma"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+model Ngo {
+  id                     String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  darpanId               String?   @unique @map("darpan_id")
+  name                   String
+  normalizedName         String?   @map("normalized_name")
+  serialNumber           String?   @map("serial_number")
+  registrationNumber     String?   @map("registration_number")
+  registrationType       String?   @map("registration_type")
+  registrationRaw        String?   @map("registration_raw")
+  email                  String?
+  phone                  String?   @map("phone")
+  mobile                 String?   @map("mobile")
+  website                String?
+  summaryAddress         String?   @map("summary_address")
+  address                String?
+  district               String?   @map("district")
+  state                  String?   @map("state")
+  pincode                String?   @map("pincode")
+  darpanRegistrationDate DateTime? @map("darpan_registration_date") @db.Date
+  registeredWith         String?   @map("registered_with")
+  typeOfNPO              String?   @map("type_of_npo")
+  actName                String?   @map("act_name")
+  cityOfRegistration     String?   @map("city_of_registration")
+  stateOfRegistration    String?   @map("state_of_registration")
+  dateOfRegistration     DateTime? @map("date_of_registration") @db.Date
+  registrationDate       DateTime? @map("registration_date") @db.Date
+  summarySectors         String[]  @map("summary_sectors")
+  primarySectors         String[]  @map("primary_sectors")
+  secondarySectors       String[]  @map("secondary_sectors")
+  operationalStates      String?   @map("operational_states")
+  operationalDistrict    String?   @map("operational_district")
+  officeBearers          Json?     @map("office_bearers")
+  latitude               Decimal?  @map("latitude") @db.Decimal(10, 7)
+  longitude              Decimal?  @map("longitude") @db.Decimal(10, 7)
+  geocodingStatus        String    @default("PENDING") @map("geocoding_status")
+  geocodedPincode        String?   @map("geocoded_pincode")
+
+  sourceUrl         String?   @map("source_url")
+  scrapedAt         DateTime? @map("scraped_at") @db.Timestamptz
+  hash              String?   @map("hash")
+  raw               Json?     @map("raw")
+  rawScrapedDetails Json?     @map("raw_scraped_details")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  sectors NgoSector[]
+
+  @@index([pincode])
+  @@index([district, state])
+  @@index([geocodingStatus])
+  @@map("ngos")
+}
+
+model ScrapeRun {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  status          String
+  startedAt       DateTime  @default(now()) @map("started_at") @db.Timestamptz
+  finishedAt      DateTime? @map("finished_at") @db.Timestamptz
+  durationMs      Int?      @map("duration_ms")
+  totalDiscovered Int?      @map("total_discovered")
+  totalProcessed  Int?      @map("total_processed")
+  inserted        Int?
+  updated         Int?
+  skipped         Int?
+  errors          Json?
+  message         String?
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz
+
+  @@index([startedAt])
+  @@map("scrape_runs")
+}
+
+model Sector {
+  id   BigInt      @id @default(autoincrement())
+  name String      @unique
+  ngos NgoSector[]
+
+  @@map("sectors")
+}
+
+model NgoSector {
+  ngoId    String @map("ngo_id") @db.Uuid
+  sectorId BigInt @map("sector_id")
+
+  ngo    Ngo    @relation(fields: [ngoId], references: [id], onDelete: Cascade)
+  sector Sector @relation(fields: [sectorId], references: [id], onDelete: Cascade)
+
+  @@id([ngoId, sectorId])
+  @@map("ngo_sectors")
+}

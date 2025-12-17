@@ -1,5 +1,5 @@
 import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "../prisma/generated/prisma";
 import type { PoolConfig } from "pg";
 import { Pool } from "pg";
 
@@ -51,7 +51,7 @@ export default prisma;
 
 if (process.env.NODE_ENV !== "production") globalThis.prisma = prisma;
 
-export * from "@prisma/client";
+export * from "../prisma/generated/prisma";
 
 export async function withRetry<T>(
   operation: () => Promise<T>,
