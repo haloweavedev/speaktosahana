@@ -30,16 +30,26 @@ export default function MapTestPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSector, setSelectedSector] = useState<string>("");
   const [isSectorOpen, setIsSectorOpen] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
 
   // Initial Load
   useEffect(() => {
     getUniqueSectors().then(setSectors);
-    // Default to Bangalore Center
-    handleSearch("Bangalore");
   }, []);
+
+  // Scroll active item into view
+  useEffect(() => {
+    if (selectedNgoId) {
+      const element = document.getElementById(`ngo-card-${selectedNgoId}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  }, [selectedNgoId]);
 
   const fetchNgos = async (lat: number, lon: number, sector?: string) => {
     setLoading(true);
+    setHasSearched(true);
     try {
       const results = await getNearestNgos(lat, lon, sector || undefined);
       setNgos(results);
@@ -117,13 +127,13 @@ export default function MapTestPage() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-gray-50 overflow-hidden font-sans text-gray-900">
+    <div className="flex flex-col md:flex-row h-screen w-full bg-gray-50 overflow-hidden font-sans text-gray-900">
       
       {/* LEFT PANEL: LIST & CONTROLS */}
-      <div className="w-[420px] flex-shrink-0 h-full bg-white border-r shadow-xl z-20 flex flex-col relative">
+      <div className="w-full md:w-[420px] flex-shrink-0 h-[40vh] md:h-full bg-white border-b md:border-r border-gray-200 shadow-xl z-20 flex flex-col relative order-2 md:order-1">
         
         {/* Header */}
-        <div className="px-6 py-5 border-b bg-white z-10 shadow-sm">
+        <div className="px-6 py-5 border-b bg-white z-30 shadow-sm">
           <h1 className="text-2xl font-bold text-purple-900 flex items-center gap-2 mb-1 tracking-tight">
             <div className="p-1.5 bg-purple-100 rounded-lg">
                 <MapPin className="w-5 h-5 text-purple-700" />
@@ -245,7 +255,17 @@ export default function MapTestPage() {
 
         {/* Scrollable List */}
         <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent">
-          {ngos.length === 0 && !loading && (
+          {!hasSearched && !loading && (
+            <div className="flex flex-col items-center justify-center h-64 text-gray-400 text-center px-6">
+              <div className="p-4 bg-purple-50 rounded-full mb-3">
+                <Search className="w-6 h-6 text-purple-300" />
+              </div>
+              <p className="text-sm font-medium text-gray-600">Find Organizations</p>
+              <p className="text-xs mt-1 leading-relaxed">Search for a location or use your current position to discover NGOs nearby.</p>
+            </div>
+          )}
+
+          {hasSearched && ngos.length === 0 && !loading && (
             <div className="flex flex-col items-center justify-center h-64 text-gray-400 text-center px-6">
               <div className="p-4 bg-gray-100 rounded-full mb-3">
                 <Filter className="w-6 h-6 opacity-30" />
@@ -258,6 +278,7 @@ export default function MapTestPage() {
           {ngos.map((ngo) => (
             <div
               key={ngo.id}
+              id={`ngo-card-${ngo.id}`}
               onClick={() => setSelectedNgoId(ngo.id)}
               className={`
                 p-4 rounded-xl border cursor-pointer transition-all duration-200 relative group
@@ -314,7 +335,7 @@ export default function MapTestPage() {
       </div>
 
       {/* RIGHT PANEL: MAP */}
-      <div className="flex-1 h-full relative bg-gray-200/50">
+      <div className="flex-1 h-[60vh] md:h-full relative bg-gray-200/50 order-1 md:order-2">
         <MapView 
             ngos={ngos} 
             userLocation={userLocation} 

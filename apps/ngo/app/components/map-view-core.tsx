@@ -5,36 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import type { NearestNgo } from "../actions/get-nearest-ngos";
-
-// Fix Leaflet's default icon issue in React
-const defaultIcon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
-// Custom Icon for Selected or Precise
-const preciseIcon = L.icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
-
-const selectedIcon = L.icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-  iconSize: [30, 48], // Slightly bigger
-  iconAnchor: [15, 48],
-  popupAnchor: [1, -40],
-  shadowSize: [41, 41]
-});
+import { defaultIcon, preciseIcon, selectedIcon, userIcon } from "./map-icons";
 
 
 // Component to handle map movement
@@ -109,10 +80,10 @@ export default function MapViewCore({ ngos, userLocation, selectedNgoId, onSelec
 
         {/* User Location */}
         {userLocation && (
-          <Marker position={[userLocation.lat, userLocation.lon]} icon={defaultIcon} opacity={0.8}>
+          <Marker position={[userLocation.lat, userLocation.lon]} icon={userIcon} opacity={1.0} zIndexOffset={500}>
             <Popup className="custom-popup">
                <div className="text-center">
-                 <span className="font-bold text-gray-700">Your Location</span>
+                 <span className="font-bold text-red-600">You are Here</span>
                </div>
             </Popup>
           </Marker>
