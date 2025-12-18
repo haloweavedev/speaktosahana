@@ -126,7 +126,21 @@ export default function MapViewCore({ ngos, userLocation, selectedNgoId, onSelec
         })}
       </MapContainer>
       
-      {/* Custom Zoom Control could go here */}
+      {/* Floating Legend */}
+      <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg border border-purple-100 z-[400] text-[10px] font-medium text-gray-600 flex flex-col gap-2 transition-opacity hover:opacity-100 opacity-80">
+        <div className="flex items-center gap-2">
+           <div className="w-2.5 h-2.5 rounded-full bg-green-500 ring-2 ring-green-100"></div>
+           <span>Verified Location</span>
+        </div>
+        <div className="flex items-center gap-2">
+           <div className="w-2.5 h-2.5 rounded-full bg-blue-500 ring-2 ring-blue-100"></div>
+           <span>Approximate</span>
+        </div>
+        <div className="flex items-center gap-2">
+           <div className="w-2.5 h-2.5 rounded-full bg-red-500 ring-2 ring-red-100"></div>
+           <span>You / Search</span>
+        </div>
+      </div>
     </div>
   );
 }
