@@ -1234,6 +1234,8 @@ export namespace Prisma {
     longitude: Decimal | null
     geocodingStatus: string | null
     geocodedPincode: string | null
+    exactGeocodeMatch: boolean | null
+    accuracyLevel: string | null
     sourceUrl: string | null
     scrapedAt: Date | null
     hash: string | null
@@ -1273,6 +1275,8 @@ export namespace Prisma {
     longitude: Decimal | null
     geocodingStatus: string | null
     geocodedPincode: string | null
+    exactGeocodeMatch: boolean | null
+    accuracyLevel: string | null
     sourceUrl: string | null
     scrapedAt: Date | null
     hash: string | null
@@ -1316,6 +1320,8 @@ export namespace Prisma {
     longitude: number
     geocodingStatus: number
     geocodedPincode: number
+    exactGeocodeMatch: number
+    accuracyLevel: number
     sourceUrl: number
     scrapedAt: number
     hash: number
@@ -1369,6 +1375,8 @@ export namespace Prisma {
     longitude?: true
     geocodingStatus?: true
     geocodedPincode?: true
+    exactGeocodeMatch?: true
+    accuracyLevel?: true
     sourceUrl?: true
     scrapedAt?: true
     hash?: true
@@ -1408,6 +1416,8 @@ export namespace Prisma {
     longitude?: true
     geocodingStatus?: true
     geocodedPincode?: true
+    exactGeocodeMatch?: true
+    accuracyLevel?: true
     sourceUrl?: true
     scrapedAt?: true
     hash?: true
@@ -1451,6 +1461,8 @@ export namespace Prisma {
     longitude?: true
     geocodingStatus?: true
     geocodedPincode?: true
+    exactGeocodeMatch?: true
+    accuracyLevel?: true
     sourceUrl?: true
     scrapedAt?: true
     hash?: true
@@ -1583,6 +1595,8 @@ export namespace Prisma {
     longitude: Decimal | null
     geocodingStatus: string
     geocodedPincode: string | null
+    exactGeocodeMatch: boolean | null
+    accuracyLevel: string | null
     sourceUrl: string | null
     scrapedAt: Date | null
     hash: string | null
@@ -1647,6 +1661,8 @@ export namespace Prisma {
     longitude?: boolean
     geocodingStatus?: boolean
     geocodedPincode?: boolean
+    exactGeocodeMatch?: boolean
+    accuracyLevel?: boolean
     sourceUrl?: boolean
     scrapedAt?: boolean
     hash?: boolean
@@ -1694,6 +1710,8 @@ export namespace Prisma {
     longitude?: boolean
     geocodingStatus?: boolean
     geocodedPincode?: boolean
+    exactGeocodeMatch?: boolean
+    accuracyLevel?: boolean
     sourceUrl?: boolean
     scrapedAt?: boolean
     hash?: boolean
@@ -1739,6 +1757,8 @@ export namespace Prisma {
     longitude?: boolean
     geocodingStatus?: boolean
     geocodedPincode?: boolean
+    exactGeocodeMatch?: boolean
+    accuracyLevel?: boolean
     sourceUrl?: boolean
     scrapedAt?: boolean
     hash?: boolean
@@ -1784,6 +1804,8 @@ export namespace Prisma {
     longitude?: boolean
     geocodingStatus?: boolean
     geocodedPincode?: boolean
+    exactGeocodeMatch?: boolean
+    accuracyLevel?: boolean
     sourceUrl?: boolean
     scrapedAt?: boolean
     hash?: boolean
@@ -1793,7 +1815,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type NgoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "darpanId" | "name" | "normalizedName" | "serialNumber" | "registrationNumber" | "registrationType" | "registrationRaw" | "email" | "phone" | "mobile" | "website" | "summaryAddress" | "address" | "district" | "state" | "pincode" | "darpanRegistrationDate" | "registeredWith" | "typeOfNPO" | "actName" | "cityOfRegistration" | "stateOfRegistration" | "dateOfRegistration" | "registrationDate" | "summarySectors" | "primarySectors" | "secondarySectors" | "operationalStates" | "operationalDistrict" | "officeBearers" | "latitude" | "longitude" | "geocodingStatus" | "geocodedPincode" | "sourceUrl" | "scrapedAt" | "hash" | "raw" | "rawScrapedDetails" | "createdAt" | "updatedAt", ExtArgs["result"]["ngo"]>
+  export type NgoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "darpanId" | "name" | "normalizedName" | "serialNumber" | "registrationNumber" | "registrationType" | "registrationRaw" | "email" | "phone" | "mobile" | "website" | "summaryAddress" | "address" | "district" | "state" | "pincode" | "darpanRegistrationDate" | "registeredWith" | "typeOfNPO" | "actName" | "cityOfRegistration" | "stateOfRegistration" | "dateOfRegistration" | "registrationDate" | "summarySectors" | "primarySectors" | "secondarySectors" | "operationalStates" | "operationalDistrict" | "officeBearers" | "latitude" | "longitude" | "geocodingStatus" | "geocodedPincode" | "exactGeocodeMatch" | "accuracyLevel" | "sourceUrl" | "scrapedAt" | "hash" | "raw" | "rawScrapedDetails" | "createdAt" | "updatedAt", ExtArgs["result"]["ngo"]>
   export type NgoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sectors?: boolean | Ngo$sectorsArgs<ExtArgs>
     _count?: boolean | NgoCountOutputTypeDefaultArgs<ExtArgs>
@@ -1842,6 +1864,8 @@ export namespace Prisma {
       longitude: Prisma.Decimal | null
       geocodingStatus: string
       geocodedPincode: string | null
+      exactGeocodeMatch: boolean | null
+      accuracyLevel: string | null
       sourceUrl: string | null
       scrapedAt: Date | null
       hash: string | null
@@ -2308,6 +2332,8 @@ export namespace Prisma {
     readonly longitude: FieldRef<"Ngo", 'Decimal'>
     readonly geocodingStatus: FieldRef<"Ngo", 'String'>
     readonly geocodedPincode: FieldRef<"Ngo", 'String'>
+    readonly exactGeocodeMatch: FieldRef<"Ngo", 'Boolean'>
+    readonly accuracyLevel: FieldRef<"Ngo", 'String'>
     readonly sourceUrl: FieldRef<"Ngo", 'String'>
     readonly scrapedAt: FieldRef<"Ngo", 'DateTime'>
     readonly hash: FieldRef<"Ngo", 'String'>
@@ -6070,6 +6096,8 @@ export namespace Prisma {
     longitude: 'longitude',
     geocodingStatus: 'geocodingStatus',
     geocodedPincode: 'geocodedPincode',
+    exactGeocodeMatch: 'exactGeocodeMatch',
+    accuracyLevel: 'accuracyLevel',
     sourceUrl: 'sourceUrl',
     scrapedAt: 'scrapedAt',
     hash: 'hash',
@@ -6220,6 +6248,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -6303,6 +6338,8 @@ export namespace Prisma {
     longitude?: DecimalNullableFilter<"Ngo"> | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringFilter<"Ngo"> | string
     geocodedPincode?: StringNullableFilter<"Ngo"> | string | null
+    exactGeocodeMatch?: BoolNullableFilter<"Ngo"> | boolean | null
+    accuracyLevel?: StringNullableFilter<"Ngo"> | string | null
     sourceUrl?: StringNullableFilter<"Ngo"> | string | null
     scrapedAt?: DateTimeNullableFilter<"Ngo"> | Date | string | null
     hash?: StringNullableFilter<"Ngo"> | string | null
@@ -6349,6 +6386,8 @@ export namespace Prisma {
     longitude?: SortOrderInput | SortOrder
     geocodingStatus?: SortOrder
     geocodedPincode?: SortOrderInput | SortOrder
+    exactGeocodeMatch?: SortOrderInput | SortOrder
+    accuracyLevel?: SortOrderInput | SortOrder
     sourceUrl?: SortOrderInput | SortOrder
     scrapedAt?: SortOrderInput | SortOrder
     hash?: SortOrderInput | SortOrder
@@ -6398,6 +6437,8 @@ export namespace Prisma {
     longitude?: DecimalNullableFilter<"Ngo"> | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringFilter<"Ngo"> | string
     geocodedPincode?: StringNullableFilter<"Ngo"> | string | null
+    exactGeocodeMatch?: BoolNullableFilter<"Ngo"> | boolean | null
+    accuracyLevel?: StringNullableFilter<"Ngo"> | string | null
     sourceUrl?: StringNullableFilter<"Ngo"> | string | null
     scrapedAt?: DateTimeNullableFilter<"Ngo"> | Date | string | null
     hash?: StringNullableFilter<"Ngo"> | string | null
@@ -6444,6 +6485,8 @@ export namespace Prisma {
     longitude?: SortOrderInput | SortOrder
     geocodingStatus?: SortOrder
     geocodedPincode?: SortOrderInput | SortOrder
+    exactGeocodeMatch?: SortOrderInput | SortOrder
+    accuracyLevel?: SortOrderInput | SortOrder
     sourceUrl?: SortOrderInput | SortOrder
     scrapedAt?: SortOrderInput | SortOrder
     hash?: SortOrderInput | SortOrder
@@ -6497,6 +6540,8 @@ export namespace Prisma {
     longitude?: DecimalNullableWithAggregatesFilter<"Ngo"> | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringWithAggregatesFilter<"Ngo"> | string
     geocodedPincode?: StringNullableWithAggregatesFilter<"Ngo"> | string | null
+    exactGeocodeMatch?: BoolNullableWithAggregatesFilter<"Ngo"> | boolean | null
+    accuracyLevel?: StringNullableWithAggregatesFilter<"Ngo"> | string | null
     sourceUrl?: StringNullableWithAggregatesFilter<"Ngo"> | string | null
     scrapedAt?: DateTimeNullableWithAggregatesFilter<"Ngo"> | Date | string | null
     hash?: StringNullableWithAggregatesFilter<"Ngo"> | string | null
@@ -6724,6 +6769,8 @@ export namespace Prisma {
     longitude?: Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: string
     geocodedPincode?: string | null
+    exactGeocodeMatch?: boolean | null
+    accuracyLevel?: string | null
     sourceUrl?: string | null
     scrapedAt?: Date | string | null
     hash?: string | null
@@ -6770,6 +6817,8 @@ export namespace Prisma {
     longitude?: Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: string
     geocodedPincode?: string | null
+    exactGeocodeMatch?: boolean | null
+    accuracyLevel?: string | null
     sourceUrl?: string | null
     scrapedAt?: Date | string | null
     hash?: string | null
@@ -6816,6 +6865,8 @@ export namespace Prisma {
     longitude?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringFieldUpdateOperationsInput | string
     geocodedPincode?: NullableStringFieldUpdateOperationsInput | string | null
+    exactGeocodeMatch?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    accuracyLevel?: NullableStringFieldUpdateOperationsInput | string | null
     sourceUrl?: NullableStringFieldUpdateOperationsInput | string | null
     scrapedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hash?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6862,6 +6913,8 @@ export namespace Prisma {
     longitude?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringFieldUpdateOperationsInput | string
     geocodedPincode?: NullableStringFieldUpdateOperationsInput | string | null
+    exactGeocodeMatch?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    accuracyLevel?: NullableStringFieldUpdateOperationsInput | string | null
     sourceUrl?: NullableStringFieldUpdateOperationsInput | string | null
     scrapedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hash?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6908,6 +6961,8 @@ export namespace Prisma {
     longitude?: Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: string
     geocodedPincode?: string | null
+    exactGeocodeMatch?: boolean | null
+    accuracyLevel?: string | null
     sourceUrl?: string | null
     scrapedAt?: Date | string | null
     hash?: string | null
@@ -6953,6 +7008,8 @@ export namespace Prisma {
     longitude?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringFieldUpdateOperationsInput | string
     geocodedPincode?: NullableStringFieldUpdateOperationsInput | string | null
+    exactGeocodeMatch?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    accuracyLevel?: NullableStringFieldUpdateOperationsInput | string | null
     sourceUrl?: NullableStringFieldUpdateOperationsInput | string | null
     scrapedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hash?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6998,6 +7055,8 @@ export namespace Prisma {
     longitude?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringFieldUpdateOperationsInput | string
     geocodedPincode?: NullableStringFieldUpdateOperationsInput | string | null
+    exactGeocodeMatch?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    accuracyLevel?: NullableStringFieldUpdateOperationsInput | string | null
     sourceUrl?: NullableStringFieldUpdateOperationsInput | string | null
     scrapedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hash?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7287,6 +7346,11 @@ export namespace Prisma {
     not?: NestedDecimalNullableFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string | null
   }
 
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -7349,6 +7413,8 @@ export namespace Prisma {
     longitude?: SortOrder
     geocodingStatus?: SortOrder
     geocodedPincode?: SortOrder
+    exactGeocodeMatch?: SortOrder
+    accuracyLevel?: SortOrder
     sourceUrl?: SortOrder
     scrapedAt?: SortOrder
     hash?: SortOrder
@@ -7395,6 +7461,8 @@ export namespace Prisma {
     longitude?: SortOrder
     geocodingStatus?: SortOrder
     geocodedPincode?: SortOrder
+    exactGeocodeMatch?: SortOrder
+    accuracyLevel?: SortOrder
     sourceUrl?: SortOrder
     scrapedAt?: SortOrder
     hash?: SortOrder
@@ -7434,6 +7502,8 @@ export namespace Prisma {
     longitude?: SortOrder
     geocodingStatus?: SortOrder
     geocodedPincode?: SortOrder
+    exactGeocodeMatch?: SortOrder
+    accuracyLevel?: SortOrder
     sourceUrl?: SortOrder
     scrapedAt?: SortOrder
     hash?: SortOrder
@@ -7551,6 +7621,14 @@ export namespace Prisma {
     _sum?: NestedDecimalNullableFilter<$PrismaModel>
     _min?: NestedDecimalNullableFilter<$PrismaModel>
     _max?: NestedDecimalNullableFilter<$PrismaModel>
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -7807,6 +7885,10 @@ export namespace Prisma {
     divide?: Decimal | DecimalJsLike | number | string
   }
 
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
@@ -7986,6 +8068,11 @@ export namespace Prisma {
     not?: NestedDecimalNullableFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string | null
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -8118,6 +8205,14 @@ export namespace Prisma {
     _sum?: NestedDecimalNullableFilter<$PrismaModel>
     _min?: NestedDecimalNullableFilter<$PrismaModel>
     _max?: NestedDecimalNullableFilter<$PrismaModel>
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -8311,6 +8406,8 @@ export namespace Prisma {
     longitude?: Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: string
     geocodedPincode?: string | null
+    exactGeocodeMatch?: boolean | null
+    accuracyLevel?: string | null
     sourceUrl?: string | null
     scrapedAt?: Date | string | null
     hash?: string | null
@@ -8356,6 +8453,8 @@ export namespace Prisma {
     longitude?: Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: string
     geocodedPincode?: string | null
+    exactGeocodeMatch?: boolean | null
+    accuracyLevel?: string | null
     sourceUrl?: string | null
     scrapedAt?: Date | string | null
     hash?: string | null
@@ -8432,6 +8531,8 @@ export namespace Prisma {
     longitude?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringFieldUpdateOperationsInput | string
     geocodedPincode?: NullableStringFieldUpdateOperationsInput | string | null
+    exactGeocodeMatch?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    accuracyLevel?: NullableStringFieldUpdateOperationsInput | string | null
     sourceUrl?: NullableStringFieldUpdateOperationsInput | string | null
     scrapedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hash?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8477,6 +8578,8 @@ export namespace Prisma {
     longitude?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     geocodingStatus?: StringFieldUpdateOperationsInput | string
     geocodedPincode?: NullableStringFieldUpdateOperationsInput | string | null
+    exactGeocodeMatch?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    accuracyLevel?: NullableStringFieldUpdateOperationsInput | string | null
     sourceUrl?: NullableStringFieldUpdateOperationsInput | string | null
     scrapedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hash?: NullableStringFieldUpdateOperationsInput | string | null

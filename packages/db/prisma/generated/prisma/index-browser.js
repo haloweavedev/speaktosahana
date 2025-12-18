@@ -156,6 +156,8 @@ exports.Prisma.NgoScalarFieldEnum = {
   longitude: 'longitude',
   geocodingStatus: 'geocodingStatus',
   geocodedPincode: 'geocodedPincode',
+  exactGeocodeMatch: 'exactGeocodeMatch',
+  accuracyLevel: 'accuracyLevel',
   sourceUrl: 'sourceUrl',
   scrapedAt: 'scrapedAt',
   hash: 'hash',
