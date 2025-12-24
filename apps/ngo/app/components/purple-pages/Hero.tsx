@@ -45,6 +45,8 @@ export function Hero({ search, setFilters }: HeroProps) {
             </button>
             <Link 
               href="/map"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-bold transition-all duration-300 bg-white text-purple-900 shadow-[0_0_30px_rgba(194,122,255,0.5)] hover:shadow-[0_0_40px_rgba(194,122,255,0.7)] hover:scale-105 active:scale-95 ml-2"
             >
               <MapIcon className="w-5 h-5" />
