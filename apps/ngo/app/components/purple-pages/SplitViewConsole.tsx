@@ -21,7 +21,7 @@ export function SplitViewConsole() {
   });
 
   return (
-    <div className="flex flex-col h-screen w-screen overflow-hidden bg-white font-sans">
+    <div className="flex flex-col h-screen w-screen bg-white font-sans">
       
       {/* Scrollable Content Area */}
       <div className="flex-1 overflow-y-auto flex flex-col no-scrollbar">
@@ -33,10 +33,10 @@ export function SplitViewConsole() {
         <div className="flex flex-1 min-h-0">
           
           {/* Left Console: Sticky Sidebar (30%) */}
-          <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0 sticky top-0 h-screen border-r border-slate-200 bg-white">
-             <div className="h-full overflow-y-auto no-scrollbar pb-20">
-                <Sidebar filters={filters} setFilters={setFilters} />
-             </div>
+          <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0 border-r border-slate-200 bg-white">
+            <div className="sticky top-0">
+              <Sidebar filters={filters} setFilters={setFilters} />
+            </div>
           </div>
 
           {/* Right Console: Feed (70%) */}
