@@ -7,7 +7,6 @@ export type GetNgosParams = {
   limit?: number;
   search?: string;
   sectors?: string[];
-  intersectSectors?: boolean;
   maturity?: '0-3' | '3-10' | '10+' | null;
   legalEntities?: string[];
 };
@@ -17,7 +16,6 @@ export async function getNgos({
   limit = 20,
   search,
   sectors = [],
-  intersectSectors = false,
   maturity,
   legalEntities = [],
 }: GetNgosParams) {
@@ -41,19 +39,12 @@ export async function getNgos({
 
   // Sectors
   if (sectors.length > 0) {
-    if (intersectSectors) {
-      andConditions.push({
-        primarySectors: {
-          hasEvery: sectors,
-        },
-      });
-    } else {
-      andConditions.push({
-        primarySectors: {
-          hasSome: sectors,
-        },
-      });
-    }
+    // Default to OR logic (hasSome) as requested to remove "intersection" (AND) logic
+    andConditions.push({
+      primarySectors: {
+        hasSome: sectors,
+      },
+    });
   }
 
   // Legal Entities

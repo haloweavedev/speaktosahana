@@ -134,17 +134,29 @@
     font-family: var(--font-heading-stack);
   }
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(156, 163, 175, 0.5);
-    border-radius: 20px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(107, 114, 128, 0.8);
-  }
+}
+
+@layer utilities {
+  /* Apply to all scrollable elements by default if desired, or use class */
+  /* For this request "i don't want visible scrollbars at all", we can target * */
+}
+
+/* Global scrollbar hiding */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

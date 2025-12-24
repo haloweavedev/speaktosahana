@@ -13,12 +13,12 @@ interface SidebarProps {
 
 export function Sidebar({ filters, setFilters }: SidebarProps) {
   return (
-    <div className="flex flex-col h-full p-5 space-y-6">
-      <div className="space-y-1">
-        <h2 className="text-lg font-bold tracking-tight text-slate-900 font-heading">
+    <div className="flex flex-col h-full p-8 space-y-10">
+      <div className="space-y-2">
+        <h2 className="text-xl font-bold tracking-tight text-slate-900 font-heading">
           Filter Results
         </h2>
-        <p className="text-xs text-slate-500">
+        <p className="text-sm text-slate-500 font-medium">
           Refine by sector, maturity, and structure.
         </p>
       </div>
@@ -27,9 +27,8 @@ export function Sidebar({ filters, setFilters }: SidebarProps) {
       <section>
         <SectorFilter 
           selected={filters.sectors}
-          intersect={filters.intersectSectors}
-          onChange={(sectors, intersect) => 
-            setFilters(prev => ({ ...prev, sectors, intersectSectors: intersect }))
+          onChange={(sectors) => 
+            setFilters(prev => ({ ...prev, sectors }))
           }
         />
       </section>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useTransition } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FilterState } from './SplitViewConsole';
 import { NgoCard } from './cards/NgoCard';
 import { Pagination } from './Pagination';
@@ -31,7 +31,6 @@ export function Feed({ filters }: FeedProps) {
          limit: 20,
          search: filters.search,
          sectors: filters.sectors,
-         intersectSectors: filters.intersectSectors,
          maturity: filters.maturity,
          legalEntities: filters.legalEntities
      }).then(res => {
@@ -40,7 +39,8 @@ export function Feed({ filters }: FeedProps) {
          setTotalPages(res.meta.totalPages);
          setLoading(false);
          // Scroll to top of feed on page change
-         window.scrollTo({ top: 0, behavior: 'smooth' });
+         // window.scrollTo({ top: 0, behavior: 'smooth' }); // This might scroll the wrong container
+         // Ideally, scroll the parent container of Feed.
      }).catch(err => {
          console.error(err);
          setLoading(false);
@@ -48,7 +48,7 @@ export function Feed({ filters }: FeedProps) {
   }, [filters, page]);
 
   return (
-    <div className="p-4 sm:p-6 max-w-5xl mx-auto">
+    <div className="p-4 sm:p-6 max-w-5xl mx-auto relative">
       {loading ? (
         <div className="space-y-4">
              {[1, 2, 3].map(i => (
@@ -76,6 +76,12 @@ export function Feed({ filters }: FeedProps) {
           />
         </>
       )}
+
+      {/* Floating Counter */}
+      <div className="fixed bottom-8 right-8 z-50 bg-slate-900/90 text-white px-5 py-3 rounded-full shadow-2xl backdrop-blur-sm border border-slate-700 animate-in fade-in slide-in-from-bottom-8 flex items-center gap-2 pointer-events-none">
+         <span className="font-bold text-purple-400">{total}</span>
+         <span className="text-sm font-medium">NGOs found</span>
+      </div>
     </div>
   );
 }
