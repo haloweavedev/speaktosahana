@@ -29,17 +29,17 @@ export function SplitViewConsole() {
       </div>
 
       {/* Main Content: Split View */}
-      <div className="flex flex-1 items-start">
+      <div className="flex flex-1 items-start bg-purple-50/30">
         
-        {/* Left Console: Sidebar - Sticks to top when Hero is scrolled past */}
-        <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0 border-r border-slate-200 bg-white">
-          <div className="sticky top-0 pb-12">
+        {/* Left Console: Sidebar - Floating Sticky Card */}
+        <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0 pl-4 pr-2 py-6">
+          <div className="sticky top-6 bg-white rounded-2xl border border-purple-100 shadow-sm overflow-hidden">
             <Sidebar filters={filters} setFilters={setFilters} />
           </div>
         </div>
 
-        {/* Right Console: Feed - Scrolls with the page */}
-        <div className="flex-1 min-w-0 bg-slate-50/50">
+        {/* Right Console: Feed */}
+        <div className="flex-1 min-w-0 py-6">
           <div className="pb-12">
             <Feed filters={filters} setFilters={setFilters} />
           </div>
