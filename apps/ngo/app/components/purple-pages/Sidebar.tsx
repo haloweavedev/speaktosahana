@@ -12,15 +12,28 @@ interface SidebarProps {
 }
 
 export function Sidebar({ filters, setFilters }: SidebarProps) {
+  const hasActiveFilters = filters.sectors.length > 0 || filters.maturity !== null || filters.legalEntities.length > 0;
+
   return (
     <div className="flex flex-col h-full p-8 space-y-10">
-      <div className="space-y-2">
-        <h2 className="text-xl font-bold tracking-tight text-slate-900 font-heading">
-          Filter Results
-        </h2>
-        <p className="text-sm text-slate-500 font-medium">
-          Refine by sector, maturity, and structure.
-        </p>
+      <div className="flex items-start justify-between">
+        <div className="space-y-2">
+            <h2 className="text-xl font-bold tracking-tight text-slate-900 font-heading">
+            Filter Results
+            </h2>
+            <p className="text-sm text-slate-500 font-medium">
+            Refine by sector, maturity, and structure.
+            </p>
+        </div>
+        
+        {hasActiveFilters && (
+            <button 
+                onClick={() => setFilters(prev => ({ ...prev, sectors: [], maturity: null, legalEntities: [] }))}
+                className="text-xs font-medium text-slate-400 hover:text-purple-600 transition-colors px-2 py-1 hover:bg-purple-50 rounded"
+            >
+                Reset
+            </button>
+        )}
       </div>
 
       {/* Filter 1: Sector Intersections */}

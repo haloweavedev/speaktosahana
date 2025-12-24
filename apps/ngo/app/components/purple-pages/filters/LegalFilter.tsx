@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { Check } from 'lucide-react';
 import { getLegalTypes } from '../../../actions/getLegalTypes';
 
 interface LegalFilterProps {
@@ -28,7 +29,7 @@ export function LegalFilter({ selected, onChange }: LegalFilterProps) {
       <h3 className="text-sm font-bold text-slate-800 tracking-wide uppercase font-heading">
         Legal Structure
       </h3>
-      <div className="space-y-1 max-h-56 overflow-y-auto pr-2 custom-scrollbar">
+      <div className="space-y-1 max-h-56 overflow-y-auto pr-2 no-scrollbar">
         {options.map((option) => {
           const isSelected = selected.includes(option);
           return (
@@ -38,11 +39,9 @@ export function LegalFilter({ selected, onChange }: LegalFilterProps) {
               onClick={() => toggleOption(option)}
             >
                {/* Stunning Checkbox */}
-               <div className={`relative flex items-center justify-center w-5 h-5 rounded border transition-all duration-200 ${isSelected ? 'bg-purple-brand border-purple-brand shadow-sm scale-105' : 'bg-white border-slate-300 group-hover:border-purple-400'}`}>
+               <div className={`relative flex items-center justify-center w-5 h-5 rounded border transition-all duration-200 ${isSelected ? 'bg-purple-600 border-purple-600 shadow-sm scale-105' : 'bg-white border-slate-300 group-hover:border-purple-400'}`}>
                 {isSelected && (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-white">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
+                  <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
                 )}
               </div>
               <span className={`text-sm font-medium transition-colors ${isSelected ? 'text-purple-900' : 'text-slate-600 group-hover:text-slate-900'}`}>
