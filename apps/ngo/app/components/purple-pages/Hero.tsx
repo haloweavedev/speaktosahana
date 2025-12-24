@@ -31,13 +31,6 @@ export function Hero({ search, setFilters }: HeroProps) {
             <span className="text-[#c27aff]">purple</span>Pages
           </h1>
           <div className="flex gap-3 mt-4 md:mt-0 flex-wrap justify-center items-center">
-            <Link 
-              href="/map"
-              className="flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-bold transition-all duration-300 bg-white text-purple-900 shadow-[0_0_30px_rgba(194,122,255,0.5)] hover:shadow-[0_0_40px_rgba(194,122,255,0.7)] hover:scale-105 active:scale-95"
-            >
-              <MapIcon className="w-5 h-5" />
-              purpleNav ✨
-            </Link>
             <button className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-white/10 text-white hover:bg-white/20 border border-white/10">
               <Heart className="w-4 h-4" />
               Donors
@@ -50,10 +43,13 @@ export function Hero({ search, setFilters }: HeroProps) {
               <User className="w-4 h-4" />
               Volunteers
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-white/10 text-white hover:bg-white/20 border border-white/10">
-              <Check className="w-4 h-4" />
-              Access
-            </button>
+            <Link 
+              href="/map"
+              className="flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-bold transition-all duration-300 bg-white text-purple-900 shadow-[0_0_30px_rgba(194,122,255,0.5)] hover:shadow-[0_0_40px_rgba(194,122,255,0.7)] hover:scale-105 active:scale-95 ml-2"
+            >
+              <MapIcon className="w-5 h-5" />
+              purpleNav ✨
+            </Link>
           </div>
         </div>
         
