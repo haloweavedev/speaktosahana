@@ -15,7 +15,7 @@ interface FeedProps {
 
 function NgoCardSkeleton() {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col md:flex-row gap-6 animate-pulse">
+    <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col md:flex-row gap-6 animate-pulse">
       <div className="flex-1 space-y-4">
         <div className="flex justify-between items-start">
           <div className="h-7 bg-slate-200 rounded-md w-3/4" />

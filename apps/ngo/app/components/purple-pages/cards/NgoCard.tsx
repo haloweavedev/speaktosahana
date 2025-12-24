@@ -15,7 +15,7 @@ export function NgoCard({ ngo }: NgoCardProps) {
   const sectors = ngo.primarySectors || [];
 
   return (
-    <div className="group relative bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-purple-900/5 transition-all duration-300 p-6 flex flex-col gap-5">
+    <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-purple-900/5 transition-all duration-300 p-6 flex flex-col gap-5">
       
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">

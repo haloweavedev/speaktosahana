@@ -33,14 +33,14 @@ export function SplitViewConsole() {
         
         {/* Left Console: Sidebar - Sticks to top when Hero is scrolled past */}
         <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0 border-r border-slate-200 bg-white">
-          <div className="sticky top-0 h-screen overflow-y-auto pb-32">
+          <div className="sticky top-0 pb-12">
             <Sidebar filters={filters} setFilters={setFilters} />
           </div>
         </div>
 
         {/* Right Console: Feed - Scrolls with the page */}
         <div className="flex-1 min-w-0 bg-slate-50/50">
-          <div className="pb-32">
+          <div className="pb-12">
             <Feed filters={filters} setFilters={setFilters} />
           </div>
         </div>
