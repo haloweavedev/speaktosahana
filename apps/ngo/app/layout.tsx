@@ -1,27 +1,15 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Playfair_Display, Manrope } from "next/font/google";
 import "./globals.css";
 
-const playfair = localFont({
-  src: [
-    {
-      path: "./fonts/GeistVF.woff",
-      weight: "100 900",
-      style: "normal",
-    },
-  ],
+const playfair = Playfair_Display({
+  subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
 });
 
-const manrope = localFont({
-  src: [
-    {
-      path: "./fonts/GeistVF.woff",
-      weight: "100 900",
-      style: "normal",
-    },
-  ],
+const manrope = Manrope({
+  subsets: ["latin"],
   variable: "--font-manrope",
   display: "swap",
 });
