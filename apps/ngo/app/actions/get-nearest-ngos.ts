@@ -14,6 +14,8 @@ export type NearestNgo = {
   accuracyLevel: string | null;
 };
 
+const SEARCH_LIMIT = 33;
+
 export async function getNearestNgos(lat: number, lon: number, sector?: string): Promise<NearestNgo[]> {
   try {
     // If sector is provided, add a WHERE clause
@@ -48,7 +50,7 @@ export async function getNearestNgos(lat: number, lon: number, sector?: string):
           AND longitude IS NOT NULL
           AND ${sector} = ANY(primary_sectors)
         ORDER BY distance ASC
-        LIMIT 50;
+        LIMIT ${SEARCH_LIMIT};
       `;
     } else {
       results = await prisma.$queryRaw<any[]>`
@@ -69,7 +71,7 @@ export async function getNearestNgos(lat: number, lon: number, sector?: string):
         WHERE latitude IS NOT NULL 
           AND longitude IS NOT NULL
         ORDER BY distance ASC
-        LIMIT 50;
+        LIMIT ${SEARCH_LIMIT};
       `;
     }
 

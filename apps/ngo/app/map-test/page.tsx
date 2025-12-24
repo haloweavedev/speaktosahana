@@ -346,7 +346,7 @@ export default function MapTestPage() {
         {/* Floating Info */}
         <div className="absolute top-6 right-6 bg-white/95 backdrop-blur px-4 py-2 rounded-xl text-xs font-medium text-gray-600 shadow-lg border border-gray-100 z-[1000] pointer-events-none flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
-            {ngos.length > 0 ? `${ngos.length} Organizations` : "Map Ready"}
+            {ngos.length > 0 ? `Showing ${ngos.length} nearest NGOs` : "Map Ready"}
         </div>
       </div>
     </div>

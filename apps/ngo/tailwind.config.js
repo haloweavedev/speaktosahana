@@ -56,6 +56,7 @@ export default {
           800: '#5b21b6',
           900: '#4c1d95',
           950: '#2e1065',
+          brand: '#c27aff',
         },
       },
       borderRadius: {
@@ -64,8 +65,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-sans-stack)", "Manrope", "system-ui", "sans-serif"],
-        heading: ["var(--font-heading-stack)", "Playfair Display", "Georgia", "serif"],
+        sans: ["var(--font-manrope)", "var(--font-sans-stack)", "system-ui", "sans-serif"],
+        heading: ["var(--font-playfair)", "var(--font-heading-stack)", "Georgia", "serif"],
+        playfair: ["var(--font-playfair)", "serif"],
+        manrope: ["var(--font-manrope)", "sans-serif"],
       },
     },
   },
