@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -34,6 +35,11 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
         {children}
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="53eb23f2-77eb-4704-8178-499e06cf026b"
+        />
       </body>
     </html>
   );
