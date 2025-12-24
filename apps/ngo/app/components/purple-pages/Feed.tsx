@@ -85,7 +85,7 @@ export function Feed({ filters }: FeedProps) {
   }, [filters, page]);
 
   return (
-    <div className="p-4 sm:p-6 max-w-5xl mx-auto relative">
+    <div className="max-w-5xl mx-auto relative">
       {loading ? (
         <div className="space-y-4">
              {[1, 2, 3, 4, 5].map(i => (

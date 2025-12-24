@@ -29,17 +29,17 @@ export function SplitViewConsole() {
       </div>
 
       {/* Main Content: Split View */}
-      <div className="flex flex-1 items-start bg-purple-50/30">
+      <div className="flex flex-1 items-start bg-purple-50/30 p-6 gap-6">
         
         {/* Left Console: Sidebar - Floating Sticky Card */}
-        <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0 pl-4 pr-2 py-6">
+        <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0">
           <div className="sticky top-6 bg-white rounded-2xl border border-purple-100 shadow-sm overflow-hidden">
             <Sidebar filters={filters} setFilters={setFilters} />
           </div>
         </div>
 
         {/* Right Console: Feed */}
-        <div className="flex-1 min-w-0 py-6">
+        <div className="flex-1 min-w-0">
           <div className="pb-12">
             <Feed filters={filters} setFilters={setFilters} />
           </div>
