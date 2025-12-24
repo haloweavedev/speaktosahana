@@ -5,7 +5,7 @@ import { Monitor, Smartphone, ArrowRight } from 'lucide-react';
 
 export function MobileOverlay() {
   return (
-    <div className="lg:hidden fixed inset-0 z-[100] bg-white/95 backdrop-blur-md flex items-center justify-center p-8 text-center">
+    <div className="lg:hidden fixed inset-0 z-[9999] bg-white flex items-center justify-center p-8 text-center">
       <div className="max-w-sm space-y-8 animate-in fade-in zoom-in duration-500 fill-mode-both">
         
         {/* Visual */}
