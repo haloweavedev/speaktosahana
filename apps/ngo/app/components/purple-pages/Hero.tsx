@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Search, Heart, Building2, User, Check } from 'lucide-react';
+import Link from 'next/link';
+import { Search, Heart, Building2, User, Check, Map as MapIcon } from 'lucide-react';
 import { FilterState } from './SplitViewConsole';
 
 interface HeroProps {
@@ -30,6 +31,13 @@ export function Hero({ search, setFilters }: HeroProps) {
             <span className="text-[#c27aff]">purple</span>Pages
           </h1>
           <div className="flex gap-2 mt-4 md:mt-0 flex-wrap justify-center">
+            <Link 
+              href="/map"
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white text-purple-900 shadow-[0_0_20px_rgba(194,122,255,0.4)] hover:shadow-[0_0_30px_rgba(194,122,255,0.6)] hover:scale-105"
+            >
+              <MapIcon className="w-4 h-4" />
+              purpleNav ✨
+            </Link>
             <button className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-white text-purple-900 shadow-lg scale-105">
               <Search className="w-4 h-4" />
               Explore
