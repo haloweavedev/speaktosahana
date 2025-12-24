@@ -39,10 +39,11 @@ export async function getNgos({
 
   // Sectors
   if (sectors.length > 0) {
-    // Default to OR logic (hasSome) as requested to remove "intersection" (AND) logic
+    // User Requirement: "when i select two different sectors, npo that have both of them only should show up"
+    // Switching to AND logic (hasEvery)
     andConditions.push({
       primarySectors: {
-        hasSome: sectors,
+        hasEvery: sectors,
       },
     });
   }
