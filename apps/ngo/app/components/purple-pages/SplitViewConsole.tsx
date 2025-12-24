@@ -33,14 +33,14 @@ export function SplitViewConsole() {
         <div className="flex flex-1 min-h-0">
           
           {/* Left Console: Sticky Sidebar (30%) */}
-          <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0 sticky top-0 max-h-screen border-r border-slate-100 bg-white">
+          <div className="hidden lg:block w-[280px] xl:w-[320px] shrink-0 sticky top-0 h-screen border-r border-slate-200 bg-white">
              <div className="h-full overflow-y-auto no-scrollbar pb-20">
                 <Sidebar filters={filters} setFilters={setFilters} />
              </div>
           </div>
 
           {/* Right Console: Feed (70%) */}
-          <div className="flex-1 min-w-0 bg-white">
+          <div className="flex-1 min-w-0 bg-slate-50/50">
             <Feed filters={filters} setFilters={setFilters} />
           </div>
         </div>
