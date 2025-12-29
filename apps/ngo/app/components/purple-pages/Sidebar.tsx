@@ -9,32 +9,41 @@ import { LegalFilter } from './filters/LegalFilter';
 interface SidebarProps {
   filters: FilterState;
   setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
+  hideHeader?: boolean;
 }
 
-export function Sidebar({ filters, setFilters }: SidebarProps) {
+export function Sidebar({ filters, setFilters, hideHeader = false }: SidebarProps) {
   const hasActiveFilters = filters.sectors.length > 0 || filters.maturity !== null || filters.legalEntities.length > 0;
 
   return (
     <div className="flex flex-col h-full p-6 space-y-8">
-      <div className="flex items-start justify-between">
-        <div className="space-y-1">
-            <h2 className="text-lg font-bold tracking-tight text-slate-900 font-heading">
-              Filters
-            </h2>
-            <p className="text-xs text-slate-500 font-medium">
-              Refine your search results.
-            </p>
+      {!hideHeader && (
+        <div className="flex items-start justify-between">
+            <div className="space-y-1">
+                <h2 className="text-lg font-bold tracking-tight text-slate-900 font-heading">
+                Filters
+                </h2>
+                <p className="text-xs text-slate-500 font-medium">
+                Refine your search results.
+                </p>
+            </div>
+            
+            {hasActiveFilters && (
+                <button 
+                    onClick={() => setFilters(prev => ({ ...prev, sectors: [], maturity: null, legalEntities: [] }))}
+                    className="text-[10px] font-bold uppercase tracking-wider text-purple-600 hover:text-purple-800 transition-colors px-2 py-1 bg-purple-50 hover:bg-purple-100 rounded-md"
+                >
+                    Reset
+                </button>
+            )}
         </div>
-        
-        {hasActiveFilters && (
-            <button 
-                onClick={() => setFilters(prev => ({ ...prev, sectors: [], maturity: null, legalEntities: [] }))}
-                className="text-[10px] font-bold uppercase tracking-wider text-purple-600 hover:text-purple-800 transition-colors px-2 py-1 bg-purple-50 hover:bg-purple-100 rounded-md"
-            >
-                Reset
-            </button>
-        )}
-      </div>
+      )}
+      
+      {/* If header is hidden but we have active filters, show reset button compactly? 
+          Or maybe the modal header handles reset? 
+          For now, let's keep it simple. If header is hidden, we lose the reset button here.
+          The modal parent can implement its own reset if needed.
+      */}
 
       <div className="space-y-8">
         {/* Filter 1: Sector Intersections */}

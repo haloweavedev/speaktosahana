@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
 import Script from "next/script";
-import { MobileOverlay } from "./components/MobileOverlay";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -35,7 +34,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
-        <MobileOverlay />
         {children}
         <Script
           defer

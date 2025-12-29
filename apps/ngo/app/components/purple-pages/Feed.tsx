@@ -11,6 +11,7 @@ type SerializedNgo = Awaited<ReturnType<typeof getNgos>>['data'][0];
 interface FeedProps {
   filters: FilterState;
   setFilters?: React.Dispatch<React.SetStateAction<FilterState>>; // Optional for now
+  onTotalChange?: (total: number) => void;
 }
 
 function NgoCardSkeleton() {
@@ -48,7 +49,7 @@ function NgoCardSkeleton() {
   );
 }
 
-export function Feed({ filters }: FeedProps) {
+export function Feed({ filters, onTotalChange }: FeedProps) {
   const [ngos, setNgos] = useState<SerializedNgo[]>([]);
   const [total, setTotal] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
@@ -73,11 +74,9 @@ export function Feed({ filters }: FeedProps) {
      }).then(res => {
          setNgos(res.data);
          setTotal(res.meta.total);
+         if (onTotalChange) onTotalChange(res.meta.total);
          setTotalPages(res.meta.totalPages);
          setLoading(false);
-         // Scroll to top of feed on page change
-         // window.scrollTo({ top: 0, behavior: 'smooth' }); // This might scroll the wrong container
-         // Ideally, scroll the parent container of Feed.
      }).catch(err => {
          console.error(err);
          setLoading(false);
@@ -114,8 +113,8 @@ export function Feed({ filters }: FeedProps) {
         </>
       )}
 
-      {/* Floating Counter */}
-      <div className="fixed bottom-8 right-8 z-50 bg-slate-900/90 text-white px-5 py-3 rounded-full shadow-2xl backdrop-blur-sm border border-slate-700 animate-in fade-in slide-in-from-bottom-8 flex items-center gap-2 pointer-events-none">
+      {/* Floating Counter - Desktop Only */}
+      <div className="hidden lg:flex fixed bottom-8 right-8 z-50 bg-slate-900/90 text-white px-5 py-3 rounded-full shadow-2xl backdrop-blur-sm border border-slate-700 animate-in fade-in slide-in-from-bottom-8 items-center gap-2 pointer-events-none">
          <span className="font-bold text-purple-400">{total}</span>
          <span className="text-sm font-medium">NGOs found</span>
       </div>
