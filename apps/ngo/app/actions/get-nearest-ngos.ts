@@ -14,23 +14,14 @@ export type NearestNgo = {
   accuracyLevel: string | null;
 };
 
-const SEARCH_LIMIT = 33;
+const SEARCH_LIMIT = 50;
 
-export async function getNearestNgos(lat: number, lon: number, sector?: string): Promise<NearestNgo[]> {
+export async function getNearestNgos(lat: number, lon: number, sectors?: string[]): Promise<NearestNgo[]> {
   try {
-    // If sector is provided, add a WHERE clause
-    const sectorCondition = sector 
-      ? `AND ${sector} = ANY(primary_sectors)` 
-      : "";
-
-    // Using Prisma.sql would be safer for parameter injection, but $queryRaw works with template literals 
-    // for simple values. For dynamic AND clauses, we have to be careful.
-    // Since sector comes from a controlled list ideally, but here we should probably pass it as a param.
-    // However, $queryRaw accepts parameters. Let's write it carefully.
-
     let results;
-    
-    if (sector) {
+
+    if (sectors && sectors.length > 0) {
+      // Use the containment operator @> to ensure primary_sectors contains all selected sectors
       results = await prisma.$queryRaw<any[]>`
         SELECT 
           id, 
@@ -48,7 +39,7 @@ export async function getNearestNgos(lat: number, lon: number, sector?: string):
         FROM ngos
         WHERE latitude IS NOT NULL 
           AND longitude IS NOT NULL
-          AND ${sector} = ANY(primary_sectors)
+          AND primary_sectors @> ${sectors}
         ORDER BY distance ASC
         LIMIT ${SEARCH_LIMIT};
       `;

@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import type { NearestNgo } from "../actions/get-nearest-ngos";
 import { defaultIcon, preciseIcon, selectedIcon, userIcon } from "./map-icons";
+import { Info, X } from "lucide-react";
 
 
 // Component to handle map movement
@@ -34,6 +35,8 @@ export default function MapViewCore({ ngos, userLocation, selectedNgoId, onSelec
   const defaultCenter: [number, number] = [12.9716, 77.5946];
   
   const activeNgo = ngos.find(n => n.id === selectedNgoId);
+  const [showLegend, setShowLegend] = useState(false);
+  const legendRef = useRef<HTMLDivElement>(null);
   
   // Logic to determine center
   // 1. If active NGO, center on it
@@ -60,8 +63,23 @@ export default function MapViewCore({ ngos, userLocation, selectedNgoId, onSelec
     }
   }, [selectedNgoId]);
 
+  // Click outside listener for legend
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (legendRef.current && !legendRef.current.contains(event.target as Node)) {
+        setShowLegend(false);
+      }
+    }
+    if (showLegend) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showLegend]);
+
   return (
-    <div className="w-full h-full z-0 outline-none">
+    <div className="w-full h-full z-0 outline-none relative group">
       <MapContainer
         center={defaultCenter}
         zoom={12}
@@ -126,20 +144,37 @@ export default function MapViewCore({ ngos, userLocation, selectedNgoId, onSelec
         })}
       </MapContainer>
       
-      {/* Floating Legend */}
-      <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg border border-purple-100 z-[400] text-[10px] font-medium text-gray-600 flex flex-col gap-2 transition-opacity hover:opacity-100 opacity-80">
-        <div className="flex items-center gap-2">
-           <div className="w-2.5 h-2.5 rounded-full bg-green-500 ring-2 ring-green-100"></div>
-           <span>Verified Location</span>
-        </div>
-        <div className="flex items-center gap-2">
-           <div className="w-2.5 h-2.5 rounded-full bg-blue-500 ring-2 ring-blue-100"></div>
-           <span>Approximate</span>
-        </div>
-        <div className="flex items-center gap-2">
-           <div className="w-2.5 h-2.5 rounded-full bg-red-500 ring-2 ring-red-100"></div>
-           <span>You / Search</span>
-        </div>
+      {/* Legend Container */}
+      <div className="absolute bottom-32 left-4 md:bottom-6 md:left-6 z-[400]" ref={legendRef}>
+        {/* Toggle Button */}
+        <button 
+          onClick={() => setShowLegend(!showLegend)}
+          className="bg-white/90 backdrop-blur-md p-3 rounded-full shadow-xl border border-purple-100 text-purple-600 hover:bg-white transition-all active:scale-95"
+          aria-label="Map Legend"
+        >
+          {showLegend ? <X size={20} /> : <Info size={20} />}
+        </button>
+
+        {/* Popover Content */}
+        {showLegend && (
+          <div className="absolute bottom-full left-0 mb-3 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-purple-100 min-w-[180px] animate-in slide-in-from-bottom-2 fade-in duration-200">
+            <h4 className="text-xs font-bold text-slate-900 mb-3 uppercase tracking-wider">Map Legend</h4>
+            <div className="flex flex-col gap-3 text-xs font-medium text-slate-600">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-green-500 ring-2 ring-green-100 shadow-sm"></div>
+                <span>Verified Location</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-blue-500 ring-2 ring-blue-100 shadow-sm"></div>
+                <span>Approximate</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-red-500 ring-2 ring-red-100 shadow-sm"></div>
+                <span>You / Search</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

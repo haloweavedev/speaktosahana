@@ -15,6 +15,7 @@ import {
   Filter,
   Check,
   ChevronDown,
+  ChevronUp,
   Navigation
 } from "lucide-react";
 
@@ -28,31 +29,47 @@ export default function MapTestPage() {
   const [userLocation, setUserLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [selectedNgoId, setSelectedNgoId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSector, setSelectedSector] = useState<string>("");
+  const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
   const [isSectorOpen, setIsSectorOpen] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
+  
+  // Mobile Sheet State
+  const [isExpanded, setIsExpanded] = useState(false);
 
   // Initial Load
   useEffect(() => {
     getUniqueSectors().then(setSectors);
   }, []);
 
-  // Scroll active item into view
+  // Scroll active item into view & Expand Sheet
   useEffect(() => {
     if (selectedNgoId) {
+      // Auto-expand sheet on mobile when a pin is clicked
+      if (window.innerWidth < 768) {
+        setIsExpanded(true);
+      }
+
       const element = document.getElementById(`ngo-card-${selectedNgoId}`);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Small delay to allow sheet expansion animation to start
+        setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
       }
     }
   }, [selectedNgoId]);
 
-  const fetchNgos = async (lat: number, lon: number, sector?: string) => {
+  const fetchNgos = async (lat: number, lon: number, sectorsList: string[]) => {
     setLoading(true);
     setHasSearched(true);
     try {
-      const results = await getNearestNgos(lat, lon, sector || undefined);
+      const results = await getNearestNgos(lat, lon, sectorsList);
       setNgos(results);
+      
+      // Auto-expand if results found on mobile
+      if (results.length > 0 && window.innerWidth < 768) {
+        setIsExpanded(true);
+      }
     } catch (err) {
       console.error(err);
       setError("Failed to fetch NGOs");
@@ -76,7 +93,7 @@ export default function MapTestPage() {
         const { latitude, longitude } = position.coords;
         setUserLocation({ lat: latitude, lon: longitude });
         setSearchQuery(""); 
-        fetchNgos(latitude, longitude, selectedSector);
+        fetchNgos(latitude, longitude, selectedSectors);
       },
       (err) => {
         console.error(err);
@@ -102,7 +119,7 @@ export default function MapTestPage() {
       }
 
       setUserLocation({ lat: location.lat, lon: location.lng });
-      fetchNgos(location.lat, location.lng, selectedSector);
+      fetchNgos(location.lat, location.lng, selectedSectors);
 
     } catch (err) {
       console.error(err);
@@ -117,42 +134,102 @@ export default function MapTestPage() {
   };
 
   const toggleSector = (sector: string) => {
-    const newSector = selectedSector === sector ? "" : sector;
-    setSelectedSector(newSector);
-    setIsSectorOpen(false);
+    if (!sector) {
+        // Clear all
+        setSelectedSectors([]);
+        if (userLocation) {
+            fetchNgos(userLocation.lat, userLocation.lon, []);
+        }
+        return;
+    }
+
+    let newSectors: string[];
+    if (selectedSectors.includes(sector)) {
+        newSectors = selectedSectors.filter(s => s !== sector);
+    } else {
+        newSectors = [...selectedSectors, sector];
+    }
     
+    setSelectedSectors(newSectors);
+    
+    // Live update map if user has a location
     if (userLocation) {
-      fetchNgos(userLocation.lat, userLocation.lon, newSector);
+      fetchNgos(userLocation.lat, userLocation.lon, newSectors);
     }
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen w-full bg-gray-50 overflow-hidden font-sans text-gray-900">
+    <div className="relative h-screen w-full bg-gray-50 overflow-hidden font-sans text-gray-900 md:flex md:flex-row">
       
-      {/* LEFT PANEL: LIST & CONTROLS */}
-      <div className="w-full md:w-[420px] flex-shrink-0 h-[40vh] md:h-full bg-white border-b md:border-r border-gray-200 shadow-xl z-20 flex flex-col relative order-2 md:order-1">
+      {/* MAP LAYER (Bottom on mobile, Right on desktop) */}
+      <div className="absolute inset-0 z-0 md:static md:flex-1 md:h-full md:order-2">
+        <MapView 
+            ngos={ngos} 
+            userLocation={userLocation} 
+            selectedNgoId={selectedNgoId}
+            onSelectNgo={setSelectedNgoId}
+        />
+        {/* Simple count overlay for desktop map, mobile uses sheet */}
+        <div className="hidden md:flex absolute top-6 right-6 bg-white/95 backdrop-blur px-4 py-2 rounded-xl text-xs font-medium text-gray-600 shadow-lg border border-gray-100 z-[1000] pointer-events-none items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
+            {ngos.length > 0 ? `Showing ${ngos.length} nearest NGOs` : "Map Ready"}
+        </div>
+      </div>
+
+      {/* SHEET LAYER (Top on mobile, Left on desktop) */}
+      <div 
+        className={`
+            absolute bottom-0 left-0 right-0 z-30 bg-white shadow-[0_-10px_40px_rgba(0,0,0,0.15)] 
+            flex flex-col rounded-t-3xl transition-[height] duration-500 cubic-bezier(0.32, 0.72, 0, 1)
+            md:static md:w-[420px] md:h-full md:rounded-none md:shadow-xl md:z-20 md:order-1
+            ${isExpanded ? 'h-[85vh]' : 'h-[200px]'}
+            md:h-full
+        `}
+      >
         
-        {/* Header */}
-        <div className="px-6 py-5 border-b bg-white z-30 shadow-sm">
+        {/* Mobile Drag Handle & Toggle */}
+        <div 
+            className="md:hidden flex flex-col items-center justify-center pt-3 pb-1 cursor-pointer shrink-0"
+            onClick={() => setIsExpanded(!isExpanded)}
+        >
+            <div className="w-12 h-1.5 bg-gray-200 rounded-full mb-2" />
+        </div>
+
+        {/* Mobile Up/Down Toggle Button */}
+        <button 
+            className={`
+                md:hidden absolute top-4 right-6 p-2 rounded-full transition-all duration-300 z-40 border shadow-sm
+                ${isExpanded 
+                    ? 'bg-purple-50 text-purple-700 border-purple-200 ring-2 ring-purple-100' 
+                    : 'bg-gray-50 text-gray-500 border-gray-100 hover:bg-purple-50 hover:text-purple-700'}
+            `}
+            onClick={() => setIsExpanded(!isExpanded)}
+        >
+            {isExpanded ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
+        </button>
+        
+        {/* Header Section (Search & Controls) */}
+        <div className="px-6 pb-4 md:pt-5 md:pb-5 border-b bg-white z-30 shrink-0">
           <h1 className="text-2xl font-bold text-purple-900 flex items-center gap-2 mb-1 tracking-tight">
             <div className="p-1.5 bg-purple-100 rounded-lg">
                 <MapPin className="w-5 h-5 text-purple-700" />
             </div>
             PurplePages
           </h1>
-          <p className="text-sm text-gray-500 mb-5 ml-1">
+          <p className="text-sm text-gray-500 mb-5 ml-1 hidden md:block">
             Intelligence Layer for the Social Sector
           </p>
           
-          <form onSubmit={onSearchSubmit} className="relative mb-3 group">
+          <form onSubmit={onSearchSubmit} className="relative mb-3 group mt-4 md:mt-0">
             <div className="relative flex items-center w-full">
               <Search className="absolute left-3.5 w-4 h-4 text-gray-400 group-focus-within:text-purple-600 transition-colors pointer-events-none" />
               
               <input
                 type="text"
-                placeholder="Search location (e.g. Indiranagar)"
+                placeholder="Search location..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => { if(window.innerWidth < 768) setIsExpanded(true); }}
                 className="w-full pl-10 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 focus:bg-white transition-all"
               />
 
@@ -192,7 +269,7 @@ export default function MapTestPage() {
             <button
                 onClick={handleGetLocation}
                 disabled={loading}
-                className="flex-1 group flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-gray-200 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-700 text-gray-600 rounded-xl text-xs font-semibold transition-all shadow-sm"
+                className="flex-1 group flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-gray-200 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-700 text-gray-600 rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95"
             >
                 {loading ? (
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -202,47 +279,21 @@ export default function MapTestPage() {
                 Near Me
             </button>
 
-            {/* Filter Dropdown */}
-            <div className="relative flex-1">
-                <button
-                    onClick={() => setIsSectorOpen(!isSectorOpen)}
-                    className={`
-                        w-full flex items-center justify-between px-4 py-2.5 border rounded-xl text-xs font-semibold transition-all shadow-sm
-                        ${selectedSector 
-                            ? 'bg-purple-50 border-purple-200 text-purple-700' 
-                            : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'}
-                    `}
-                >
-                    <span className="truncate max-w-[120px]">
-                        {selectedSector || "Filter Sector"}
-                    </span>
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isSectorOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {isSectorOpen && (
-                    <div className="absolute top-full left-0 right-0 mt-2 max-h-60 overflow-y-auto bg-white border border-gray-200 rounded-xl shadow-xl z-50 py-1">
-                        <button
-                            onClick={() => toggleSector("")}
-                            className="w-full text-left px-4 py-2 text-xs hover:bg-gray-50 text-gray-600 font-medium border-b border-gray-50"
-                        >
-                            All Sectors
-                        </button>
-                        {sectors.map((sector) => (
-                            <button
-                                key={sector}
-                                onClick={() => toggleSector(sector)}
-                                className={`
-                                    w-full text-left px-4 py-2 text-xs hover:bg-purple-50 flex items-center justify-between
-                                    ${selectedSector === sector ? 'text-purple-700 font-bold bg-purple-50/50' : 'text-gray-700'}
-                                `}
-                            >
-                                {sector}
-                                {selectedSector === sector && <Check className="w-3 h-3" />}
-                            </button>
-                        ))}
-                    </div>
-                )}
-            </div>
+            {/* Filter Button (Triggers Modal) */}
+            <button
+                onClick={() => setIsSectorOpen(true)}
+                className={`
+                    flex-1 flex items-center justify-between px-4 py-2.5 border rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95
+                    ${selectedSectors.length > 0 
+                        ? 'bg-purple-50 border-purple-200 text-purple-700' 
+                        : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'}
+                `}
+            >
+                <span className="truncate max-w-[100px]">
+                    {selectedSectors.length > 0 ? `${selectedSectors.length} Sectors` : "Filter Sector"}
+                </span>
+                <Filter className="w-3.5 h-3.5" />
+            </button>
           </div>
           
           {error && (
@@ -253,20 +304,20 @@ export default function MapTestPage() {
           )}
         </div>
 
-        {/* Scrollable List */}
+        {/* Scrollable List Body */}
         <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent">
           {!hasSearched && !loading && (
-            <div className="flex flex-col items-center justify-center h-64 text-gray-400 text-center px-6">
+            <div className="flex flex-col items-center justify-center h-48 md:h-64 text-gray-400 text-center px-6">
               <div className="p-4 bg-purple-50 rounded-full mb-3">
                 <Search className="w-6 h-6 text-purple-300" />
               </div>
               <p className="text-sm font-medium text-gray-600">Find Organizations</p>
-              <p className="text-xs mt-1 leading-relaxed">Search for a location or use your current position to discover NGOs nearby.</p>
+              <p className="text-xs mt-1 leading-relaxed max-w-[200px] mx-auto">Search for a location or use your current position to discover NGOs nearby.</p>
             </div>
           )}
 
           {hasSearched && ngos.length === 0 && !loading && (
-            <div className="flex flex-col items-center justify-center h-64 text-gray-400 text-center px-6">
+            <div className="flex flex-col items-center justify-center h-48 md:h-64 text-gray-400 text-center px-6">
               <div className="p-4 bg-gray-100 rounded-full mb-3">
                 <Filter className="w-6 h-6 opacity-30" />
               </div>
@@ -329,26 +380,69 @@ export default function MapTestPage() {
             </div>
           ))}
           
-          {/* Footer Spacer */}
-          <div className="h-4"></div>
+          {/* Footer Spacer for Mobile safety */}
+          <div className="h-8 md:h-4"></div>
         </div>
       </div>
 
-      {/* RIGHT PANEL: MAP */}
-      <div className="flex-1 h-[60vh] md:h-full relative bg-gray-200/50 order-1 md:order-2">
-        <MapView 
-            ngos={ngos} 
-            userLocation={userLocation} 
-            selectedNgoId={selectedNgoId}
-            onSelectNgo={setSelectedNgoId}
-        />
-        
-        {/* Floating Info */}
-        <div className="absolute top-6 right-6 bg-white/95 backdrop-blur px-4 py-2 rounded-xl text-xs font-medium text-gray-600 shadow-lg border border-gray-100 z-[1000] pointer-events-none flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
-            {ngos.length > 0 ? `Showing ${ngos.length} nearest NGOs` : "Map Ready"}
+      {/* FILTER MODAL OVERLAY */}
+      {isSectorOpen && (
+        <div className="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
+           <div 
+             className="bg-white rounded-2xl w-full max-w-sm max-h-[80vh] flex flex-col shadow-2xl animate-in zoom-in-95 duration-200"
+             onClick={(e) => e.stopPropagation()}
+           >
+              <div className="p-5 border-b border-gray-100 flex items-center justify-between shrink-0">
+                  <h3 className="font-bold text-lg text-gray-900">Filter by Sector</h3>
+                  <button 
+                      onClick={() => setIsSectorOpen(false)}
+                      className="p-2 -mr-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100"
+                  >
+                      <X size={20} />
+                  </button>
+              </div>
+              
+              <div className="overflow-y-auto p-2">
+                  <button
+                      onClick={() => toggleSector("")}
+                      className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 text-gray-600 mb-1 border border-transparent hover:border-gray-200 transition-all"
+                  >
+                      Clear Selection
+                  </button>
+                  {sectors.map((sector) => {
+                      const isSelected = selectedSectors.includes(sector);
+                      return (
+                        <button
+                            key={sector}
+                            onClick={() => toggleSector(sector)}
+                            className={`
+                                w-full text-left px-4 py-3 rounded-xl text-sm flex items-center justify-between mb-1 border transition-all
+                                ${isSelected 
+                                    ? 'bg-purple-50 border-purple-200 text-purple-700 font-bold shadow-sm' 
+                                    : 'text-gray-700 border-transparent hover:bg-gray-50 hover:border-gray-200'}
+                            `}
+                        >
+                            {sector}
+                            {isSelected && <Check className="w-4 h-4" />}
+                        </button>
+                      );
+                  })}
+              </div>
+              {/* Footer with Apply button */}
+              <div className="p-4 border-t border-gray-100 shrink-0">
+                  <button
+                     onClick={() => setIsSectorOpen(false)}
+                     className="w-full py-3 bg-purple-600 text-white rounded-xl font-bold shadow-lg shadow-purple-600/20 active:scale-95 transition-transform"
+                  >
+                     Apply Filters {selectedSectors.length > 0 && `(${selectedSectors.length})`}
+                  </button>
+              </div>
+           </div>
+           {/* Backdrop click to close */}
+           <div className="absolute inset-0 -z-10" onClick={() => setIsSectorOpen(false)} />
         </div>
-      </div>
+      )}
+
     </div>
   );
 }
