@@ -27,7 +27,7 @@ export function MaturityFilter({ selected, onChange }: MaturityFilterProps) {
             <div 
               key={option.value} 
               className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-all duration-200 group ${isSelected ? 'bg-purple-50' : 'hover:bg-slate-50'}`}
-              onClick={() => onChange(option.value as any)}
+              onClick={() => onChange(isSelected ? null : (option.value as any))}
             >
                {/* Checkbox-style Radio */}
                <div className={`relative flex items-center justify-center w-5 h-5 rounded border transition-all duration-200 ${isSelected ? 'bg-purple-600 border-purple-600 shadow-sm scale-105' : 'bg-white border-slate-300 group-hover:border-purple-400'}`}>

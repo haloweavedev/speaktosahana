@@ -13,9 +13,16 @@ interface SectorFilterProps {
 export function SectorFilter({ selected, onChange }: SectorFilterProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [allSectors, setAllSectors] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getSectors().then(setAllSectors);
+    setIsLoading(true);
+    getSectors()
+      .then((sectors) => {
+        setAllSectors(sectors);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
   }, []);
 
   const filteredSectors = allSectors.filter(sector => 
@@ -49,31 +56,40 @@ export function SectorFilter({ selected, onChange }: SectorFilterProps) {
       </div>
 
       <div className="h-64 overflow-y-auto space-y-1 pr-2 no-scrollbar">
-        {filteredSectors.map(sector => {
-          const isSelected = selected.includes(sector);
-          return (
-            <div 
-              key={sector} 
-              className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-all duration-200 group ${isSelected ? 'bg-purple-50' : 'hover:bg-slate-50'}`}
-              onClick={() => toggleSector(sector)}
-            >
-              {/* Stunning Checkbox */}
-              <div className={`relative flex items-center justify-center w-5 h-5 rounded border transition-all duration-200 ${isSelected ? 'bg-purple-600 border-purple-600 shadow-sm scale-105' : 'bg-white border-slate-300 group-hover:border-purple-400'}`}>
-                {isSelected && (
-                  <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
-                )}
+        {isLoading ? (
+          // Loading Skeleton
+          Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="flex items-center gap-3 p-2 rounded-lg animate-pulse">
+              <div className="w-5 h-5 bg-slate-200 rounded" />
+              <div className="h-4 bg-slate-200 rounded w-3/4" />
+            </div>
+          ))
+        ) : filteredSectors.length > 0 ? (
+          filteredSectors.map(sector => {
+            const isSelected = selected.includes(sector);
+            return (
+              <div 
+                key={sector} 
+                className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-all duration-200 group ${isSelected ? 'bg-purple-50' : 'hover:bg-slate-50'}`}
+                onClick={() => toggleSector(sector)}
+              >
+                {/* Stunning Checkbox */}
+                <div className={`relative flex items-center justify-center w-5 h-5 rounded border transition-all duration-200 ${isSelected ? 'bg-purple-600 border-purple-600 shadow-sm scale-105' : 'bg-white border-slate-300 group-hover:border-purple-400'}`}>
+                  {isSelected && (
+                    <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                  )}
+                </div>
+                
+                <span className={`text-sm font-medium transition-colors ${isSelected ? 'text-purple-900' : 'text-slate-600 group-hover:text-slate-900'}`}>
+                  {sector}
+                </span>
               </div>
-              
-              <span className={`text-sm font-medium transition-colors ${isSelected ? 'text-purple-900' : 'text-slate-600 group-hover:text-slate-900'}`}>
-                {sector}
-              </span>
-            </div>
-          );
-        })}
-        {filteredSectors.length === 0 && (
-            <div className="py-4 text-center">
-               <p className="text-xs text-slate-400 italic">No sectors found matching "{searchTerm}"</p>
-            </div>
+            );
+          })
+        ) : (
+          <div className="py-4 text-center">
+             <p className="text-xs text-slate-400 italic">No sectors found matching "{searchTerm}"</p>
+          </div>
         )}
       </div>
     </div>
