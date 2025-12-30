@@ -29,6 +29,16 @@ export type AnalyticsData = {
     sector: string;
     pincode?: string;
   }[];
+  digitalStats: {
+      emailCount: number;
+      mobileCount: number;
+      websiteCount: number;
+  };
+  ageDemographics: {
+      new: number; // < 3 years
+      established: number; // 3-10 years
+      veteran: number; // > 10 years
+  };
 };
 
 export async function getAnalyticsData(): Promise<AnalyticsData> {
@@ -52,6 +62,9 @@ export async function getAnalyticsData(): Promise<AnalyticsData> {
         secondarySectors: true,
         registrationDate: true,
         dateOfRegistration: true,
+        email: true,
+        mobile: true,
+        website: true,
       },
     }),
   ]);
@@ -67,12 +80,24 @@ export async function getAnalyticsData(): Promise<AnalyticsData> {
   const synergyZoneCounts: Record<string, number> = {}; // Pincode -> Synergy Count
 
   let oldNgos = 0;
+  const now = new Date();
   const threeYearsAgo = new Date();
-  threeYearsAgo.setFullYear(threeYearsAgo.getFullYear() - 3);
+  threeYearsAgo.setFullYear(now.getFullYear() - 3);
+  
+  const tenYearsAgo = new Date();
+  tenYearsAgo.setFullYear(now.getFullYear() - 10);
+
+  const digitalStats = { emailCount: 0, mobileCount: 0, websiteCount: 0 };
+  const ageDemographics = { new: 0, established: 0, veteran: 0 };
 
   const mapPoints: AnalyticsData['mapPoints'] = [];
 
   allNgos.forEach((ngo) => {
+    // Digital Stats
+    if (ngo.email) digitalStats.emailCount++;
+    if (ngo.mobile) digitalStats.mobileCount++;
+    if (ngo.website) digitalStats.websiteCount++;
+
     const sectors = [...(ngo.primarySectors || []), ...(ngo.secondarySectors || [])];
     const uniqueSectors = Array.from(new Set(sectors));
     const pincode = ngo.pincode ? ngo.pincode.trim() : null;
@@ -125,13 +150,23 @@ export async function getAnalyticsData(): Promise<AnalyticsData> {
         });
     }
 
-    // 2. Dates
+    // 2. Dates & Demographics
     const regDate = ngo.registrationDate || ngo.dateOfRegistration;
     if (regDate) {
       const date = new Date(regDate);
       if (date < threeYearsAgo) {
         oldNgos++;
       }
+      
+      // Age Demographics
+      if (date > threeYearsAgo) {
+          ageDemographics.new++;
+      } else if (date > tenYearsAgo) {
+          ageDemographics.established++;
+      } else {
+          ageDemographics.veteran++;
+      }
+
       const year = date.getFullYear();
       if (year > 1900 && year <= new Date().getFullYear()) {
         yearCounts[year] = (yearCounts[year] || 0) + 1;
@@ -209,5 +244,7 @@ export async function getAnalyticsData(): Promise<AnalyticsData> {
     sectorDistribution: topSectors,
     registrationTrend,
     mapPoints,
+    digitalStats,
+    ageDemographics,
   };
 }

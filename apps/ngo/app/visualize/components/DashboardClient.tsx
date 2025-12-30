@@ -6,6 +6,8 @@ import { MetricCard } from './MetricCard';
 import { SectorChart } from './SectorChart';
 import { SynergyCard } from './SynergyCard';
 import { TrustTrendChart } from './TrustTrendChart';
+import { DigitalPresenceCard } from './DigitalPresenceCard';
+import { ExperienceLevelChart } from './ExperienceLevelChart';
 import { Globe, ShieldCheck, Database, MapPin } from 'lucide-react';
 import type { AnalyticsData } from '../../actions/analytics';
 import { Card, CardContent, CardHeader, CardTitle } from '@repo/ui';
@@ -73,12 +75,12 @@ export function DashboardClient({ data }: DashboardClientProps) {
         
         {/* Top 10 Areas List */}
         <div className="lg:col-span-1 h-full">
-            <Card className="h-full border-border/60 shadow-none flex flex-col">
+            <Card className="h-full max-h-[500px] border-border/60 shadow-none flex flex-col">
               <CardHeader>
                 <CardTitle className="text-lg font-display">High Density Zones</CardTitle>
                 <p className="text-sm text-muted-foreground">Top 10 NGO Hubs in Bengaluru</p>
               </CardHeader>
-              <CardContent className="flex-1 overflow-y-auto pr-2">
+              <CardContent className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
                  <div className="space-y-3">
                    {data.topAreas.map((area, i) => (
                        <div key={area.pincode} className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 border border-secondary hover:bg-secondary/50 transition-colors">
@@ -100,11 +102,17 @@ export function DashboardClient({ data }: DashboardClientProps) {
         </div>
       </div>
 
-      {/* Deep Dive Row: Sectors, Synergy, Trends */}
+      {/* Ecosystem Pulse Row: Digital Maturity, Demographics, Trends */}
       <div className="grid gap-6 lg:grid-cols-3">
+         <DigitalPresenceCard stats={data.digitalStats} total={data.totalCount} />
+         <ExperienceLevelChart data={data.ageDemographics} total={data.totalCount} />
+         <TrustTrendChart data={data.registrationTrend} />
+      </div>
+
+      {/* Deep Dive Row: Sectors & Synergy */}
+      <div className="grid gap-6 lg:grid-cols-2">
          <SectorChart data={data.sectorDistribution} />
          <SynergyCard data={data.synergy.pairs} zones={data.synergy.topZones} />
-         <TrustTrendChart data={data.registrationTrend} />
       </div>
     </div>
   );
