@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Search, Heart, Building2, User, Check, Map as MapIcon } from 'lucide-react';
+import { Search, Heart, Building2, User, Check, Map as MapIcon, BarChart2 } from 'lucide-react';
 import { FilterState } from './SplitViewConsole';
 
 interface HeroProps {
@@ -43,6 +43,13 @@ export function Hero({ search, setFilters }: HeroProps) {
               <User className="w-4 h-4" />
               Volunteers
             </button>
+            <Link 
+              href="/visualize"
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-white/10 text-white hover:bg-white/20 border border-white/10"
+            >
+              <BarChart2 className="w-4 h-4" />
+              Insights
+            </Link>
             <Link 
               href="/map"
               target="_blank"

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Sidebar } from './Sidebar';
 import { Feed } from './Feed';
 import { Hero } from './Hero';
-import { Menu, X, Map as MapIcon, SlidersHorizontal } from 'lucide-react';
+import { Menu, X, Map as MapIcon, SlidersHorizontal, BarChart2 } from 'lucide-react';
 import Link from 'next/link';
 
 export type FilterState = {
@@ -57,7 +57,7 @@ export function SplitViewConsole() {
 
       {/* Mobile Floating Pill Console */}
       <div className="lg:hidden fixed bottom-6 left-4 right-4 z-40 flex justify-center pointer-events-none">
-        <div className="pointer-events-auto bg-slate-900/95 backdrop-blur-xl text-white rounded-full shadow-2xl shadow-purple-900/20 border border-white/10 flex items-center p-1.5 w-full max-w-sm mx-auto">
+        <div className="pointer-events-auto bg-slate-900/95 backdrop-blur-xl text-white rounded-full shadow-2xl shadow-purple-900/20 border border-white/10 flex items-center p-1.5 w-full max-w-md mx-auto">
             
             {/* Left: Filters */}
             <button
@@ -76,6 +76,18 @@ export function SplitViewConsole() {
                 <p className="text-xs text-slate-400 font-medium uppercase tracking-wider">Found</p>
                 <p className="text-sm font-bold text-white leading-none mt-0.5 truncate">{totalResults}</p>
             </div>
+
+            {/* Divider */}
+            <div className="w-px h-6 bg-white/20 mx-1" />
+
+            {/* Insights */}
+            <Link
+                href="/visualize"
+                className="flex items-center gap-2 px-4 py-3 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors shrink-0"
+            >
+                <BarChart2 className="w-4 h-4 text-purple-300" />
+                <span className="text-sm font-semibold tracking-wide">Insights</span>
+            </Link>
 
             {/* Divider */}
             <div className="w-px h-6 bg-white/20 mx-1" />
