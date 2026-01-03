@@ -57,48 +57,48 @@ export function SplitViewConsole() {
 
       {/* Mobile Floating Pill Console */}
       <div className="lg:hidden fixed bottom-6 left-4 right-4 z-40 flex justify-center pointer-events-none">
-        <div className="pointer-events-auto bg-slate-900/95 backdrop-blur-xl text-white rounded-full shadow-2xl shadow-purple-900/20 border border-white/10 flex items-center p-1.5 w-full max-w-md mx-auto">
+        <div className="pointer-events-auto bg-slate-900/95 backdrop-blur-xl text-white rounded-full shadow-2xl shadow-purple-900/20 border border-white/10 flex items-center justify-between p-1 w-full max-w-md mx-auto">
             
             {/* Left: Filters */}
             <button
                 onClick={() => setIsFilterOpen(true)}
-                className="flex items-center gap-2 px-4 py-3 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors shrink-0"
+                className="flex items-center gap-1.5 px-3 py-2.5 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors shrink-0"
             >
                 <SlidersHorizontal className="w-4 h-4 text-purple-300" />
-                <span className="text-sm font-semibold tracking-wide">Filters</span>
+                <span className="text-xs font-semibold tracking-wide">Filters</span>
             </button>
 
             {/* Divider */}
-            <div className="w-px h-6 bg-white/20 mx-1" />
+            <div className="w-px h-5 bg-white/20" />
 
             {/* Center: Count */}
-            <div className="flex-1 text-center min-w-0 px-2">
-                <p className="text-xs text-slate-400 font-medium uppercase tracking-wider">Found</p>
+            <div className="flex-1 text-center min-w-0 px-1 flex flex-col justify-center">
+                <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider leading-none">Found</p>
                 <p className="text-sm font-bold text-white leading-none mt-0.5 truncate">{totalResults}</p>
             </div>
 
             {/* Divider */}
-            <div className="w-px h-6 bg-white/20 mx-1" />
+            <div className="w-px h-5 bg-white/20" />
 
-            {/* Insights */}
+            {/* Insights (Icon Only) */}
             <Link
                 href="/visualize"
-                className="flex items-center gap-2 px-4 py-3 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors shrink-0"
+                className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors shrink-0"
+                aria-label="Insights"
             >
-                <BarChart2 className="w-4 h-4 text-purple-300" />
-                <span className="text-sm font-semibold tracking-wide">Insights</span>
+                <BarChart2 className="w-5 h-5 text-purple-300" />
             </Link>
 
             {/* Divider */}
-            <div className="w-px h-6 bg-white/20 mx-1" />
+            <div className="w-px h-5 bg-white/20" />
 
             {/* Right: Map */}
             <Link
                 href="/map"
-                className="flex items-center gap-2 px-4 py-3 rounded-full bg-purple-600 hover:bg-purple-500 active:bg-purple-700 transition-colors shadow-lg shadow-purple-900/50 shrink-0"
+                className="flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-purple-600 hover:bg-purple-500 active:bg-purple-700 transition-colors shadow-lg shadow-purple-900/50 shrink-0 ml-1"
             >
                 <MapIcon className="w-4 h-4 text-white" />
-                <span className="text-sm font-bold">Maps</span>
+                <span className="text-xs font-bold">Map</span>
             </Link>
         </div>
       </div>
