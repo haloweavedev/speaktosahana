@@ -1,106 +1,147 @@
 'use client';
 
-import { MapContainer, TileLayer, CircleMarker, Popup, ZoomControl, Tooltip } from 'react-leaflet';
+import { useState } from 'react';
+import { MapContainer, TileLayer, CircleMarker, ZoomControl, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@repo/ui';
-
-interface MapPoint {
-  id: string;
-  lat: number;
-  lng: number;
-  name: string;
-  sector: string;
-}
-
-interface TopArea {
-    name: string; 
-    count: number; 
-    pincode: string;
-    lat?: number;
-    lng?: number;
-}
+import type { DensityZone } from '../../actions/analytics';
 
 interface MapVisualizerProps {
-  points: MapPoint[];
-  topAreas?: TopArea[];
+  densityZones: DensityZone[];
+  maxDensity: number;
 }
 
-export default function MapVisualizer({ points, topAreas }: MapVisualizerProps) {
-  // Center roughly on Karnataka/Bangalore as per data
+export default function MapVisualizer({ densityZones, maxDensity }: MapVisualizerProps) {
+  const [hoveredZone, setHoveredZone] = useState<DensityZone | null>(null);
+
+  // Center on Bengaluru
   const center: [number, number] = [12.9716, 77.5946];
 
+  // Calculate radius using square root scaling for better visual distribution
+  // Min radius: 8, Max radius: 35
+  const getRadius = (count: number) => {
+    const normalized = Math.sqrt(count) / Math.sqrt(maxDensity);
+    return 8 + normalized * 27;
+  };
+
+  // Calculate opacity based on count (higher = more opaque)
+  const getOpacity = (count: number) => {
+    const normalized = count / maxDensity;
+    return 0.3 + normalized * 0.5; // Range: 0.3 to 0.8
+  };
+
+  // Total NGOs across all zones
+  const totalNGOs = densityZones.reduce((sum, z) => sum + z.count, 0);
+
   return (
-    <Card className="h-[600px] flex flex-col overflow-hidden border-0 bg-transparent shadow-none relative">
-      <CardHeader className="pt-6 pb-4">
-        <CardTitle className="text-lg font-display">Geospatial Density</CardTitle>
-        <p className="text-sm text-muted-foreground">Mapping service providers across Bengaluru's neighborhoods</p>
+    <Card className="h-[350px] md:h-[600px] flex flex-col overflow-hidden border-0 bg-white shadow-none relative">
+      <CardHeader className="pt-4 md:pt-6 pb-2 md:pb-4">
+        <CardTitle className="text-base md:text-lg font-display text-slate-900">Service Coverage Map</CardTitle>
+        <p className="text-xs md:text-sm text-slate-500">
+          {densityZones.length} neighborhoods with disability services
+        </p>
       </CardHeader>
-      <CardContent className="p-0 flex-1 relative rounded-2xl overflow-hidden border border-border/50 shadow-sm">
-        <MapContainer 
-            center={center} 
-            zoom={11} 
-            scrollWheelZoom={false} 
-            className="h-full w-full bg-slate-50"
-            style={{ height: "100%", width: "100%", zIndex: 0 }}
+      <CardContent className="p-0 flex-1 relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+        <MapContainer
+          center={center}
+          zoom={11}
+          scrollWheelZoom={true}
+          className="h-full w-full bg-slate-50"
+          style={{ height: "100%", width: "100%", zIndex: 0 }}
         >
-          {/* CartoDB Positron (Light, Clean) */}
+          {/* CartoDB Positron - Clean light basemap */}
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
-          
-          {/* Individual Points */}
-          {points.map((point) => (
-            <CircleMarker
-              key={point.id}
-              center={[point.lat, point.lng]}
-              radius={3}
-              pathOptions={{ 
-                  fillColor: '#7c3aed', // Purple-600
-                  color: '#fff', 
-                  weight: 0.5, 
-                  opacity: 0.5, 
-                  fillOpacity: 0.6
-              }}
-            >
-              <Popup className="custom-popup">
-                <div className="text-sm p-1">
-                  <p className="font-bold text-slate-900">{point.name}</p>
-                  <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">{point.sector}</p>
-                </div>
-              </Popup>
-            </CircleMarker>
-          ))}
 
-          {/* Top Area Centroids (Optional Visualization) */}
-          {topAreas?.map((area) => (
-              area.lat && area.lng ? (
-                <CircleMarker
-                    key={area.pincode}
-                    center={[area.lat, area.lng]}
-                    radius={20} // Larger
-                    pathOptions={{
-                        fillColor: '#d8b4fe', // Light Purple
-                        color: '#7c3aed',     // Dark Purple Stroke
-                        weight: 2,
-                        opacity: 0.8,
-                        fillOpacity: 0.2
-                    }}
-                >
-                    <Tooltip direction="center" permanent className="bg-transparent border-0 shadow-none text-purple-900 font-bold text-xs">
-                        {area.count}
-                    </Tooltip>
-                </CircleMarker>
-              ) : null
-          ))}
+          {/* Density Circles - Render smaller ones first, larger ones on top */}
+          {[...densityZones]
+            .sort((a, b) => a.count - b.count)
+            .map((zone) => (
+              <CircleMarker
+                key={zone.pincode}
+                center={[zone.lat, zone.lng]}
+                radius={getRadius(zone.count)}
+                pathOptions={{
+                  fillColor: '#a855f7',
+                  color: '#7c3aed',
+                  weight: 1.5,
+                  opacity: 0.9,
+                  fillOpacity: getOpacity(zone.count),
+                }}
+                eventHandlers={{
+                  mouseover: () => setHoveredZone(zone),
+                  mouseout: () => setHoveredZone(null),
+                }}
+              >
+                {/* Show count label for zones with 10+ NGOs */}
+                {zone.count >= 10 && (
+                  <Tooltip
+                    direction="center"
+                    permanent
+                    className="density-label"
+                  >
+                    <span className="text-[10px] font-bold text-purple-900">
+                      {zone.count}
+                    </span>
+                  </Tooltip>
+                )}
+              </CircleMarker>
+            ))}
 
           <ZoomControl position="bottomright" />
         </MapContainer>
-        
-        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-200 shadow-sm text-xs font-mono z-[400] text-slate-600">
-           {points.length} Verified Locations
+
+        {/* Stats Badge */}
+        <div className="absolute top-2 md:top-4 right-2 md:right-4 bg-white px-2 md:px-3 py-1 md:py-1.5 rounded-full border border-slate-200 shadow-sm text-[10px] md:text-xs font-mono z-[400] text-slate-600">
+          {totalNGOs.toLocaleString()} NGOs
+        </div>
+
+        {/* Hover Info Card */}
+        {hoveredZone && (
+          <div className="absolute top-2 left-2 md:top-auto md:bottom-4 md:left-4 bg-white/95 backdrop-blur-sm px-3 py-2 md:px-4 md:py-3 rounded-xl border border-slate-200 shadow-lg z-[400] min-w-[160px] md:min-w-[180px]">
+            <p className="text-sm font-semibold text-slate-900">{hoveredZone.name}</p>
+            <p className="text-xs text-slate-500 font-mono">{hoveredZone.pincode}</p>
+            <div className="mt-1 md:mt-2 flex items-baseline gap-1">
+              <span className="text-xl md:text-2xl font-bold text-purple-600">{hoveredZone.count}</span>
+              <span className="text-[10px] md:text-xs text-slate-500">providers</span>
+            </div>
+          </div>
+        )}
+
+        {/* Legend */}
+        <div className="absolute bottom-2 left-2 md:bottom-4 md:left-4 bg-white/95 backdrop-blur-sm px-2 md:px-3 py-1.5 md:py-2 rounded-lg border border-slate-200 shadow-sm z-[400]">
+          <p className="hidden md:block text-[10px] font-medium text-slate-500 uppercase tracking-wide mb-1.5">Density</p>
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <div className="flex items-center gap-0.5 md:gap-1">
+              <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-purple-500/30 border border-purple-600" />
+              <span className="text-[8px] md:text-[10px] text-slate-500">Low</span>
+            </div>
+            <div className="flex items-center gap-0.5 md:gap-1">
+              <div className="w-2.5 h-2.5 md:w-4 md:h-4 rounded-full bg-purple-500/50 border border-purple-600" />
+              <span className="text-[8px] md:text-[10px] text-slate-500">Med</span>
+            </div>
+            <div className="flex items-center gap-0.5 md:gap-1">
+              <div className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-purple-500/80 border border-purple-600" />
+              <span className="text-[8px] md:text-[10px] text-slate-500">High</span>
+            </div>
+          </div>
         </div>
       </CardContent>
+
+      <style jsx global>{`
+        .density-label {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        .density-label::before {
+          display: none !important;
+        }
+      `}</style>
     </Card>
   );
 }

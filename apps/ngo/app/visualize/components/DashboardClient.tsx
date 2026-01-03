@@ -3,20 +3,19 @@
 
 import dynamic from 'next/dynamic';
 import { MetricCard } from './MetricCard';
-import { SectorChart } from './SectorChart';
+import { PwDFactsCard } from './PwDFactsCard';
 import { SynergyCard } from './SynergyCard';
 import { TrustTrendChart } from './TrustTrendChart';
-import { DigitalPresenceCard } from './DigitalPresenceCard';
 import { ExperienceLevelChart } from './ExperienceLevelChart';
-import { Globe, ShieldCheck, Database, MapPin } from 'lucide-react';
+import { ShieldCheck, MapPin, Users } from 'lucide-react';
 import type { AnalyticsData } from '../../actions/analytics';
 import { Card, CardContent, CardHeader, CardTitle } from '@repo/ui';
 
 const MapVisualizer = dynamic(() => import('./MapVisualizer'), {
   ssr: false,
   loading: () => (
-    <div className="h-[600px] w-full flex items-center justify-center bg-muted/20 rounded-xl animate-pulse border border-border/50">
-      <p className="text-muted-foreground font-medium">Loading Geospatial Intelligence...</p>
+    <div className="h-[600px] w-full flex items-center justify-center bg-slate-50 rounded-xl animate-pulse border border-slate-200">
+      <p className="text-slate-500 font-medium">Loading Geospatial Intelligence...</p>
     </div>
   ),
 });
@@ -27,73 +26,69 @@ interface DashboardClientProps {
 
 export function DashboardClient({ data }: DashboardClientProps) {
   return (
-    <div className="container mx-auto py-10 space-y-10 px-4 md:px-6">
-      <div className="flex flex-col space-y-4 max-w-3xl">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight font-display text-foreground">
-          PurplePages <span className="text-primary">Intelligence</span>
+    <div className="container mx-auto py-6 md:py-10 space-y-6 md:space-y-10 px-4 md:px-6">
+      {/* Header */}
+      <div className="flex flex-col space-y-3 md:space-y-4 max-w-3xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-display text-slate-900">
+          <span className="text-[#c27aff]">purple</span>Pages Intelligence
         </h1>
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          The operating system for the social sector. visualizing the <span className="text-foreground font-semibold">Synergy Graph</span> connecting 
-          capital, volunteers, and services across the region.
+        <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+          Bengaluru&apos;s comprehensive directory of <span className="text-purple-600 font-semibold">Differently Abled</span> service providers.
+          Mapping the ecosystem of care, education, and empowerment.
         </p>
       </div>
 
       {/* Metrics Row */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <MetricCard
-          title="Verified Partners"
+          title="Disability Service Providers"
           value={data.totalCount.toLocaleString()}
-          icon={Database}
-          description="Legally verified entities"
-          className="border-primary/20 bg-primary/5"
+          icon={Users}
+          description="NGOs serving the Differently Abled"
+          className="border-purple-200 bg-purple-50"
         />
         <MetricCard
-          title="Active Neighborhoods"
+          title="Neighborhoods Covered"
           value={data.districtsCount}
           icon={MapPin}
-          description="Hyper-local presence"
+          description="Pincodes with active services"
         />
         <MetricCard
-          title="Established Partners"
+          title="Established Organizations"
           value={`${data.trustIndex.toFixed(0)}%`}
           icon={ShieldCheck}
           description="Operational > 3 Years"
-        />
-        <MetricCard
-          title="Cause Areas"
-          value={data.sectorDistribution.length + "+"} 
-          icon={Globe}
-          description="Diverse impact sectors"
+          className="sm:col-span-2 lg:col-span-1"
         />
       </div>
 
       {/* Map & Top Areas Row */}
-      <div className="grid gap-6 lg:grid-cols-3 h-full">
-        <div className="lg:col-span-2 min-h-[500px] rounded-2xl overflow-hidden border border-border shadow-sm">
-          <MapVisualizer points={data.mapPoints} topAreas={data.topAreas} />
+      <div className="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-3">
+        <div className="lg:col-span-2 min-h-[350px] md:min-h-[500px] rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+          <MapVisualizer densityZones={data.densityZones} maxDensity={data.maxDensity} />
         </div>
-        
+
         {/* Top 10 Areas List */}
-        <div className="lg:col-span-1 h-full">
-            <Card className="h-full max-h-[500px] border-border/60 shadow-none flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-lg font-display">High Density Zones</CardTitle>
-                <p className="text-sm text-muted-foreground">Top 10 NGO Hubs in Bengaluru</p>
+        <div className="lg:col-span-1">
+            <Card className="h-full max-h-[400px] lg:max-h-[500px] border-slate-200 shadow-none flex flex-col bg-white">
+              <CardHeader className="pb-2 md:pb-4">
+                <CardTitle className="text-base md:text-lg font-display text-slate-900">Service Hotspots</CardTitle>
+                <p className="text-xs md:text-sm text-slate-500">Top 10 areas for disability services</p>
               </CardHeader>
-              <CardContent className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
-                 <div className="space-y-3">
+              <CardContent className="flex-1 overflow-y-auto pr-2">
+                 <div className="space-y-2 md:space-y-3">
                    {data.topAreas.map((area, i) => (
-                       <div key={area.pincode} className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 border border-secondary hover:bg-secondary/50 transition-colors">
-                           <div className="flex items-center gap-3">
-                               <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white text-primary text-xs font-bold shadow-sm">
+                       <div key={area.pincode} className="flex items-center justify-between p-2 md:p-3 rounded-lg bg-slate-50 border border-slate-100 hover:bg-slate-100 transition-colors">
+                           <div className="flex items-center gap-2 md:gap-3">
+                               <div className="flex items-center justify-center w-5 h-5 md:w-6 md:h-6 rounded-full bg-purple-100 text-purple-700 text-[10px] md:text-xs font-bold">
                                    {i + 1}
                                </div>
                                <div>
-                                   <p className="font-medium text-sm text-foreground">{area.name}</p>
-                                   <p className="text-xs text-muted-foreground font-mono">{area.pincode}</p>
+                                   <p className="font-medium text-xs md:text-sm text-slate-900">{area.name}</p>
+                                   <p className="text-[10px] md:text-xs text-slate-500 font-mono">{area.pincode}</p>
                                </div>
                            </div>
-                           <span className="font-bold text-lg text-primary/80">{area.count}</span>
+                           <span className="font-bold text-base md:text-lg text-purple-600">{area.count}</span>
                        </div>
                    ))}
                  </div>
@@ -102,16 +97,15 @@ export function DashboardClient({ data }: DashboardClientProps) {
         </div>
       </div>
 
-      {/* Ecosystem Pulse Row: Digital Maturity, Demographics, Trends */}
-      <div className="grid gap-6 lg:grid-cols-3">
-         <DigitalPresenceCard stats={data.digitalStats} total={data.totalCount} />
+      {/* Demographics & Trends Row */}
+      <div className="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-2">
          <ExperienceLevelChart data={data.ageDemographics} total={data.totalCount} />
          <TrustTrendChart data={data.registrationTrend} />
       </div>
 
-      {/* Deep Dive Row: Sectors & Synergy */}
-      <div className="grid gap-6 lg:grid-cols-2">
-         <SectorChart data={data.sectorDistribution} />
+      {/* Insights Row: PwD Facts & Synergy */}
+      <div className="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-2">
+         <PwDFactsCard />
          <SynergyCard data={data.synergy.pairs} zones={data.synergy.topZones} />
       </div>
     </div>

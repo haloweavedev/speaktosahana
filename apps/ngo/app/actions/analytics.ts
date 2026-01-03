@@ -3,22 +3,32 @@
 import prisma from '@repo/db';
 import { getAreaName } from '../../lib/bengaluru-pincodes';
 
+export type DensityZone = {
+  name: string;
+  count: number;
+  pincode: string;
+  lat: number;
+  lng: number;
+};
+
 export type AnalyticsData = {
   totalCount: number;
   geocodedCount: number;
   districtsCount: number;
-  topAreas: { 
-      name: string; 
-      count: number; 
+  topAreas: {
+      name: string;
+      count: number;
       pincode: string;
       lat?: number;
       lng?: number;
   }[];
+  densityZones: DensityZone[];
+  maxDensity: number;
   synergy: {
       pairs: { sector: string; count: number }[];
       topZones: { name: string; count: number }[];
   };
-  trustIndex: number; 
+  trustIndex: number;
   sectorDistribution: { name: string; value: number }[];
   registrationTrend: { year: number; count: number }[];
   mapPoints: {
@@ -205,6 +215,26 @@ export async function getAnalyticsData(): Promise<AnalyticsData> {
         };
     });
 
+  // All Density Zones (for map visualization)
+  const densityZones: DensityZone[] = Object.entries(pincodeCounts)
+    .filter(([pincode]) => {
+        const coords = pincodeCoords[pincode];
+        return coords && coords.count > 0;
+    })
+    .map(([pincode, count]) => {
+        const coords = pincodeCoords[pincode]!;
+        return {
+            name: getAreaName(pincode),
+            count,
+            pincode,
+            lat: coords.latSum / coords.count,
+            lng: coords.lngSum / coords.count,
+        };
+    })
+    .sort((a, b) => b.count - a.count);
+
+  const maxDensity = densityZones.length > 0 ? densityZones[0]!.count : 1;
+
   // Top Sectors
   const sortedSectors = Object.entries(sectorCounts)
     .sort(([, a], [, b]) => b - a);
@@ -236,6 +266,8 @@ export async function getAnalyticsData(): Promise<AnalyticsData> {
     geocodedCount,
     districtsCount: districts.size,
     topAreas,
+    densityZones,
+    maxDensity,
     synergy: {
         pairs: synergyPairs,
         topZones: synergyZones
