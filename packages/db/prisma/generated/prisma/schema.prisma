@@ -102,3 +102,14 @@ model NgoSector {
   @@id([ngoId, sectorId])
   @@map("ngo_sectors")
 }
+
+model ContactSubmission {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name      String
+  email     String
+  phone     String?
+  message   String
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  @@map("contact_submissions")
+}

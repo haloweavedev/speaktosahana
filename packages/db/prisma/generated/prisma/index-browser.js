@@ -193,6 +193,15 @@ exports.Prisma.NgoSectorScalarFieldEnum = {
   sectorId: 'sectorId'
 };
 
+exports.Prisma.ContactSubmissionScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  message: 'message',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -224,7 +233,8 @@ exports.Prisma.ModelName = {
   Ngo: 'Ngo',
   ScrapeRun: 'ScrapeRun',
   Sector: 'Sector',
-  NgoSector: 'NgoSector'
+  NgoSector: 'NgoSector',
+  ContactSubmission: 'ContactSubmission'
 };
 
 /**

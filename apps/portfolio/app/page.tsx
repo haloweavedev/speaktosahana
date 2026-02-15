@@ -15,6 +15,7 @@ import {
   Plus,
   Minus,
 } from 'lucide-react';
+import ContactModal from './components/ContactModal';
 
 type NavLinkProps = { to: string; label: string };
 type LensCardProps = { title: string; desc: string; icon: React.ElementType };
@@ -31,6 +32,7 @@ type ProjectCategoryProps = { category: string; description: string; children: R
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -156,10 +158,15 @@ const App = () => {
           <div className="hidden md:flex gap-8 items-center">
             <NavLink to="about" label="About Me" />
             <NavLink to="projects" label="Projects" />
-            <NavLink to="contact" label="Contact" />
+            <button
+              onClick={() => setIsContactOpen(true)}
+              className="text-xs font-bold uppercase tracking-widest px-5 py-2 bg-stone-900 text-white hover:bg-emerald-900 transition-colors duration-300 rounded-sm"
+            >
+              Contact
+            </button>
           </div>
-          
-          <button onClick={() => scrollToSection('contact')} className="md:hidden">
+
+          <button onClick={() => setIsContactOpen(true)} className="md:hidden">
             <Mail className="w-5 h-5 text-stone-900" />
           </button>
         </div>
@@ -444,7 +451,13 @@ const App = () => {
             Available for strategic consulting, ecosystem partnerships, and speaking engagements.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-8 mb-20">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-20">
+            <button
+              onClick={() => setIsContactOpen(true)}
+              className="text-sm font-bold tracking-widest uppercase px-8 py-3 bg-white text-stone-900 hover:bg-emerald-50 transition-colors duration-300 rounded-sm"
+            >
+              Send a Message
+            </button>
             <a href="mailto:speaktosahana@gmail.com" className="text-sm font-bold tracking-widest uppercase hover:text-white transition-colors border-b border-stone-700 pb-1">
               Email Me
             </a>
@@ -458,6 +471,8 @@ const App = () => {
           </div>
         </div>
       </section>
+
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </div>
   );
 };
