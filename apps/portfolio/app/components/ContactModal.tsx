@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { X, Send, CheckCircle, Loader2 } from "lucide-react";
+import { submitContact } from "../actions/submit-contact";
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -44,23 +45,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     setStatus("submitting");
     setErrorMsg("");
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
+    const result = await submitContact(form);
 
-      if (!res.ok) {
-        setErrorMsg(data.error || "Something went wrong.");
-        setStatus("error");
-        return;
-      }
-
+    if (result.success) {
       setStatus("success");
-    } catch {
-      setErrorMsg("Network error. Please try again.");
+    } else {
+      setErrorMsg(result.error);
       setStatus("error");
     }
   };
