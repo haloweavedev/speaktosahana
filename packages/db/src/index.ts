@@ -6,6 +6,13 @@ import { Pool } from "pg";
 const connectionString =
   process.env.DIRECT_DATABASE_URL || process.env.DIRECT_URL || process.env.DATABASE_URL;
 
+// Supabase pooler uses certs that Node's TLS rejects by default.
+// The pg Pool `ssl` option only covers the Pool layer — the @prisma/adapter-pg
+// adapter opens its own TLS connections, so we must relax it at the process level.
+if (process.env.PRISMA_STRICT_SSL !== "true") {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
 const prismaClientSingleton = () => {
   if (!connectionString) {
     throw new Error("DATABASE_URL (or DIRECT_URL/DIRECT_DATABASE_URL) must be set for Prisma.");
