@@ -271,7 +271,7 @@ const App = () => {
               <LensCard 
                 title="The Academic Rigor"
                 icon={Award}
-                desc="Masters in Disability Studies. Coupled with an Honours degree in Sociology, this education grounded my ability to design interventions rooted in both field realities and critical theory."
+                desc="Leveraging academic excellence in Sociology(LSR, DU), Social Work and Disability Studies (TISS Gold Medalist), I apply critical theory to systemic problem-solving. I don't just design programs; I build evidence-based frameworks that ensure social impact is both practically and structurally sound."
               />
             </div>
           </div>
