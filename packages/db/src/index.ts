@@ -11,16 +11,13 @@ const prismaClientSingleton = () => {
     throw new Error("DATABASE_URL (or DIRECT_URL/DIRECT_DATABASE_URL) must be set for Prisma.");
   }
 
-  const allowSelfSigned =
-    process.env.PRISMA_ALLOW_SELF_SIGNED === "true" ||
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED === "0";
+  const strictSsl = process.env.PRISMA_STRICT_SSL === "true";
 
   if (process.env.LOG_PRISMA_CONNECTION !== "false") {
     try {
       const url = new URL(connectionString);
       const display = `${url.hostname}:${url.port || "5432"}${url.pathname}`;
-      const sslMode = allowSelfSigned ? "relaxed" : "strict";
-      console.info(`[prisma] init adapter host=${display} ssl=${sslMode}`);
+      console.info(`[prisma] init adapter host=${display} ssl=${strictSsl ? "strict" : "relaxed"}`);
     } catch {
       // ignore parsing issues to avoid blocking client creation
     }
@@ -28,7 +25,7 @@ const prismaClientSingleton = () => {
 
   const poolConfig: PoolConfig = {
     connectionString,
-    ssl: allowSelfSigned ? { rejectUnauthorized: false } : undefined,
+    ssl: strictSsl ? undefined : { rejectUnauthorized: false },
   };
 
   const pool = new Pool(poolConfig);
