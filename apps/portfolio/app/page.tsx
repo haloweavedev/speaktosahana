@@ -178,11 +178,12 @@ const App = () => {
           
           <div className="md:col-span-7">
             <p className="text-emerald-800 font-bold tracking-widest uppercase text-xs mb-8 animate-fade-in-up">
-              Strategic Initiatives Lead • APD
+              Inclusion and Impact Architect
             </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium leading-[1] text-stone-900 mb-8 tracking-tight">
-              Inclusion <span className="italic text-stone-400">&</span> Impact<br/>
-              <span className="italic text-stone-400">Architect</span>
+              Inclusion <br/>
+              <span className="italic text-stone-400">is strategy.</span>
+              <span className="block text-2xl md:text-3xl lg:text-4xl text-stone-300 mt-2 font-light italic">(not just charity)</span>
             </h1>
             
             <p className="text-lg md:text-xl text-stone-600 font-light leading-relaxed mb-12 max-w-lg">
