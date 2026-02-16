@@ -449,7 +449,7 @@ const App = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">Let&apos;s connect dots.</h2>
           <p className="text-lg font-light mb-12 max-w-xl mx-auto opacity-80">
-            Available for strategic consulting, ecosystem partnerships, and speaking engagements.
+            Here to work on the shared vision of a more inclusive world—let&apos;s design systems, processes & tools that make it a reality. Whether it&apos;s an AI-driven tool or a scalable process for NGO excellence, I am happy to build it with you through strategic consultation and/or partnerships.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-20">
